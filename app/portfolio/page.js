@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Case Studies | Beelio Technologies',
+  description: "Real products we've built from scratch and the problems they solve.",
+};
+
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Portfolio from '../../components/Portfolio';

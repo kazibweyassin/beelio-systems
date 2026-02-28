@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Home | Beelio Technologies',
+  description: 'Intelligent software built for African businesses. Custom platforms with embedded AI to streamline operations.',
+};
+
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Problem from '../components/Problem';
