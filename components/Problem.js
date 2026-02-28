@@ -34,7 +34,7 @@ export default function Problem() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            Sound <span className="text-[#00e6fe]">familiar?</span>
+            Sound <span className="text-electric">familiar?</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
             Most Ugandan businesses are losing time and money to problems 
@@ -51,7 +51,7 @@ export default function Problem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-[#00e6fe]/20 transition-colors duration-300"
+              className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-electric/20 transition-colors duration-300"
             >
               {/* Icon */}
               <div className="text-3xl mb-4">{point.icon}</div>
@@ -78,7 +78,7 @@ export default function Problem() {
           className="text-center text-white/40 text-sm mt-10"
         >
           These aren't small problems. They compound every single day. 
-          <span className="text-[#00e6fe]"> Here's how we fix them. ↓</span>
+          <span className="text-electric"> Here's how we fix them. ↓</span>
         </motion.p>
 
       </div>

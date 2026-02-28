@@ -7,7 +7,7 @@ export default function Hero() {
     <section id="hero" className="min-h-[90vh] flex flex-col justify-center items-center bg-[#0a1020] text-white px-4 py-24 relative overflow-hidden">
       
       {/* Glow background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#00e6fe]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-electric/5 blur-[120px] pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -20,15 +20,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="inline-flex items-center gap-2 bg-white/5 border border-[#00e6fe]/20 rounded-full px-4 py-1 text-xs text-[#00e6fe] mb-6"
+          className="inline-flex items-center gap-2 bg-white/5 border border-electric/20 rounded-full px-4 py-1 text-xs text-electric mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-[#00e6fe] animate-pulse" />
-          AI-Powered Software for African Businesses
-        </motion.div>
-
-        {/* Headline */}
+          <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          <span className="text-[#00e6fe]">Intelligent Software.</span>
+          <span className="text-electric">Intelligent Software.</span>
           <br />
           <span className="text-white">Built for Africa.</span>
         </h1>
@@ -46,13 +42,13 @@ export default function Hero() {
             href="https://wa.me/256786367460"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#00e6fe] text-[#0a1020] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-[#00c4d8] transition-colors duration-200"
+            className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-electric/90 transition-colors duration-200"
           >
             Book Free Consultation
           </a>
           <a
             href="/portfolio"
-            className="inline-block border border-white/20 text-white px-8 py-3 rounded-full hover:border-[#00e6fe] hover:text-[#00e6fe] transition-colors duration-200"
+            className="inline-block border border-white/20 text-white px-8 py-3 rounded-full hover:border-electric hover:text-electric transition-colors duration-200"
           >
             See Our Work
           </a>
@@ -73,7 +69,7 @@ export default function Hero() {
             animate={{ pathLength: 1 }}
             transition={{ duration: 2.5, ease: "easeInOut" }}
             d="M0,160L80,149.3C160,139,320,117,480,122.7C640,128,800,160,960,186.7C1120,213,1280,235,1360,245.3L1440,256"
-            stroke="#00e6fe"
+            stroke="currentColor"
             strokeWidth="1.5"
             fill="none"
             opacity="0.15"

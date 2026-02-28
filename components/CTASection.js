@@ -7,7 +7,7 @@ export default function CTASection() {
     <section id="contact" className="py-24 bg-[#080e1a] text-white relative overflow-hidden">
 
       {/* Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-[#00e6fe]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-electric/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-3xl mx-auto px-4 text-center relative z-10">
 
@@ -17,14 +17,9 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 bg-white/5 border border-[#00e6fe]/20 rounded-full px-4 py-1 text-xs text-[#00e6fe] mb-6"
+          className="inline-flex items-center gap-2 bg-white/5 border border-electric/20 rounded-full px-4 py-1 text-xs text-electric mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-[#00e6fe] animate-pulse" />
-          Available for new projects
-        </motion.div>
-
-        {/* Headline */}
-        <motion.h2
+          <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -32,7 +27,7 @@ export default function CTASection() {
           className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
         >
           Ready to build something{" "}
-          <span className="text-[#00e6fe]">intelligent?</span>
+          <span className="text-electric">intelligent?</span>
         </motion.h2>
 
         {/* Supporting copy */}
@@ -60,13 +55,13 @@ export default function CTASection() {
             href="https://wa.me/256786367460"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#00e6fe] text-[#0a1020] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-[#00c4d8] transition-colors duration-200"
+            className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-electric/90 transition-colors duration-200"
           >
             Book Free Consultation
           </a>
           <a
             href="mailto:beeliotechnologies@gmail.com"
-            className="inline-block border border-white/20 text-white px-8 py-3 rounded-full hover:border-[#00e6fe] hover:text-[#00e6fe] transition-colors duration-200"
+            className="inline-block border border-white/20 text-white px-8 py-3 rounded-full hover:border-electric hover:text-electric transition-colors duration-200"
           >
             Send Us an Email
           </a>

@@ -27,7 +27,7 @@ export default function Footer() {
               <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
                 <polygon
                   points="16,2 30,9 30,23 16,30 2,23 2,9"
-                  fill="#00e6fe"
+                  fill="currentColor"
                   opacity="0.7"
                 />
               </svg>
@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2 text-sm mt-2">
               <a
                 href="mailto:beeliotechnologies@gmail.com"
-                className="hover:text-[#00e6fe] transition-colors"
+                className="hover:text-electric transition-colors"
               >
                 beeliotechnologies@gmail.com
               </a>
@@ -52,7 +52,7 @@ export default function Footer() {
                 href="https://wa.me/256786367460"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#00e6fe] transition-colors"
+                className="hover:text-electric transition-colors"
               >
                 WhatsApp: +256 786 367460
               </a>
@@ -70,7 +70,7 @@ export default function Footer() {
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="text-sm hover:text-[#00e6fe] transition-colors"
+                      className="text-sm hover:text-electric transition-colors"
                     >
                       {item.label}
                     </a>
@@ -92,7 +92,7 @@ export default function Footer() {
               href="https://tiktok.com/@beelio"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#00e6fe] transition-colors"
+              className="hover:text-electric transition-colors"
             >
               TikTok
             </a>
@@ -100,7 +100,7 @@ export default function Footer() {
               href="https://x.com/beelio"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#00e6fe] transition-colors"
+              className="hover:text-electric transition-colors"
             >
               X (Twitter)
             </a>

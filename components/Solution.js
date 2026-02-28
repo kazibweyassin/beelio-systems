@@ -41,7 +41,7 @@ export default function Solution() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             This is how we{" "}
-            <span className="text-[#00e6fe]">fix it.</span>
+            <span className="text-electric">fix it.</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
             We combine custom software with embedded AI — so your business 
@@ -58,13 +58,13 @@ export default function Solution() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-[#00e6fe]/30 transition-all duration-300 flex flex-col gap-4"
+              className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-electric/30 transition-all duration-300 flex flex-col gap-4"
             >
               {/* Icon */}
               <div className="text-3xl">{pillar.icon}</div>
 
               {/* Problem echo */}
-              <p className="text-[#00e6fe] text-xs font-medium uppercase tracking-wider">
+                <p className="text-electric text-xs font-medium uppercase tracking-wider">
                 {pillar.problem}
               </p>
 
@@ -80,7 +80,7 @@ export default function Solution() {
 
               {/* Outcome */}
               <div className="border-t border-white/5 pt-4">
-                <p className="text-[#00e6fe] text-sm font-medium">
+                <p className="text-electric text-sm font-medium">
                   ✓ {pillar.outcome}
                 </p>
               </div>
@@ -100,7 +100,7 @@ export default function Solution() {
             href="https://wa.me/256786367460"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#00e6fe] text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-[#00c4d8] transition-colors duration-200"
+            className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
           >
             Let's Build Your System
           </a>

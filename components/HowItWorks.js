@@ -40,7 +40,7 @@ export default function HowItWorks() {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            How it <span className="text-[#00e6fe]">works</span>
+            How it <span className="text-electric">works</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
             From first conversation to live system — here's exactly what 
@@ -52,7 +52,7 @@ export default function HowItWorks() {
         <div className="relative grid md:grid-cols-3 gap-6">
 
           {/* Connecting line — desktop only */}
-          <div className="hidden md:block absolute top-10 left-[16%] right-[16%] h-[1px] bg-gradient-to-r from-transparent via-[#00e6fe]/30 to-transparent" />
+          <div className="hidden md:block absolute top-10 left-[16%] right-[16%] h-[1px] bg-gradient-to-r from-transparent via-electric/30 to-transparent" />
 
           {steps.map((step, i) => (
             <motion.div
@@ -61,10 +61,10 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-[#00e6fe]/20 transition-all duration-300 flex flex-col gap-4 relative"
+              className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-electric/20 transition-all duration-300 flex flex-col gap-4 relative"
             >
               {/* Step number circle */}
-              <div className="w-10 h-10 rounded-full bg-[#00e6fe]/10 border border-[#00e6fe]/30 flex items-center justify-center text-[#00e6fe] font-bold text-sm">
+              <div className="w-10 h-10 rounded-full bg-electric/10 border border-electric/30 flex items-center justify-center text-electric font-bold text-sm">
                 {step.number}
               </div>
 
@@ -83,7 +83,7 @@ export default function HowItWorks() {
 
               {/* Time */}
               <div className="border-t border-white/5 pt-4">
-                <p className="text-[#00e6fe]/70 text-xs font-medium">
+                <p className="text-electric/70 text-xs font.medium">
                   ⏱ {step.time}
                 </p>
               </div>
@@ -106,7 +106,7 @@ export default function HowItWorks() {
             href="https://wa.me/256786367460"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#00e6fe] text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-[#00c4d8] transition-colors duration-200"
+            className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
           >
             Start With a Free Consultation
           </a>

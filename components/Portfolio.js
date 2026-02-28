@@ -49,7 +49,7 @@ export default function Portfolio({
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            Our <span className="text-[#00e6fe]">Success Stories</span>
+            Our <span className="text-electric">Success Stories</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
             {subheading}
@@ -68,7 +68,7 @@ export default function Portfolio({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group block overflow-hidden rounded-2xl border border-white/5 hover:border-[#00e6fe]/30 transition-all duration-300"
+              className="group block overflow-hidden rounded-2xl border border-white/5 hover:border-electric/30 transition-all duration-300"
             >
               {/* Image */}
               <div className="relative w-full h-48 overflow-hidden">
@@ -97,7 +97,7 @@ export default function Portfolio({
                 </h3>
 
                 {/* Tagline */}
-                <p className="text-[#00e6fe] text-xs font-medium">
+                <p className="text-electric text-xs font-medium">
                   {project.tagline}
                 </p>
 
@@ -125,7 +125,7 @@ export default function Portfolio({
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#00e6fe] text-sm font-medium hover:underline"
+                      className="text-electric text-sm font-medium hover:underline"
                     >
                       View Live Site →
                     </a>
@@ -158,7 +158,7 @@ export default function Portfolio({
             href="https://wa.me/256786367460"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#00e6fe] text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-[#00c4d8] transition-colors duration-200"
+            className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
           >
             Discuss Your Project
           </a>
