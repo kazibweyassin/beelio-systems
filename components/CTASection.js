@@ -20,6 +20,8 @@ export default function CTASection() {
           className="inline-flex items-center gap-2 bg-white/5 border border-electric/20 rounded-full px-4 py-1 text-xs text-electric mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
+        </motion.div>
+        <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
