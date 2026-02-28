@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         navy: '#0a1020',
         // primary highlight colour – feel free to change to whatever you like
-        electric: '#ff6f61',      // coral (was #00e6fe cyan)
+        electric: '#f1e9e8',      // coral (was #00e6fe cyan)
         accent: '#00ff99',
       },
       fontFamily: {
