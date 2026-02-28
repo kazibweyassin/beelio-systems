@@ -225,7 +225,7 @@ export default function Chatbot() {
 
               {/* WhatsApp CTA */}
               {lastMessage?.whatsapp && (
-                
+                <a
                   href={WHATSAPP}
                   target="_blank"
                   rel="noopener noreferrer"
