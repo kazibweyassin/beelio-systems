@@ -23,6 +23,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 bg-white/5 border border-electric/20 rounded-full px-4 py-1 text-xs text-electric mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
+        </motion.div>
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
           <span className="text-electric">Intelligent Software.</span>
           <br />
