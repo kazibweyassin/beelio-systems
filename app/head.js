@@ -5,6 +5,7 @@ export default function Head() {
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#0a1020" />
+      <meta name="google-site-verification" content="nEbMwhZBb2OwtLJwOToW2AVj3J_ER68hxJXkz21selI" />
       <link rel="icon" href="/favicon.ico" />
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       {/* Google Fonts preconnect and import (manual) */}
