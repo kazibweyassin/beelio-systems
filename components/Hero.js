@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="min-h-[90vh] flex flex-col justify-center items-center bg-[#0a1020] text-white px-4 py-24 relative overflow-hidden">
+    <section id="hero" className="min-h-[90vh] flex flex-col justify-center items-center bg-[#0a1020] text-white px-4 py-24 relative overflow-hidden">
       
       {/* Glow background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#00e6fe]/5 blur-[120px] pointer-events-none" />

@@ -22,7 +22,7 @@ const painPoints = [
 
 export default function Problem() {
   return (
-    <section className="py-20 bg-[#080e1a] text-white">
+    <section id="problem" className="py-20 bg-[#080e1a] text-white">
       <div className="max-w-5xl mx-auto px-4">
         
         {/* Section Header */}

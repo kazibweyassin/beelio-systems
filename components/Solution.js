@@ -28,7 +28,7 @@ const pillars = [
 
 export default function Solution() {
   return (
-    <section className="py-20 bg-[#0a1020] text-white">
+    <section id="solution" className="py-20 bg-[#0a1020] text-white">
       <div className="max-w-5xl mx-auto px-4">
 
         {/* Section Header */}

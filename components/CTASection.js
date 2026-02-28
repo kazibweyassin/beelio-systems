@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function CTASection() {
   return (
-    <section className="py-24 bg-[#080e1a] text-white relative overflow-hidden">
+    <section id="contact" className="py-24 bg-[#080e1a] text-white relative overflow-hidden">
 
       {/* Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-[#00e6fe]/5 blur-[120px] pointer-events-none" />
