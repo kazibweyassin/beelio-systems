@@ -13,6 +13,7 @@ import Problem from '../components/Problem';
 import HowItWorks from '../components/HowItWorks';
 import WhyBeelio from '../components/WhyBeelio';
 import CTASection from '../components/CTASection';
+import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
 
@@ -31,6 +32,7 @@ export default function Home() {
       <Problem />
       <HowItWorks />
       <WhyBeelio />
+      <FAQ />
       <CTASection />
       <Footer />
       <Chatbot />

@@ -51,11 +51,20 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Quick trust strip */}
-          <div className="mt-8 flex flex-wrap gap-4 text-white/30 text-xs">
-            <span>✓ Free demo, no obligation</span>
-            <span>✓ Reply within 24 hours</span>
-            <span>✓ Based in Kampala</span>
+          {/* Stats bar */}
+          <div className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
+            <div>
+              <p className="text-electric font-bold text-2xl md:text-3xl">40+</p>
+              <p className="text-white/40 text-xs mt-1">Businesses automated</p>
+            </div>
+            <div>
+              <p className="text-electric font-bold text-2xl md:text-3xl">&lt;2min</p>
+              <p className="text-white/40 text-xs mt-1">Avg. first reply time</p>
+            </div>
+            <div>
+              <p className="text-electric font-bold text-2xl md:text-3xl">24/7</p>
+              <p className="text-white/40 text-xs mt-1">Always-on automation</p>
+            </div>
           </div>
         </motion.div>
 
