@@ -104,7 +104,7 @@ const scriptedFlow = [
   },
   {
     id: "restaurant_loyalty",
-    bot: "Customer retention is cheaper than new acquisition. We build WhatsApp loyalty bots that reward repeat customers automatically, send personalised birthday offers, and re-engage customers who haven't visited in a while. One Kampala café increased repeat visits by 40%.",
+    bot: "Customer retention is cheaper than new acquisition. We build WhatsApp loyalty bots that reward repeat customers automatically, send personalised birthday offers, and re-engage customers who haven't visited in a while. One of our clients increased repeat visits by 40%.",
     options: [
       { label: "I want something like that", next: "qualify" },
       { label: "How does it work technically?", next: "how_it_works" },
@@ -384,7 +384,7 @@ const scriptedFlow = [
   },
   {
     id: "pricing",
-    bot: "Pricing depends on scope. Here's a rough guide:\n\n• WhatsApp Chatbot ,  from UGX 2.5M\n• Business Automation ,  from UGX 4M\n• Full Custom System ,  from UGX 8M\n\nAll prices include 3 months of free support after launch. We're significantly more affordable than international agencies ,  and we're right here in Kampala.",
+    bot: "Pricing depends on scope. Here's a rough guide:\n\n• WhatsApp Chatbot ,  from UGX 2.5M\n• Business Automation ,  from UGX 4M\n• Full Custom System ,  from UGX 8M\n\nAll prices include 3 months of free support after launch. We're significantly more affordable than international agencies ,  and we're right here.",
     options: [
       { label: "That's within budget ,  let's talk", next: "whatsapp" },
       { label: "How long does it take?", next: "timeline" },
@@ -448,7 +448,7 @@ const scriptedFlow = [
   },
   {
     id: "case_study",
-    bot: "Here are a few real examples:\n\n• A Kampala clinic ,  patient system that cut admin time by 60%\n• A restaurant chain ,  WhatsApp loyalty bot that increased repeat visits by 40%\n• A local SACCO ,  loan management system for 800+ members with automated reminders\n\nWant to see the full portfolio?",
+    bot: "Here are a few real examples:\n\n• A clinic, patient system that cut admin time by 60%\n• A restaurant chain ,  WhatsApp loyalty bot that increased repeat visits by 40%\n• A local SACCO ,  loan management system for 800+ members with automated reminders\n\nWant to see the full portfolio?",
     options: [
       { label: "Yes, show me the portfolio page", next: "portfolio_link" },
       { label: "My business is similar ,  let's talk", next: "whatsapp" },

@@ -72,7 +72,7 @@ export default function CTASection() {
             <div className="flex flex-wrap gap-4 text-white/30 text-xs mt-6">
               <span>\u2713 Free consultation</span>
               <span>\u2713 No commitment required</span>
-              <span>\u2713 Based in Kampala, Uganda</span>
+              <span>\u2713 Based, Uganda</span>
             </div>
           </div>
 

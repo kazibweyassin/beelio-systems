@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "Is this right for my type of business?",
-    a: "If your business gets customer enquiries on WhatsApp ,  bookings, orders, questions, complaints ,  then yes. We've built systems for clinics, restaurants, retail shops, schools, and logistics companies across Kampala. If you're not sure, message us and we'll tell you honestly within 24 hours.",
+    a: "If your business gets customer enquiries on WhatsApp ,  bookings, orders, questions, complaints ,  then yes. We've built systems for clinics, restaurants, retail shops, schools, and logistics companies across Uganda and East Africa. If you're not sure, message us and we'll tell you honestly within 24 hours.",
   },
   {
     q: "What if it doesn't work for me?",

@@ -51,7 +51,7 @@ export default function HowItWorks() {
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
             From our first chat to the day your system is live ,  here's what 
-            working with our Kampala team actually feels like.
+            working with our team actually feels like.
           </p>
         </motion.div>
 

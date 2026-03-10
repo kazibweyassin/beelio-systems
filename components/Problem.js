@@ -44,7 +44,7 @@ export default function Problem() {
             Sound <span className="text-electric">familiar?</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            Lots of businesses around Kampala and beyond are wasting hours and cash on issues
+            Lots of businesses are wasting hours and cash on issues
             that a simple system could fix once and for all.
           </p>
         </motion.div>

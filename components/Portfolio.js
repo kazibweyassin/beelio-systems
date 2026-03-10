@@ -6,12 +6,12 @@ const projects = [
   {
     img: "/vagaro-Rz9_wnuHyA0-unsplash.jpg",
     label: "Clinic",
-    text: "Clinic in Kampala reduced customer response time from 4 hours to instant \u2014 and increased bookings by 40%.",
+    text: "Clinic reduced customer response time from 4 hours to instant \u2014 and increased bookings by 40%.",
   },
   {
     img: "/restuarant.jpg",
     label: "Restaurant",
-    text: "Restaurant in Kampala cut order errors by 90% with a WhatsApp bot \u2014 sales jumped 25%.",
+    text: "Restaurant cut order errors by 90% with a WhatsApp bot \u2014 sales jumped 25%.",
   },
   {
     img: "/detail-co-MnamLwFl1d8-unsplash.jpg",
@@ -22,7 +22,7 @@ const projects = [
 
 export default function Portfolio({
   heading = "Our Success Stories",
-  subheading = "Mini case studies from Kampala and beyond.",
+  subheading = "Real results from real businesses.",
 }) {
   return (
     <section className="py-20 bg-[#0a1020] text-white" id="portfolio">

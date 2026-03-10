@@ -28,7 +28,7 @@ export default function Home() {
       <Solution />
       <Portfolio
         heading="Real results from real businesses"
-        subheading="Mini case studies from Kampala and beyond."
+        subheading="Real results from real businesses."
       />
       <Industries />
       <Pricing />

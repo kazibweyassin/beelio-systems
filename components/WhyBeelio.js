@@ -40,7 +40,7 @@ export default function WhyBeelio() {
                 className="w-full h-72 md:h-80 object-cover"
               />
             </div>
-            <p className="text-white/30 text-xs mt-3 text-center">Our Kampala team</p>
+            <p className="text-white/30 text-xs mt-3 text-center">Our team</p>
           </motion.div>
 
           {/* Differentiators */}
