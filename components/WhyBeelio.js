@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { Check } from "lucide-react";
 
 const differentiators = [
   'Local team that understands African business context',
@@ -54,7 +55,7 @@ export default function WhyBeelio() {
                   transition={{ duration: 0.5, delay: i * 0.15 }}
                   className="flex items-start gap-3 bg-[#0d1526] rounded-xl p-4 border border-electric/10"
                 >
-                  <span className="text-electric font-bold text-lg mt-0.5">✓</span>
+                  <span className="mt-0.5 flex-shrink-0"><Check size={18} className="text-electric" strokeWidth={2.5} /></span>
                   <span className="text-white/80 font-medium">{item}</span>
                 </motion.li>
               ))}

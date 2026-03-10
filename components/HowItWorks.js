@@ -1,6 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Search, Wrench, Zap, Clock } from "lucide-react";
+
+const STEP_ICONS = { search: Search, wrench: Wrench, zap: Zap };
+function StepIcon({ name }) {
+  const Icon = STEP_ICONS[name];
+  return Icon ? <Icon size={18} className="text-electric" /> : null;
+}
 
 const steps = [
   {
@@ -8,21 +15,21 @@ const steps = [
     title: "We understand your problem",
     desc: "We start with a free consultation — a real conversation about how your business actually works, where you're losing time, and what a solution needs to do.",
     time: "Day 1 — Free, no commitment",
-    icon: "🔍",
+    icon: "search",
   },
   {
     number: "02",
     title: "We build your custom system",
     desc: "No templates. We design and develop a platform built around your exact workflow — whether that's a management system, a booking platform, or a customer portal.",
     time: "Week 1–3 — Depending on scope",
-    icon: "⚙️",
+    icon: "wrench",
   },
   {
     number: "03",
     title: "We integrate AI so it runs itself",
     desc: "We embed AI agents that handle the repetitive work — customer follow-ups, data processing, reporting, and more. Your system gets smarter over time.",
     time: "Week 3–4 — Launch ready",
-    icon: "🚀",
+    icon: "zap",
   },
 ];
 
@@ -69,7 +76,9 @@ export default function HowItWorks() {
               </div>
 
               {/* Icon */}
-              <div className="text-2xl">{step.icon}</div>
+              <div className="w-9 h-9 rounded-lg bg-electric/10 border border-electric/20 flex items-center justify-center">
+                <StepIcon name={step.icon} />
+              </div>
 
               {/* Title */}
               <h3 className="text-lg font-semibold text-white">
@@ -83,8 +92,8 @@ export default function HowItWorks() {
 
               {/* Time */}
               <div className="border-t border-white/5 pt-4">
-                <p className="text-electric/70 text-xs font.medium">
-                  ⏱ {step.time}
+                <p className="text-electric/70 text-xs font-medium flex items-center gap-1">
+                  <Clock size={11} className="text-electric/50" /> {step.time}
                 </p>
               </div>
             </motion.div>

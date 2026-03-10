@@ -1,20 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { LayoutGrid, Clock, Users } from "lucide-react";
+
+const PROBLEM_ICONS = { grid: LayoutGrid, clock: Clock, users: Users };
+function ProblemIcon({ name }) {
+  const Icon = PROBLEM_ICONS[name];
+  return Icon ? <Icon size={22} className="text-electric" /> : null;
+}
 
 const painPoints = [
   {
-    icon: "📊",
+    icon: "grid",
     title: "Still using spreadsheets?",
     desc: "You're spending hours every week entering data by hand — and one mistake costs you a client or your entire month's records.",
   },
   {
-    icon: "💬",
+    icon: "clock",
     title: "Losing customers to slow follow-ups?",
     desc: "A customer messages you at 9pm. Nobody replies until morning. By then they've already called your competitor.",
   },
   {
-    icon: "👥",
+    icon: "users",
     title: "Paying staff to do repetitive work?",
     desc: "You have people doing the same tasks every single day — tasks that a well-built system could handle automatically, 24/7.",
   },
@@ -69,7 +76,9 @@ export default function Problem() {
               className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-electric/20 transition-colors duration-300"
             >
               {/* Icon */}
-              <div className="text-3xl mb-4">{point.icon}</div>
+              <div className="w-10 h-10 rounded-lg bg-electric/10 border border-electric/20 flex items-center justify-center mb-4">
+                <ProblemIcon name={point.icon} />
+              </div>
               
               {/* Title */}
               <h3 className="text-lg font-semibold mb-3 text-white">

@@ -1,20 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MessageSquare, Settings, Code2 } from "lucide-react";
+
+const SOLUTION_ICONS = { chat: MessageSquare, gear: Settings, code: Code2 };
+function SolutionIcon({ name }) {
+  const Icon = SOLUTION_ICONS[name];
+  return Icon ? <Icon size={22} className="text-electric" /> : null;
+}
 
 const pillars = [
   {
-    icon: "💬",
+    icon: "chat",
     title: "WhatsApp Chatbots",
     outcome: "Reply to 100 customers at once — automatically.",
   },
   {
-    icon: "⚙️",
+    icon: "gear",
     title: "Business Automation",
     outcome: "Work that used to take hours now happens by itself.",
   },
   {
-    icon: "🛠️",
+    icon: "code",
     title: "Custom Software",
     outcome: "Systems built around how your business really works.",
   },
@@ -69,7 +76,9 @@ export default function Solution() {
               className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-electric/30 transition-all duration-300 flex flex-col gap-4"
             >
               {/* Icon */}
-              <div className="text-3xl">{pillar.icon}</div>
+              <div className="w-10 h-10 rounded-lg bg-electric/10 border border-electric/20 flex items-center justify-center">
+                <SolutionIcon name={pillar.icon} />
+              </div>
 
               {/* Title */}
               <h3 className="text-lg font-semibold text-white">

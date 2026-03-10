@@ -108,7 +108,7 @@ export default function Footer() {
 
           {/* Pride line */}
           <p className="text-white/20">
-            Built in Uganda 🇺🇬 for Africa 🌍
+            Built in Kampala, Uganda — for Africa
           </p>
         </div>
 

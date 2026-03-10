@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, MessageCircle, Send } from "lucide-react";
+import { X, MessageCircle, Send, Bot } from "lucide-react";
 
 const BOT_NAME = "Bee";
 const WHATSAPP = "https://wa.me/256786367460";
@@ -10,7 +10,7 @@ const WHATSAPP = "https://wa.me/256786367460";
 const scriptedFlow = [
   {
     id: "welcome",
-    bot: "Hey 👋 I'm Bee, Beelio's AI assistant. What kind of business do you run?",
+    bot: "Hi, I'm Bee — Beelio's AI assistant. What kind of business do you run?",
     options: [
       { label: "School / Education", next: "education" },
       { label: "Retail / Shop", next: "retail" },
@@ -66,7 +66,7 @@ const scriptedFlow = [
   },
   {
     id: "qualify",
-    bot: "That's exactly the kind of problem we solve. 🎯 We can build a custom system with AI built in — and give you a free consultation with no obligation. Want to talk to the team?",
+    bot: "That's exactly the kind of problem we solve. We can build a custom system with AI built in — and give you a free consultation with no obligation. Want to talk to the team?",
     options: [
       { label: "Yes, let's talk on WhatsApp", next: "whatsapp" },
       { label: "I have more questions", next: "more" },
@@ -99,7 +99,7 @@ const scriptedFlow = [
   },
   {
     id: "whatsapp",
-    bot: "Perfect! Click below to chat with our team on WhatsApp. We reply within 24 hours. 🚀",
+    bot: "Perfect! Click below to chat with our team on WhatsApp. We reply within 24 hours.",
     options: [],
     whatsapp: true,
   },
@@ -170,8 +170,8 @@ export default function Chatbot() {
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 bg-[#0a1020] border-b border-white/5">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-electric/20 border border-electric/30 flex items-center justify-center text-sm">
-                  🤖
+                <div className="w-8 h-8 rounded-full bg-electric/20 border border-electric/30 flex items-center justify-center">
+                  <Bot size={16} className="text-electric" />
                 </div>
                 <div>
                   <p className="text-white text-sm font-semibold">{BOT_NAME}</p>
@@ -231,7 +231,7 @@ export default function Chatbot() {
                   rel="noopener noreferrer"
                   className="mt-2 text-center bg-green-500 text-white font-semibold px-4 py-2.5 rounded-xl hover:bg-green-600 transition-colors duration-200 text-sm"
                 >
-                  💬 Chat on WhatsApp
+                  <MessageCircle size={14} className="inline mr-1.5" /> Chat on WhatsApp
                 </a>
               )}
 
