@@ -12,7 +12,7 @@ const scriptedFlow = [
   // ── WELCOME ────────────────────────────────────────────────────────────
   {
     id: "welcome",
-    bot: "Hi, I'm Bee — Beelio's AI assistant. We build custom software and AI automation for businesses across Uganda and East Africa. What kind of business do you run?",
+    bot: "Hi, I'm Bee — Beelio's assistant. What kind of business do you run?",
     options: [
       { label: "Clinic / Pharmacy / Hospital", next: "clinic" },
       { label: "Restaurant / Food Business", next: "restaurant" },
