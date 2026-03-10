@@ -1,6 +1,9 @@
 export const metadata = {
-  title: 'Case Studies | Beelio Technologies',
-  description: "Real products we've built from scratch and the problems they solve.",
+  title: 'Case Studies | Software Built for Uganda Businesses',
+  description: 'See real systems Beelio Technologies has built for clinics, restaurants, retail shops and SACCOs across Uganda. WhatsApp automation, management systems, and more.',
+  alternates: {
+    canonical: 'https://beelio.tech/portfolio',
+  },
 };
 
 import Header from '../../components/Header';

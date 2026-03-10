@@ -1,6 +1,9 @@
 export const metadata = {
-  title: 'Home | Beelio Technologies',
-  description: 'Kampala‑based team building WhatsApp chatbots and business automation for African companies. Simple, local, no-nonsense.',
+  title: 'Custom Software, WhatsApp Chatbots & Business Automation in Uganda',
+  description: 'Beelio Technologies builds WhatsApp chatbots, business automation, web apps and mobile apps for clinics, schools, restaurants, SACCOs and retail businesses across Uganda and East Africa.',
+  alternates: {
+    canonical: 'https://beelio.tech',
+  },
 };
 
 import Header from '../components/Header';
