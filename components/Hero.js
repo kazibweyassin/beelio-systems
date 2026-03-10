@@ -38,7 +38,7 @@ const headlines = [
         <span className="text-electric"> on spreadsheets?</span>
       </>
     ),
-    sub: "Custom software built around how your business actually works. Not a template. Built for you, here in Kampala.",
+    sub: "Custom software built around how your business actually works. Not a template. Built for you.",
   },
 ];
 
