@@ -77,7 +77,7 @@ export default function Hero() {
         >
           <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
             <img
-              src="/interface.jpg"
+              src="/Real-Time-Analytics.png"
               alt="Beelio automation interface in action"
               className="w-full h-auto object-cover"
             />
