@@ -24,19 +24,29 @@ export default function Hero() {
         >
           <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
         </motion.div>
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
           Still answering customer WhatsApp messages manually?
           <br />
           Automate replies, bookings, and follow‑ups — so you never lose a sale again.
         </h1>
 
         {/* Subheading */}
-        <p className="text-lg md:text-xl mb-10 text-white/60 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base md:text-lg mb-8 text-white/60 max-w-2xl mx-auto leading-relaxed">
           We're a Kampala‑based tech team building automation tools for African businesses.
         </p>
 
+        {/* Demo screenshot/video placeholder */}
+        <div className="mt-6">
+          {/* Replace the src with an actual screenshot or short looping video */}
+          <img
+            src="/demo-phone.png"
+            alt="WhatsApp bot in action"
+            className="mx-auto w-full max-w-xs rounded-lg shadow-lg"
+          />
+        </div>
+
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
           <a
             href="https://wa.me/256786367460"
             target="_blank"
