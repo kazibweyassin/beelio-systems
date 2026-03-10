@@ -6,11 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "Is this right for my type of business?",
-    a: "If your business gets customer enquiries on WhatsApp — bookings, orders, questions, complaints — then yes. We've built systems for clinics, restaurants, retail shops, schools, and logistics companies across Kampala. If you're not sure, message us and we'll tell you honestly within 24 hours.",
+    a: "If your business gets customer enquiries on WhatsApp ,  bookings, orders, questions, complaints ,  then yes. We've built systems for clinics, restaurants, retail shops, schools, and logistics companies across Kampala. If you're not sure, message us and we'll tell you honestly within 24 hours.",
   },
   {
     q: "What if it doesn't work for me?",
-    a: "We build every system around your specific workflow, not a generic template. Before we write a single line of code we map out exactly how your business operates. If after the demo you feel it's not the right fit, there's zero obligation — the consultation is free.",
+    a: "We build every system around your specific workflow, not a generic template. Before we write a single line of code we map out exactly how your business operates. If after the demo you feel it's not the right fit, there's zero obligation ,  the consultation is free.",
   },
   {
     q: "How is this different from just hiring someone to reply messages?",
@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "How long until I see results?",
-    a: "Most clients go live within 1–2 weeks. You'll see the first automated replies within days of launch. Measurable changes — faster response times, more bookings — typically show up in the first 30 days.",
+    a: "Most clients go live within 1–2 weeks. You'll see the first automated replies within days of launch. Measurable changes ,  faster response times, more bookings ,  typically show up in the first 30 days.",
   },
   {
     q: "What's the catch? Why is the demo free?",
@@ -44,7 +44,7 @@ export default function FAQ() {
             Questions we get <span className="text-electric">all the time</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            Straight answers — no fluff.
+            Straight answers ,  no fluff.
           </p>
         </motion.div>
 

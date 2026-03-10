@@ -13,7 +13,7 @@ const painPoints = [
   {
     icon: "grid",
     title: "Still using spreadsheets?",
-    desc: "You're spending hours every week entering data by hand — and one mistake costs you a client or your entire month's records.",
+    desc: "You're spending hours every week entering data by hand ,  and one mistake costs you a client or your entire month's records.",
   },
   {
     icon: "clock",
@@ -23,7 +23,7 @@ const painPoints = [
   {
     icon: "users",
     title: "Paying staff to do repetitive work?",
-    desc: "You have people doing the same tasks every single day — tasks that a well-built system could handle automatically, 24/7.",
+    desc: "You have people doing the same tasks every single day ,  tasks that a well-built system could handle automatically, 24/7.",
   },
 ];
 

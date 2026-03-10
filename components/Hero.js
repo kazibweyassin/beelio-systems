@@ -30,7 +30,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-base md:text-lg mb-8 text-white/60 leading-relaxed max-w-lg">
-            Automate replies, bookings, and follow-ups — so you never lose a sale again.
+            Automate replies, bookings, and follow-ups ,  so you never lose a sale again.
             We build automation tools for African businesses.
           </p>
 

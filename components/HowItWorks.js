@@ -13,22 +13,22 @@ const steps = [
   {
     number: "01",
     title: "We understand your problem",
-    desc: "We start with a free consultation — a real conversation about how your business actually works, where you're losing time, and what a solution needs to do.",
-    time: "Day 1 — Free, no commitment",
+    desc: "We start with a free consultation ,  a real conversation about how your business actually works, where you're losing time, and what a solution needs to do.",
+    time: "Day 1 ,  Free, no commitment",
     icon: "search",
   },
   {
     number: "02",
     title: "We build your custom system",
-    desc: "No templates. We design and develop a platform built around your exact workflow — whether that's a management system, a booking platform, or a customer portal.",
-    time: "Week 1–3 — Depending on scope",
+    desc: "No templates. We design and develop a platform built around your exact workflow ,  whether that's a management system, a booking platform, or a customer portal.",
+    time: "Week 1–3 ,  Depending on scope",
     icon: "wrench",
   },
   {
     number: "03",
     title: "We integrate AI so it runs itself",
-    desc: "We embed AI agents that handle the repetitive work — customer follow-ups, data processing, reporting, and more. Your system gets smarter over time.",
-    time: "Week 3–4 — Launch ready",
+    desc: "We embed AI agents that handle the repetitive work ,  customer follow-ups, data processing, reporting, and more. Your system gets smarter over time.",
+    time: "Week 3–4 ,  Launch ready",
     icon: "zap",
   },
 ];
@@ -50,7 +50,7 @@ export default function HowItWorks() {
             How it <span className="text-electric">works</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            From our first chat to the day your system is live — here's what 
+            From our first chat to the day your system is live ,  here's what 
             working with our Kampala team actually feels like.
           </p>
         </motion.div>
@@ -58,7 +58,7 @@ export default function HowItWorks() {
         {/* Steps */}
         <div className="relative grid md:grid-cols-3 gap-6">
 
-          {/* Connecting line — desktop only */}
+          {/* Connecting line ,  desktop only */}
           <div className="hidden md:block absolute top-10 left-[16%] right-[16%] h-[1px] bg-gradient-to-r from-transparent via-electric/30 to-transparent" />
 
           {steps.map((step, i) => (

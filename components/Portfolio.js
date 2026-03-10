@@ -16,7 +16,7 @@ const projects = [
   {
     img: "/detail-co-MnamLwFl1d8-unsplash.jpg",
     label: "Retail",
-    text: "Retail shop automates stock alerts and freed two staff for sales — revenue grew 15%.",
+    text: "Retail shop automates stock alerts and freed two staff for sales ,  revenue grew 15%.",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function Portfolio({
             Have a project in mind?
           </p>
           <p className="text-white/40 text-sm mb-6">
-            Tell us your business problem. We'll tell you exactly what we'd build — free, no obligation.
+            Tell us your business problem. We'll tell you exactly what we'd build ,  free, no obligation.
           </p>
           <a
             href="https://wa.me/256786367460"

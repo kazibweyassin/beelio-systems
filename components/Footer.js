@@ -36,7 +36,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-              We build intelligent software systems for African businesses — 
+              We build intelligent software systems for African businesses ,  
               custom platforms with AI built in, so your operations run 
               smarter with less manual work.
             </p>
@@ -108,7 +108,7 @@ export default function Footer() {
 
           {/* Pride line */}
           <p className="text-white/20">
-            Built in Kampala, Uganda — for Africa
+            Built in Kampala, Uganda ,  for Africa
           </p>
         </div>
 

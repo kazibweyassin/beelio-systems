@@ -13,7 +13,7 @@ const pillars = [
   {
     icon: "chat",
     title: "WhatsApp Chatbots",
-    outcome: "Reply to 100 customers at once — automatically.",
+    outcome: "Reply to 100 customers at once ,  automatically.",
   },
   {
     icon: "gear",
@@ -44,7 +44,7 @@ export default function Solution() {
             Our <span className="text-electric">core services</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            Only three things we do, and we do them well — WhatsApp chatbots,
+            Only three things we do, and we do them well ,  WhatsApp chatbots,
             business automation and custom systems built around how you work.
           </p>
         </motion.div>
