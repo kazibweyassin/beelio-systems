@@ -14,14 +14,14 @@ export default function Hero() {
         {/* ── LEFT: copy ── */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }} 
           transition={{ duration: 0.8 }}
           className="flex-1 z-10"
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/5 border border-electric/20 rounded-full px-4 py-1 text-xs text-electric mb-6">
             <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
-            Kampala-based · WhatsApp Automation
+            Built for Business Growth
           </div>
 
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
@@ -30,7 +30,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-base md:text-lg mb-8 text-white/60 leading-relaxed max-w-lg">
-            Automate replies, bookings, and follow-ups ,  so you never lose a sale again.
+            Automate replies, bookings, and follow-ups — so you never lose a sale again.
             We build automation tools for African businesses.
           </p>
 
