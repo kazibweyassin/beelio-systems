@@ -9,74 +9,74 @@ export default function CTASection() {
       {/* Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-electric/5 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-3xl mx-auto px-4 text-center relative z-10">
+      <div className="max-w-5xl mx-auto px-4 relative z-10">
+        <div className="flex flex-col md:flex-row items-center gap-12">
 
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 bg-white/5 border border-electric/20 rounded-full px-4 py-1 text-xs text-electric mb-6"
-        >
-          <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
-        </motion.div>
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
-        >
-          Ready to build something{" "}
-          <span className="text-electric">intelligent?</span>
-        </motion.h2>
-
-        {/* Supporting copy */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-white/50 text-base md:text-lg mb-10 leading-relaxed"
-        >
-          Tell us your business problem. We'll design a solution, 
-          give you a clear scope, and show you exactly what we'd build — 
-          completely free, no obligation.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex justify-center mb-10"
-        >
-          <a
-            href="https://wa.me/256786367460"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-electric/90 transition-colors duration-200"
+          {/* Left: photo */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="flex-1 w-full"
           >
-            Get a Free WhatsApp Demo
-          </a>
-        </motion.div>
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+              <img
+                src="/youversion-G3Rqy_OT8uw-unsplash.jpg"
+                alt="Customer using WhatsApp automation"
+                className="w-full h-72 object-cover"
+              />
+            </div>
+          </motion.div>
 
-        {/* Trust signals */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-6 text-white/30 text-xs"
-        >
-          <span>✓ Free consultation</span>
-          <span>✓ No commitment required</span>
-          <span>✓ Reply within 24 hours</span>
-          <span>✓ Based in Kampala, Uganda</span>
-        </motion.div>
+          {/* Right: copy */}
+          <div className="flex-1 text-left">
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-4xl font-bold mb-6 leading-tight"
+            >
+              Ready to stop losing sales to
+              <span className="text-electric"> slow replies?</span>
+            </motion.h2>
 
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-white/50 text-base mb-8 leading-relaxed"
+            >
+              Tell us your business problem. We'll design a solution and show you
+              exactly what we'd build \u2014 completely free, no obligation.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <a
+                href="https://wa.me/256786367460"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-electric/90 transition-colors duration-200"
+              >
+                Get a Free WhatsApp Demo
+              </a>
+            </motion.div>
+
+            <div className="flex flex-wrap gap-4 text-white/30 text-xs mt-6">
+              <span>\u2713 Free consultation</span>
+              <span>\u2713 No commitment required</span>
+              <span>\u2713 Based in Kampala, Uganda</span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

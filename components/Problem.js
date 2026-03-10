@@ -42,6 +42,21 @@ export default function Problem() {
           </p>
         </motion.div>
 
+        {/* Visual */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-12 rounded-2xl overflow-hidden border border-white/5 shadow-xl"
+        >
+          <img
+            src="/aerps-com-pp8rmBQC7Yc-unsplash.jpg"
+            alt="Business owner managing customer messages"
+            className="w-full h-52 md:h-64 object-cover"
+          />
+        </motion.div>
+
         {/* Pain Point Cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {painPoints.map((point, i) => (
