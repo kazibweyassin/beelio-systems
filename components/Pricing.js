@@ -41,6 +41,20 @@ export default function Pricing() {
           </p>
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-12 rounded-2xl overflow-hidden border border-white/5 shadow-xl"
+        >
+          <img
+            src="/jakub-zerdzicki-9GfR3zLyy6o-unsplash.jpg"
+            alt="Simple, transparent pricing"
+            className="w-full h-48 md:h-56 object-cover"
+          />
+        </motion.div>
+
         <div className="grid md:grid-cols-3 gap-8">
           {tiers.map((tier, i) => (
             <motion.div

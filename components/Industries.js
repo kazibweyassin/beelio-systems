@@ -31,6 +31,20 @@ export default function Industries() {
           </p>
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-12 rounded-2xl overflow-hidden border border-white/5 shadow-xl"
+        >
+          <img
+            src="/igor-omilaev-gVQLAbGVB6Q-unsplash.jpg"
+            alt="African businesses powered by automation"
+            className="w-full h-56 md:h-64 object-cover"
+          />
+        </motion.div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {industries.map((item, i) => (
             <motion.div

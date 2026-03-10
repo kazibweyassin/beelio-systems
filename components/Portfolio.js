@@ -4,12 +4,18 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    text: "Clinic in Kampala reduced customer response time from 4 hours to instant — and increased bookings by 40%.",
+    img: "/vagaro-Rz9_wnuHyA0-unsplash.jpg",
+    label: "Clinic",
+    text: "Clinic in Kampala reduced customer response time from 4 hours to instant \u2014 and increased bookings by 40%.",
   },
   {
-    text: "Restaurant in Kampala cut order errors by 90% with a WhatsApp bot — sales jumped 25%.",
+    img: "/carlos-gil-nyYvpVt8OlU-unsplash.jpg",
+    label: "Restaurant",
+    text: "Restaurant in Kampala cut order errors by 90% with a WhatsApp bot \u2014 sales jumped 25%.",
   },
   {
+    img: "/detail-co-MnamLwFl1d8-unsplash.jpg",
+    label: "Retail",
     text: "Retail shop automates stock alerts and freed two staff for sales — revenue grew 15%.",
   },
 ];
@@ -47,9 +53,13 @@ export default function Portfolio({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-electric/30 transition-all duration-300 flex flex-col justify-between"
+              className="bg-[#0d1526] rounded-2xl overflow-hidden border border-white/5 hover:border-electric/30 transition-all duration-300 flex flex-col"
             >
-              <p className="text-white/70 text-sm leading-relaxed flex-1">
+              <div className="relative h-44 overflow-hidden">
+                <img src={project.img} alt={project.label} className="w-full h-full object-cover" />
+                <span className="absolute top-3 left-3 bg-electric/90 text-[#0a1020] text-xs font-semibold px-3 py-1 rounded-full">{project.label}</span>
+              </div>
+              <p className="text-white/70 text-sm leading-relaxed flex-1 p-6">
                 {project.text}
               </p>
             </motion.div>
