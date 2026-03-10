@@ -39,7 +39,7 @@ export default function Industries() {
           className="mb-12 rounded-2xl overflow-hidden border border-white/5 shadow-xl"
         >
           <img
-            src="/igor-omilaev-gVQLAbGVB6Q-unsplash.jpg"
+            src="/restuarant.jpg"
             alt="African businesses powered by automation"
             className="w-full h-56 md:h-64 object-cover"
           />
