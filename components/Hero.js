@@ -25,16 +25,14 @@ export default function Hero() {
           <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
         </motion.div>
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          <span className="text-electric">Intelligent Software.</span>
+          Still answering customer WhatsApp messages manually?
           <br />
-          <span className="text-white">Built for Africa.</span>
+          Automate replies, bookings, and follow‑ups — so you never lose a sale again.
         </h1>
 
         {/* Subheading */}
         <p className="text-lg md:text-xl mb-10 text-white/60 max-w-2xl mx-auto leading-relaxed">
-          We build custom software systems with AI agents built in — so your 
-          business runs smarter, serves customers faster, and scales without 
-          hiring more staff.
+          We're a Kampala‑based tech team building automation tools for African businesses.
         </p>
 
         {/* CTAs */}
@@ -45,13 +43,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-electric/90 transition-colors duration-200"
           >
-            Book Free Consultation
-          </a>
-          <a
-            href="/portfolio"
-            className="inline-block border border-white/20 text-white px-8 py-3 rounded-full hover:border-electric hover:text-electric transition-colors duration-200"
-          >
-            See Our Work
+            Book Free Demo
           </a>
         </div>
       </motion.div>

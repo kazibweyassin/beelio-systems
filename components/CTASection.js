@@ -51,7 +51,7 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
+          className="flex justify-center mb-10"
         >
           <a
             href="https://wa.me/256786367460"
@@ -59,13 +59,7 @@ export default function CTASection() {
             rel="noopener noreferrer"
             className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-electric/90 transition-colors duration-200"
           >
-            Book Free Consultation
-          </a>
-          <a
-            href="mailto:beeliotechnologies@gmail.com"
-            className="inline-block border border-white/20 text-white px-8 py-3 rounded-full hover:border-electric hover:text-electric transition-colors duration-200"
-          >
-            Send Us an Email
+            Get a Free WhatsApp Demo
           </a>
         </motion.div>
 

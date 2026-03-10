@@ -7,9 +7,10 @@ export default function Header() {
 
   const navLinks = [
     { label: "Home", href: "#hero" },
-    { label: "Problem", href: "#problem" },
-    { label: "Solution", href: "#solution" },
-    { label: "Portfolio", href: "/portfolio" },
+    { label: "Services", href: "#services" },
+    { label: "Case Studies", href: "#portfolio" },
+    { label: "Industries", href: "#industries" },
+    { label: "Pricing", href: "#pricing" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -51,7 +52,7 @@ export default function Header() {
           rel="noopener noreferrer"
           className="hidden md:inline-block bg-electric text-[#0a1020] font-semibold px-4 py-2 rounded-full text-xs hover:bg-electric/90 transition-colors duration-200"
         >
-          Book Free Consultation
+          Get a Free WhatsApp Demo
         </a>
 
         {/* Mobile Menu Toggle */}
@@ -83,7 +84,7 @@ export default function Header() {
             rel="noopener noreferrer"
             classity="mt-2 text-center bg-electric text-[#0a1020] font-semibold px-4 py-2 rounded-full text-xs hover:bg-electric/90 transition-colors duration-200"
           >
-            Book Free Consultation
+            Get a Free WhatsApp Demo
           </a>
         </div>
       )}

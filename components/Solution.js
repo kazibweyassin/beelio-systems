@@ -4,31 +4,25 @@ import { motion } from "framer-motion";
 
 const pillars = [
   {
-    icon: "🧠",
-    title: "Custom Software Development",
-    problem: "Tired of spreadsheets and manual processes?",
-    desc: "We design and build platforms tailored exactly to how your business works — no templates, no shortcuts, no generic tools that half-fit your needs.",
-    outcome: "A system built for you, owned by you, forever.",
+    icon: "💬",
+    title: "WhatsApp Chatbots",
+    outcome: "Reply to 100 customers at once — automatically.",
   },
   {
-    icon: "🤖",
-    title: "AI Agent Integration",
-    problem: "Losing customers to slow responses?",
-    desc: "We embed AI agents directly into your software — they answer customer queries, follow up on leads, process requests, and handle repetitive tasks 24/7 without a salary.",
-    outcome: "Your business stays open even when you're asleep.",
-  },
-  {
-    icon: "⚡",
+    icon: "⚙️",
     title: "Business Automation",
-    problem: "Paying staff to do work a system could do?",
-    desc: "From onboarding new clients to generating monthly reports, we map your workflows and automate everything that doesn't need a human touch.",
-    outcome: "Less manual work. Lower costs. Faster operations.",
+    outcome: "Work that used to take hours now happens by itself.",
+  },
+  {
+    icon: "🛠️",
+    title: "Custom Software",
+    outcome: "Systems built around how your business really works.",
   },
 ];
 
 export default function Solution() {
   return (
-    <section id="solution" className="py-20 bg-[#0a1020] text-white">
+    <section id="services" className="py-20 bg-[#0a1020] text-white">
       <div className="max-w-5xl mx-auto px-4">
 
         {/* Section Header */}
@@ -40,12 +34,11 @@ export default function Solution() {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            This is how we{" "}
-            <span className="text-electric">fix it.</span>
+            Our <span className="text-electric">core services</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            We combine custom software with embedded AI — so your business 
-            runs smarter, responds faster, and scales without growing your payroll.
+            Only three things we do, and we do them well — WhatsApp chatbots,
+            business automation and custom systems built around how you work.
           </p>
         </motion.div>
 
@@ -63,27 +56,15 @@ export default function Solution() {
               {/* Icon */}
               <div className="text-3xl">{pillar.icon}</div>
 
-              {/* Problem echo */}
-                <p className="text-electric text-xs font-medium uppercase tracking-wider">
-                {pillar.problem}
-              </p>
-
               {/* Title */}
               <h3 className="text-lg font-semibold text-white">
                 {pillar.title}
               </h3>
 
-              {/* Description */}
-              <p className="text-white/50 text-sm leading-relaxed flex-1">
-                {pillar.desc}
-              </p>
-
               {/* Outcome */}
-              <div className="border-t border-white/5 pt-4">
-                <p className="text-electric text-sm font-medium">
-                  ✓ {pillar.outcome}
-                </p>
-              </div>
+              <p className="text-electric text-sm mt-2 flex-1">
+                {pillar.outcome}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -102,7 +83,7 @@ export default function Solution() {
             rel="noopener noreferrer"
             className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
           >
-            Let's Build Your System
+            Get a Free WhatsApp Demo
           </a>
         </motion.div>
 

@@ -37,8 +37,8 @@ export default function Problem() {
             Sound <span className="text-electric">familiar?</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            Most Ugandan businesses are losing time and money to problems 
-            that the right software can solve completely.
+            Lots of businesses around Kampala and beyond are wasting hours and cash on issues
+            that a simple system could fix once and for all.
           </p>
         </motion.div>
 
@@ -77,9 +77,25 @@ export default function Problem() {
           transition={{ delay: 0.6, duration: 0.6 }}
           className="text-center text-white/40 text-sm mt-10"
         >
-          These aren't small problems. They compound every single day. 
-          <span className="text-electric"> Here's how we fix them. ↓</span>
+          These things stack up fast. <span className="text-electric">Here's how we sort them out. ↓</span>
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="text-center mt-8"
+        >
+          <a
+            href="https://wa.me/256786367460"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
+          >
+            Get a Free WhatsApp Demo
+          </a>
+        </motion.div>
 
       </div>
     </section>

@@ -43,8 +43,8 @@ export default function HowItWorks() {
             How it <span className="text-electric">works</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            From first conversation to live system — here's exactly what 
-            working with Beelio looks like.
+            From our first chat to the day your system is live — here's what 
+            working with our Kampala team actually feels like.
           </p>
         </motion.div>
 
@@ -100,7 +100,7 @@ export default function HowItWorks() {
           className="text-center mt-12"
         >
           <p className="text-white/40 text-sm mb-4">
-            Ready to start? Step 1 is completely free.
+            Ready to see it in action? It's free to try.
           </p>
           <a
             href="https://wa.me/256786367460"
@@ -108,7 +108,7 @@ export default function HowItWorks() {
             rel="noopener noreferrer"
             className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
           >
-            Start With a Free Consultation
+            Get a Free WhatsApp Demo
           </a>
         </motion.div>
 

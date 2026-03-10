@@ -20,7 +20,7 @@ export default function WhyBeelio() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold mb-8 text-accent text-center"
         >
-          Why Beelio?
+          Why work with us?
         </motion.h2>
         <ul className="grid md:grid-cols-2 gap-6">
           {differentiators.map((item, i) => (
@@ -36,6 +36,23 @@ export default function WhyBeelio() {
             </motion.li>
           ))}
         </ul>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-center mt-12"
+        >
+          <a
+            href="https://wa.me/256786367460"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
+          >
+            Get a Free WhatsApp Demo
+          </a>
+        </motion.div>
       </div>
     </section>
   );

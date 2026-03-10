@@ -1,14 +1,16 @@
 export const metadata = {
   title: 'Home | Beelio Technologies',
-  description: 'Intelligent software built for African businesses. Custom platforms with embedded AI to streamline operations.',
+  description: 'Kampala‑based team building WhatsApp chatbots and business automation for African companies. Simple, local, no-nonsense.',
 };
 
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import Problem from '../components/Problem';
 import Solution from '../components/Solution';
-import HowItWorks from '../components/HowItWorks';
 import Portfolio from '../components/Portfolio';
+import Industries from '../components/Industries';
+import Pricing from '../components/Pricing';
+import Problem from '../components/Problem';
+import HowItWorks from '../components/HowItWorks';
 import WhyBeelio from '../components/WhyBeelio';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
@@ -19,13 +21,15 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
-      <Problem />
       <Solution />
-      <HowItWorks />
       <Portfolio
-        heading="What we've built"
-        subheading="Real products, built from scratch, serving real users across Africa."
+        heading="Real results from real businesses"
+        subheading="Mini case studies from Kampala and beyond."
       />
+      <Industries />
+      <Pricing />
+      <Problem />
+      <HowItWorks />
       <WhyBeelio />
       <CTASection />
       <Footer />
