@@ -1,8 +1,59 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const headlines = [
+  {
+    heading: (
+      <>
+        Still answering customer WhatsApp messages
+        <span className="text-electric"> manually?</span>
+      </>
+    ),
+    sub: "Automate replies, bookings, and follow-ups so you never lose a sale again. We build automation tools for African businesses.",
+  },
+  {
+    heading: (
+      <>
+        Your competitors reply in seconds.
+        <span className="text-electric"> You reply in hours.</span>
+      </>
+    ),
+    sub: "A WhatsApp bot built for your business replies instantly, books appointments, and follows up, 24 hours a day.",
+  },
+  {
+    heading: (
+      <>
+        Losing customers because
+        <span className="text-electric"> no one follows up?</span>
+      </>
+    ),
+    sub: "We build systems that automatically follow up with every lead, remind every client, and recover every lost sale.",
+  },
+  {
+    heading: (
+      <>
+        Still managing your business
+        <span className="text-electric"> on spreadsheets?</span>
+      </>
+    ),
+    sub: "Custom software built around how your business actually works. Not a template. Built for you, here in Kampala.",
+  },
+];
 
 export default function Hero() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((i) => (i + 1) % headlines.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const current = headlines[index];
+
   return (
     <section id="hero" className="min-h-screen bg-[#0a1020] text-white px-4 py-28 md:py-32 relative overflow-hidden">
       
@@ -24,15 +75,34 @@ export default function Hero() {
             Built for Business Growth
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            Still answering customer WhatsApp messages
-            <span className="text-electric"> manually?</span>
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight min-h-[120px] md:min-h-[140px]">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.45 }}
+                className="block"
+              >
+                {current.heading}
+              </motion.span>
+            </AnimatePresence>
           </h1>
 
-          <p className="text-base md:text-lg mb-8 text-white/60 leading-relaxed max-w-lg">
-            Automate replies, bookings, and follow-ups — so you never lose a sale again.
-            We build automation tools for African businesses.
-          </p>
+          <div className="text-base md:text-lg mb-8 text-white/60 leading-relaxed max-w-lg min-h-[64px]">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={index + "-sub"}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+              >
+                {current.sub}
+              </motion.p>
+            </AnimatePresence>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -49,6 +119,19 @@ export default function Hero() {
             >
               See What We Build
             </a>
+          </div>
+
+          {/* Slide dots */}
+          <div className="flex gap-2 mt-6">
+            {headlines.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  i === index ? "bg-electric w-5" : "bg-white/20"
+                }`}
+              />
+            ))}
           </div>
 
           {/* Stats bar */}
