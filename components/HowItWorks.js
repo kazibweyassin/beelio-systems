@@ -109,7 +109,7 @@ export default function HowItWorks() {
           className="mt-14 rounded-2xl overflow-hidden border border-white/5 shadow-xl"
         >
           <img
-            src="/interface.jpg"
+            src="/women.jpg"
             alt="Beelio system dashboard"
             className="w-full h-56 md:h-72 object-cover"
           />
