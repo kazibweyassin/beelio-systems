@@ -42,6 +42,21 @@ export default function Solution() {
           </p>
         </motion.div>
 
+        {/* Visual: AI image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-14 rounded-2xl overflow-hidden border border-white/5 shadow-xl"
+        >
+          <img
+            src="/ai.jpg"
+            alt="AI-powered business automation"
+            className="w-full h-64 md:h-80 object-cover"
+          />
+        </motion.div>
+
         {/* Pillar Cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {pillars.map((pillar, i) => (

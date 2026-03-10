@@ -91,6 +91,21 @@ export default function HowItWorks() {
           ))}
         </div>
 
+        {/* Process preview image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.7 }}
+          className="mt-14 rounded-2xl overflow-hidden border border-white/5 shadow-xl"
+        >
+          <img
+            src="/interface.jpg"
+            alt="Beelio system dashboard"
+            className="w-full h-56 md:h-72 object-cover"
+          />
+        </motion.div>
+
         {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
