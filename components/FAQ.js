@@ -6,23 +6,31 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "Is this right for my type of business?",
-    a: "If your business gets customer enquiries on WhatsApp ,  bookings, orders, questions, complaints ,  then yes. We've built systems for clinics, restaurants, retail shops, schools, and logistics companies across Uganda and East Africa. If you're not sure, message us and we'll tell you honestly within 24 hours.",
+    a: "If your business gets customer enquiries on WhatsApp, bookings, orders, questions, or complaints, then yes. We've built systems for clinics, restaurants, retail shops, schools, SACCOs, and logistics companies across Uganda and East Africa. If you're not sure, message us and we'll tell you honestly within 24 hours.",
   },
   {
     q: "What if it doesn't work for me?",
-    a: "We build every system around your specific workflow, not a generic template. Before we write a single line of code we map out exactly how your business operates. If after the demo you feel it's not the right fit, there's zero obligation ,  the consultation is free.",
+    a: "We build every system around your specific workflow, not a generic template. Before we write a single line of code we map out exactly how your business operates. If after the demo you feel it's not the right fit, there's zero obligation. The consultation is free.",
   },
   {
     q: "How is this different from just hiring someone to reply messages?",
-    a: "A person sleeps, gets sick, asks for a salary increase, and can only handle one conversation at a time. Our chatbot replies to 100 customers simultaneously, at 3am, for a flat monthly fee. It never misses a lead.",
+    a: "A person sleeps, gets sick, asks for a salary increase, and can only handle one conversation at a time. Our chatbot replies to 100 customers simultaneously, at 3am, for a flat one-off fee. It never misses a lead.",
   },
   {
     q: "How long until I see results?",
-    a: "Most clients go live within 1–2 weeks. You'll see the first automated replies within days of launch. Measurable changes ,  faster response times, more bookings ,  typically show up in the first 30 days.",
+    a: "Most clients go live within 1 to 2 weeks. You'll see the first automated replies within days of launch. Measurable changes like faster response times and more bookings typically show up in the first 30 days.",
   },
   {
     q: "What's the catch? Why is the demo free?",
     a: "No catch. We offer a free demo because we know that once you see your own business running on automation, you'll want to keep it. We'd rather show you than pitch you. No hard sell, no hidden fees.",
+  },
+  {
+    q: "What happens after the project launches?",
+    a: "Every project includes 3 months of free support after launch. Bug fixes, minor updates, and guidance are all included. After that, we offer affordable ongoing retainers. You'll have our WhatsApp number and we respond the same day.",
+  },
+  {
+    q: "Do you work with businesses outside Uganda?",
+    a: "Yes. We've worked with clients in Kenya, Tanzania, and Rwanda. Our systems support multiple currencies, languages, and mobile money providers across East Africa. Remote projects work just as well.",
   },
 ];
 
@@ -44,7 +52,7 @@ export default function FAQ() {
             Questions we get <span className="text-electric">all the time</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            Straight answers ,  no fluff.
+            Straight answers, no fluff.
           </p>
         </motion.div>
 

@@ -4,10 +4,12 @@ import { motion } from 'framer-motion';
 import { Check } from "lucide-react";
 
 const differentiators = [
-  'Local team that understands African business context',
-  'Full stack MERN + Python + AI',
-  'Fast delivery',
-  'Affordable compared to international agencies',
+  'We build around your workflow, not a generic template',
+  'Most projects are live within 2 to 4 weeks',
+  'Flat-rate pricing with no surprise invoices',
+  'Free 3-month support after every launch',
+  'We stay reachable on WhatsApp after go-live',
+  'African market experience: MTN MoMo, Airtel Money, offline-first',
 ];
 
 export default function WhyBeelio() {

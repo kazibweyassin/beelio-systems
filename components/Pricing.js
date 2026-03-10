@@ -4,19 +4,45 @@ import { motion } from "framer-motion";
 
 const tiers = [
   {
-    name: "Basic",
-    price: "From $199/month",
-    features: ["WhatsApp bot", "1 custom workflow", "Email support"],
+    name: "Starter",
+    price: "From UGX 2.5M",
+    note: "One-off project fee",
+    popular: false,
+    features: [
+      "WhatsApp chatbot or automation",
+      "1 custom workflow",
+      "Mobile money integration",
+      "3 months free support",
+      "WhatsApp support line",
+    ],
   },
   {
-    name: "Standard",
-    price: "From $499/month",
-    features: ["Everything in Basic", "API integrations", "Monthly reports"],
+    name: "Business",
+    price: "From UGX 4M",
+    note: "One-off project fee",
+    popular: true,
+    features: [
+      "Everything in Starter",
+      "Full management system or web app",
+      "Staff and admin dashboard",
+      "Reports and analytics",
+      "API and third-party integrations",
+      "3 months free support",
+    ],
   },
   {
-    name: "Advanced",
-    price: "From $999/month",
-    features: ["All features", "Dedicated engineer", "24/7 support"],
+    name: "Enterprise",
+    price: "Custom quote",
+    note: "For complex or multi-branch builds",
+    popular: false,
+    features: [
+      "Everything in Business",
+      "Multi-branch or multi-role systems",
+      "Mobile app (iOS and Android)",
+      "Dedicated engineer throughout",
+      "Priority 24/7 support",
+      "Ongoing monthly retainer available",
+    ],
   },
 ];
 
@@ -63,24 +89,41 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 flex flex-col"
+              className={`bg-[#0d1526] rounded-2xl p-6 border flex flex-col relative ${
+                tier.popular
+                  ? "border-electric/50 shadow-lg shadow-electric/10"
+                  : "border-white/5"
+              }`}
             >
-              <h3 className="text-xl font-semibold mb-2 text-white">
+              {tier.popular && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-electric text-[#0a1020] text-xs font-bold px-4 py-1 rounded-full">
+                  Most Popular
+                </div>
+              )}
+              <h3 className="text-xl font-semibold mb-1 text-white">
                 {tier.name}
               </h3>
-              <p className="text-electric font-bold mb-4">{tier.price}</p>
-              <ul className="text-white/50 text-sm mb-6 space-y-1 flex-1">
+              <p className="text-electric font-bold text-lg mb-1">{tier.price}</p>
+              <p className="text-white/30 text-xs mb-5">{tier.note}</p>
+              <ul className="text-white/60 text-sm mb-6 space-y-2 flex-1">
                 {tier.features.map((f, j) => (
-                  <li key={j}>• {f}</li>
+                  <li key={j} className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-electric mt-1.5 flex-shrink-0" />
+                    {f}
+                  </li>
                 ))}
               </ul>
               <a
                 href="https://wa.me/256786367460"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto inline-block bg-electric text-[#0a1020] font-semibold px-6 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
+                className={`mt-auto inline-block font-semibold px-6 py-3 rounded-full transition-colors duration-200 text-center ${
+                  tier.popular
+                    ? "bg-electric text-[#0a1020] hover:bg-electric/90"
+                    : "border border-electric/30 text-electric hover:bg-electric/10"
+                }`}
               >
-                Get a Free WhatsApp Demo
+                {tier.name === "Enterprise" ? "Request a Quote" : "Get Started"}
               </a>
             </motion.div>
           ))}

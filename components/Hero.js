@@ -138,15 +138,15 @@ export default function Hero() {
           <div className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
             <div>
               <p className="text-electric font-bold text-2xl md:text-3xl">40+</p>
-              <p className="text-white/40 text-xs mt-1">Businesses automated</p>
+              <p className="text-white/40 text-xs mt-1">Systems built and live</p>
             </div>
             <div>
-              <p className="text-electric font-bold text-2xl md:text-3xl">&lt;2min</p>
-              <p className="text-white/40 text-xs mt-1">Avg. first reply time</p>
+              <p className="text-electric font-bold text-2xl md:text-3xl">2–4 wks</p>
+              <p className="text-white/40 text-xs mt-1">Avg. delivery time</p>
             </div>
             <div>
               <p className="text-electric font-bold text-2xl md:text-3xl">24/7</p>
-              <p className="text-white/40 text-xs mt-1">Always-on automation</p>
+              <p className="text-white/40 text-xs mt-1">Automated, always on</p>
             </div>
           </div>
         </motion.div>

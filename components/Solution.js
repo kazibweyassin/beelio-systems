@@ -13,17 +13,23 @@ const pillars = [
   {
     icon: "chat",
     title: "WhatsApp Chatbots",
-    outcome: "Reply to 100 customers at once ,  automatically.",
+    outcome: "Reply to 100 customers simultaneously, 24 hours a day.",
+    detail: "Never miss a lead again. Your bot handles enquiries, bookings, and follow-ups while you sleep.",
+    features: ["Instant automated replies", "Appointment booking & reminders", "Order taking and confirmation", "Lead capture and follow-up"],
   },
   {
     icon: "gear",
     title: "Business Automation",
-    outcome: "Work that used to take hours now happens by itself.",
+    outcome: "Cut hours of manual work down to seconds.",
+    detail: "We map your most repetitive tasks and build systems that handle them automatically, every time.",
+    features: ["Invoice and billing automation", "Staff and shift management", "Inventory alerts and reordering", "Automated reporting and dashboards"],
   },
   {
     icon: "code",
     title: "Custom Software",
-    outcome: "Systems built around how your business really works.",
+    outcome: "A system built for exactly how your business works.",
+    detail: "Not a template. Not a plugin. Software engineered around your specific workflow, from scratch.",
+    features: ["Web apps and management portals", "Mobile apps (iOS and Android)", "POS and payment integrations", "MTN MoMo and Airtel Money support"],
   },
 ];
 
@@ -86,9 +92,24 @@ export default function Solution() {
               </h3>
 
               {/* Outcome */}
-              <p className="text-electric text-sm mt-2 flex-1">
+              <p className="text-electric text-sm font-medium">
                 {pillar.outcome}
               </p>
+
+              {/* Detail */}
+              <p className="text-white/50 text-sm leading-relaxed">
+                {pillar.detail}
+              </p>
+
+              {/* Features */}
+              <ul className="flex flex-col gap-1.5 mt-1">
+                {pillar.features.map((f, j) => (
+                  <li key={j} className="flex items-center gap-2 text-white/60 text-xs">
+                    <span className="w-1 h-1 rounded-full bg-electric flex-shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

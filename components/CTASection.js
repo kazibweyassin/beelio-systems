@@ -70,9 +70,10 @@ export default function CTASection() {
             </motion.div>
 
             <div className="flex flex-wrap gap-4 text-white/30 text-xs mt-6">
-              <span>\u2713 Free consultation</span>
-              <span>\u2713 No commitment required</span>
-              <span>\u2713 Based, Uganda</span>
+              <span>&#10003; Free consultation</span>
+              <span>&#10003; No commitment required</span>
+              <span>&#10003; 3 months support included</span>
+              <span>&#10003; We reply within a few hours</span>
             </div>
           </div>
 
