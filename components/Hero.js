@@ -34,11 +34,11 @@ const headlines = [
   {
     heading: (
       <>
-        Still managing your business
-        <span className="text-electric"> on spreadsheets?</span>
+        Need a web app or mobile app
+        <span className="text-electric"> built for your business?</span>
       </>
     ),
-    sub: "Custom software built around how your business actually works. Not a template. Built for you.",
+    sub: "From customer portals to full management systems, we build web and mobile apps tailored to how your business actually operates.",
   },
 ];
 
