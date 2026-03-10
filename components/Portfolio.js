@@ -9,7 +9,7 @@ const projects = [
     text: "Clinic in Kampala reduced customer response time from 4 hours to instant \u2014 and increased bookings by 40%.",
   },
   {
-    img: "/carlos-gil-nyYvpVt8OlU-unsplash.jpg",
+    img: "/restuarant.jpg",
     label: "Restaurant",
     text: "Restaurant in Kampala cut order errors by 90% with a WhatsApp bot \u2014 sales jumped 25%.",
   },
