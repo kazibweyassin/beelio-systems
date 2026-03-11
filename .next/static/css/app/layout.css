@@ -797,6 +797,9 @@ video {
 .max-w-xs {
   max-width: 20rem;
 }
+.max-w-2xl {
+  max-width: 42rem;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1124,6 +1127,12 @@ video {
 }
 .pt-24 {
   padding-top: 6rem;
+}
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+.pt-28 {
+  padding-top: 7rem;
 }
 .text-left {
   text-align: left;
