@@ -1,2 +1,6 @@
 node_modules
-ssh-keygen -t ed25519 -C "kazibweusama.com"
+.next
+.env
+.env.local
+whatsapp-bot/node_modules
+whatsapp-bot/.env
