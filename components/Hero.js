@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { MessageSquare, MessageCircle, Globe, Phone, Sparkles } from "lucide-react";
 
 const headlines = [
   {
@@ -69,6 +70,11 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="flex-1 z-10"
         >
+          {/* Vision line */}
+          <p className="text-white/30 text-xs uppercase tracking-widest mb-3 font-medium">
+            A fully integrated AI workspace of the future
+          </p>
+
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/5 border border-electric/20 rounded-full px-4 py-1 text-xs text-electric mb-6">
             <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
@@ -121,8 +127,27 @@ export default function Hero() {
             </a>
           </div>
 
+          {/* Channel pills */}
+          <div className="flex flex-wrap gap-2 mt-7">
+            {[
+              { label: 'WhatsApp', icon: MessageCircle,  iconColor: 'text-[#25D366]' },
+              { label: 'SMS',      icon: MessageSquare,  iconColor: 'text-blue-400'  },
+              { label: 'Website',  icon: Globe,          iconColor: 'text-purple-400'},
+              { label: 'Voice',    icon: Phone,          iconColor: 'text-orange-400'},
+              { label: 'Custom',   icon: Sparkles,       iconColor: 'text-pink-400'  },
+            ].map((ch) => (
+              <span
+                key={ch.label}
+                className="inline-flex items-center gap-2 bg-[#111827] border border-white/8 rounded-full px-4 py-1.5 text-xs font-medium text-white/80 hover:border-white/20 transition-colors duration-200"
+              >
+                <ch.icon size={13} className={ch.iconColor} />
+                {ch.label}
+              </span>
+            ))}
+          </div>
+
           {/* Slide dots */}
-          <div className="flex gap-2 mt-6">
+          <div className="flex gap-2 mt-5">
             {headlines.map((_, i) => (
               <button
                 key={i}
