@@ -24,6 +24,9 @@ export const metadata = {
   authors: [{ name: 'Beelio Technologies', url: 'https://beelio.tech' }],
   creator: 'Beelio Technologies',
   publisher: 'Beelio Technologies',
+  verification: {
+    google: 'TsNyECOtCRf4_M_SnhbTXqwSrmXAEPYp-wt7fuijFlE',
+  },
   alternates: {
     canonical: 'https://beelio.tech',
   },
