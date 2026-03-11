@@ -6,13 +6,13 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: "Home", href: "#hero" },
-    { label: "Services", href: "#services" },
-    { label: "Case Studies", href: "#portfolio" },
-    { label: "Industries", href: "#industries" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home",         href: "/" },
+    { label: "Services",     href: "/services" },
+    { label: "Case Studies", href: "/portfolio" },
+    { label: "Industries",   href: "/industries" },
+    { label: "Pricing",      href: "/pricing" },
+    { label: "How It Works", href: "/how-it-works" },
+    { label: "Contact",      href: "/contact" },
   ];
 
   return (
