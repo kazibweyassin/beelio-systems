@@ -9,8 +9,9 @@ export default function Footer() {
     ],
     Company: [
       { label: "Portfolio", href: "/portfolio" },
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "Contact", href: "#contact" },
+      { label: "How It Works", href: "/how-it-works" },
+      { label: "Blog", href: "/blog" },
+      { label: "Contact", href: "/contact" },
     ],
   };
 
