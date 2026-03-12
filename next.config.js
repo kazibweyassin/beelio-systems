@@ -13,8 +13,6 @@ const nextConfig = {
       { source: '/services/managed-it',      destination: '/services',     permanent: true },
       { source: '/services/it-consultancy',  destination: '/services',     permanent: true },
       { source: '/services/cloud',           destination: '/services',     permanent: true },
-      // www → non-www (canonical)
-      { source: '/:path*', has: [{ type: 'host', value: 'www.beelio.tech' }], destination: 'https://beelio.tech/:path*', permanent: true },
     ];
   },
 };
