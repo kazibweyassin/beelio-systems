@@ -55,7 +55,7 @@ function RenderBlock({ block }) {
         <ul className="mb-6 space-y-2 pl-1">
           {block.items.map((item, i) => (
             <li key={i} className="flex gap-3 text-white/70 text-[15px] leading-relaxed">
-              <span className="mt-1 w-1.5 h-1.5 rounded-full bg-electric flex-shrink-0" />
+              <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/30 flex-shrink-0" />
               {item}
             </li>
           ))}
@@ -68,7 +68,7 @@ function RenderBlock({ block }) {
             href={block.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-electric text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition"
+            className="inline-flex items-center gap-2 bg-white/5 border border-white/15 text-white/80 font-medium px-6 py-3 rounded-xl hover:border-white/30 hover:text-white transition"
           >
             <MessageCircle size={18} />
             {block.text}
@@ -99,7 +99,7 @@ export default function BlogPostPage({ params }) {
 
           {/* Meta */}
           <div className="flex items-center gap-3 mb-5 flex-wrap">
-            <span className="text-xs font-medium px-3 py-1 rounded-full bg-electric/15 text-electric border border-electric/20">
+            <span className="text-xs font-medium px-3 py-1 rounded-full bg-white/8 text-white/50 border border-white/10">
               {post.category}
             </span>
             <span className="text-white/40 text-sm flex items-center gap-1">
@@ -140,7 +140,7 @@ export default function BlogPostPage({ params }) {
               href="https://wa.me/256786367460"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-electric text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition"
+              className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-white/80 font-medium px-6 py-3 rounded-xl hover:border-white/30 hover:text-white transition"
             >
               <MessageCircle size={18} />
               Chat on WhatsApp
