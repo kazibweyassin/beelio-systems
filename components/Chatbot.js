@@ -12,7 +12,7 @@ const scriptedFlow = [
   // ── WELCOME ────────────────────────────────────────────────────────────
   {
     id: "welcome",
-    bot: "Hi, I'm Bee ,  Beelio's assistant. What kind of business do you run?",
+    bot: "Hi, I'm Bee, the Beelio AI assistant. In a few clicks I'll show you what kind of custom system and AI agents we can build for your business. What kind of business do you run?",
     options: [
       { label: "Clinic / Pharmacy / Hospital", next: "clinic" },
       { label: "Restaurant / Food Business", next: "restaurant" },
@@ -27,7 +27,7 @@ const scriptedFlow = [
   // ── CLINIC ─────────────────────────────────────────────────────────────
   {
     id: "clinic",
-    bot: "Clinics and pharmacies come to us for patient management, appointment booking, billing automation, and WhatsApp reminders. What's your biggest challenge?",
+    bot: "Clinics and pharmacies use Beelio for digital patient systems and AI agents that handle reminders, follow‑ups, and reporting. Which of these sounds most like your situation?",
     options: [
       { label: "Patient records are in files or spreadsheets", next: "clinic_records" },
       { label: "Too many missed appointments", next: "clinic_appointments" },
@@ -85,7 +85,7 @@ const scriptedFlow = [
   // ── RESTAURANT ─────────────────────────────────────────────────────────
   {
     id: "restaurant",
-    bot: "Restaurants and food businesses use our systems for digital ordering, customer loyalty automation, and kitchen management. What's slowing your business down?",
+    bot: "Restaurants and food businesses use Beelio systems and AI agents for digital ordering, loyalty automation, and kitchen management. What's slowing your business down the most?",
     options: [
       { label: "Taking orders is chaotic and error-prone", next: "restaurant_orders" },
       { label: "Customers don't come back enough", next: "restaurant_loyalty" },
@@ -133,7 +133,7 @@ const scriptedFlow = [
   // ── SCHOOL ─────────────────────────────────────────────────────────────
   {
     id: "school",
-    bot: "Schools and training centres use our systems for student management, fee collection, exam results, and parent communication via WhatsApp. What's your biggest pain?",
+    bot: "Schools and training centres use Beelio for student management systems and AI agents that handle reminders, parent communication, and reports. What's your biggest headache today?",
     options: [
       { label: "Student records and results management", next: "school_records" },
       { label: "Collecting and tracking school fees", next: "school_fees" },
@@ -181,7 +181,7 @@ const scriptedFlow = [
   // ── RETAIL ─────────────────────────────────────────────────────────────
   {
     id: "retail",
-    bot: "Retail shops and supermarkets use our systems for inventory control, sales tracking, supplier management, and customer loyalty programs. What's your main problem?",
+    bot: "Retail shops and supermarkets use Beelio systems and AI agents for inventory control, sales tracking, supplier management, and loyalty programs. What's your main problem right now?",
     options: [
       { label: "Stock goes missing or runs out unexpectedly", next: "retail_stock" },
       { label: "I can't track daily sales properly", next: "retail_sales" },
@@ -229,7 +229,7 @@ const scriptedFlow = [
   // ── LOGISTICS ──────────────────────────────────────────────────────────
   {
     id: "logistics",
-    bot: "Logistics and transport businesses use our systems for delivery tracking, automated customer updates, driver management, and billing. What's your biggest challenge?",
+    bot: "Logistics and transport businesses use Beelio systems and AI agents for delivery tracking, automated customer updates, driver management, and billing. What's your biggest challenge to fix first?",
     options: [
       { label: "I can't track where deliveries are in real time", next: "logistics_tracking" },
       { label: "Customers keep calling for delivery updates", next: "logistics_updates" },
@@ -277,7 +277,7 @@ const scriptedFlow = [
   // ── FINANCE ────────────────────────────────────────────────────────────
   {
     id: "finance",
-    bot: "SACCOs, microfinance institutions, and investment clubs come to us for loan management, member portals, automated repayment reminders, and reporting. What do you need most?",
+    bot: "SACCOs, microfinance institutions, and investment clubs come to Beelio for loan management systems, member portals, AI repayment reminder agents, and automated reporting. What do you need most help with?",
     options: [
       { label: "Managing loans and repayments", next: "finance_loans" },
       { label: "Member registration and contributions", next: "finance_members" },
@@ -325,7 +325,7 @@ const scriptedFlow = [
   // ── OTHER ──────────────────────────────────────────────────────────────
   {
     id: "other",
-    bot: "No problem ,  we work with all kinds of businesses across Uganda and East Africa. What is the main problem you want software to solve?",
+    bot: "No problem, Beelio works with all kinds of businesses across Uganda and East Africa. What is the main problem you want software and AI agents to solve for you first?",
     options: [
       { label: "Save time on manual and repetitive work", next: "other_automation" },
       { label: "Automate customer follow-ups", next: "other_crm" },
@@ -373,7 +373,7 @@ const scriptedFlow = [
   // ── CROSS-CUTTING NODES ────────────────────────────────────────────────
   {
     id: "qualify",
-    bot: "Based on what you've described, we've built something similar for businesses here in Uganda. We offer a free 30-minute consultation ,  no obligation ,  to map out exactly what you need and give you a realistic quote.",
+    bot: "Based on what you've described, we've already built similar Beelio systems and AI agents for businesses here in Uganda. We offer a free 30‑minute consultation, no obligation, to map your workflow, suggest the right automations and agents, and give you a realistic quote.",
     options: [
       { label: "Book the free consultation", next: "whatsapp" },
       { label: "What will it cost?", next: "pricing" },
@@ -384,7 +384,7 @@ const scriptedFlow = [
   },
   {
     id: "pricing",
-    bot: "Pricing depends on scope. Here's a rough guide:\n\n• WhatsApp Chatbot ,  from UGX 2.5M\n• Business Automation ,  from UGX 4M\n• Full Custom System ,  from UGX 8M\n\nAll prices include 3 months of free support after launch. We're significantly more affordable than international agencies ,  and we're right here.",
+    bot: "Pricing depends on scope, but here is a simple guide for Beelio systems and AI agents:\n\n• WhatsApp chatbot or AI agent – from UGX 2.5M\n• Business automation + AI workflows – from UGX 4M\n• Full custom system with integrated agents – from UGX 8M\n\nAll prices include 3 months of free support after launch. We're significantly more affordable than international agencies, and we're right here.",
     options: [
       { label: "That's within budget ,  let's talk", next: "whatsapp" },
       { label: "How long does it take?", next: "timeline" },
@@ -394,7 +394,7 @@ const scriptedFlow = [
   },
   {
     id: "timeline",
-    bot: "Here's a realistic timeline:\n\n• WhatsApp Chatbot ,  1–2 weeks\n• Business Automation ,  2–3 weeks\n• Full Custom System ,  3–6 weeks\n\nWe work in short sprints ,  you see real progress every few days, not just at the end.",
+    bot: "Here's a realistic Beelio timeline:\n\n• WhatsApp chatbot or AI agent – 1–2 weeks\n• Business automation – 2–3 weeks\n• Full custom system – 3–6 weeks\n\nWe work in short sprints, so you see real progress every few days, not just at the end.",
     options: [
       { label: "That's fast ,  let's get started", next: "whatsapp" },
       { label: "What does it cost?", next: "pricing" },
@@ -403,7 +403,7 @@ const scriptedFlow = [
   },
   {
     id: "how_it_works",
-    bot: "Here's how we work:\n\n1. Free 30-min consultation ,  we map your workflow\n2. We send a proposal: scope, price and timeline\n3. You approve and we start building\n4. You review progress every few days\n5. We go live ,  and stay on for support\n\nNo payment until you've approved the proposal.",
+    bot: "Here's how Beelio works:\n\n1. Free 30‑min consultation – we map your workflow and identify where AI agents can help\n2. Clear proposal – scope, price, and timeline\n3. Build – we start on your custom system and agents\n4. Review – you see progress every few days\n5. Launch and support – we go live and stay on to support you\n\nNo payment until you've approved the proposal.",
     options: [
       { label: "That sounds straightforward ,  let's start", next: "whatsapp" },
       { label: "What does it cost?", next: "pricing" },
@@ -448,7 +448,7 @@ const scriptedFlow = [
   },
   {
     id: "case_study",
-    bot: "Here are a few real examples:\n\n• A clinic, patient system that cut admin time by 60%\n• A restaurant chain ,  WhatsApp loyalty bot that increased repeat visits by 40%\n• A local SACCO ,  loan management system for 800+ members with automated reminders\n\nWant to see the full portfolio?",
+    bot: "Here are a few real Beelio examples:\n\n• Clinic – patient system that cut admin time by 60%\n• Restaurant chain – WhatsApp loyalty bot that increased repeat visits by 40%\n• Local SACCO – loan management system for 800+ members with automated reminders\n\nWant to see more case studies like these?",
     options: [
       { label: "Yes, show me the portfolio page", next: "portfolio_link" },
       { label: "My business is similar ,  let's talk", next: "whatsapp" },
@@ -483,7 +483,7 @@ const scriptedFlow = [
   // ── TERMINAL ───────────────────────────────────────────────────────────
   {
     id: "whatsapp",
-    bot: "Click below to open a WhatsApp conversation with our team. Just tell them what you discussed with Bee ,  we reply within a few hours, usually much faster.",
+    bot: "Click below to open a WhatsApp conversation with the Beelio team. Tell us your name, business name, and what you discussed with Bee ,  and we'll share a simple automation plan and quote. We reply within a few hours, usually much faster.",
     options: [],
     whatsapp: true,
   },
