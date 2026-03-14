@@ -72,7 +72,7 @@ export default function Hero() {
         >
           {/* Vision line */}
           <p className="text-white/30 text-xs uppercase tracking-widest mb-3 font-medium">
-            A fully integrated AI workspace of the future
+            WhatsApp automation and custom software for African businesses
           </p>
 
           {/* Badge */}
@@ -126,6 +126,11 @@ export default function Hero() {
               See What We Build
             </a>
           </div>
+
+          {/* Trust line */}
+          <p className="mt-4 text-xs md:text-sm text-white/40">
+            Trusted by clinics, schools, SACCOs and retailers across Uganda and East Africa.
+          </p>
 
           {/* Channel pills */}
           <div className="flex flex-wrap gap-2 mt-7">

@@ -49,8 +49,9 @@ export default function CTASection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-white/50 text-base mb-8 leading-relaxed"
             >
-              Tell us your business problem. We'll design a solution and show you
-              exactly what we'd build \u2014 completely free, no obligation.
+              Tell us how your business works and what’s slowing you down.
+              We’ll design a simple automation plan and show you exactly what we’d build—free and with no obligation.
+              You’ll get a clear demo or walkthrough, usually within 24 hours.
             </motion.p>
 
             <motion.div
@@ -73,7 +74,7 @@ export default function CTASection() {
               <span>&#10003; Free consultation</span>
               <span>&#10003; No commitment required</span>
               <span>&#10003; 3 months support included</span>
-              <span>&#10003; We reply within a few hours</span>
+              <span>&#10003; We reply on WhatsApp within a few hours</span>
             </div>
           </div>
 

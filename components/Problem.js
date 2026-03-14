@@ -12,18 +12,18 @@ function ProblemIcon({ name }) {
 const painPoints = [
   {
     icon: "grid",
-    title: "Still using spreadsheets?",
-    desc: "You're spending hours every week entering data by hand ,  and one mistake costs you a client or your entire month's records.",
+    title: "Still using spreadsheets for everything?",
+    desc: "You spend hours every week entering data by hand, and one small mistake can cost you a client or an entire month of records.",
   },
   {
     icon: "clock",
-    title: "Losing customers to slow follow-ups?",
-    desc: "A customer messages you at 9pm. Nobody replies until morning. By then they've already called your competitor.",
+    title: "Losing customers to slow replies?",
+    desc: "A customer messages you at 9pm. Nobody replies until morning. By then, they’ve already called your competitor.",
   },
   {
     icon: "users",
     title: "Paying staff to do repetitive work?",
-    desc: "You have people doing the same tasks every single day ,  tasks that a well-built system could handle automatically, 24/7.",
+    desc: "Your team repeats the same tasks every single day—work that a well-designed system could handle automatically, 24/7.",
   },
 ];
 
@@ -44,8 +44,8 @@ export default function Problem() {
             Sound <span className="text-electric">familiar?</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            Lots of businesses are wasting hours and cash on issues
-            that a simple system could fix once and for all.
+            Many growing businesses are burning hours and money on problems
+            that a simple, well-built system could remove permanently.
           </p>
         </motion.div>
 

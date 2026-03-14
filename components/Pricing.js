@@ -7,6 +7,7 @@ const tiers = [
     name: "Starter",
     price: "From UGX 2.5M",
     note: "One-off project fee",
+    typical: "Typical: a WhatsApp bot plus a simple booking or enquiry flow.",
     popular: false,
     features: [
       "WhatsApp chatbot or automation",
@@ -20,6 +21,7 @@ const tiers = [
     name: "Business",
     price: "From UGX 4M",
     note: "One-off project fee",
+    typical: "Typical: a full management dashboard plus automated WhatsApp flows for staff and customers.",
     popular: true,
     features: [
       "Everything in Starter",
@@ -34,6 +36,7 @@ const tiers = [
     name: "Enterprise",
     price: "Custom quote",
     note: "For complex or multi-branch builds",
+    typical: "Typical: multi-branch systems, mobile apps, and advanced reporting across locations.",
     popular: false,
     features: [
       "Everything in Business",
@@ -58,12 +61,12 @@ export default function Pricing() {
           className="text-center mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            Easy pricing
+            Simple pricing
             <br />
-            <span className="text-electric">for serious people</span>
+            <span className="text-electric">built for growing businesses</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            Three simple tiers to help you get started without the guesswork.
+            Three transparent tiers so you know exactly what you’re getting before we write a single line of code.
           </p>
         </motion.div>
 
@@ -104,7 +107,10 @@ export default function Pricing() {
                 {tier.name}
               </h3>
               <p className="text-electric font-bold text-lg mb-1">{tier.price}</p>
-              <p className="text-white/30 text-xs mb-5">{tier.note}</p>
+              <p className="text-white/30 text-xs mb-1">{tier.note}</p>
+              {tier.typical && (
+                <p className="text-white/40 text-xs mb-5">{tier.typical}</p>
+              )}
               <ul className="text-white/60 text-sm mb-6 space-y-2 flex-1">
                 {tier.features.map((f, j) => (
                   <li key={j} className="flex items-start gap-2">

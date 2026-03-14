@@ -52,7 +52,7 @@ export default function FAQ() {
             Questions we get <span className="text-electric">all the time</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            Straight answers, no fluff.
+            Straight, practical answers so you can decide if this is right for your business.
           </p>
         </motion.div>
 

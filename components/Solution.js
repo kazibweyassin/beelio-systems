@@ -14,22 +14,40 @@ const pillars = [
     icon: "chat",
     title: "WhatsApp Chatbots",
     outcome: "Reply to 100 customers simultaneously, 24 hours a day.",
-    detail: "Never miss a lead again. Your bot handles enquiries, bookings, and follow-ups while you sleep.",
-    features: ["Instant automated replies", "Appointment booking & reminders", "Order taking and confirmation", "Lead capture and follow-up"],
+    detail:
+      "Best for clinics, restaurants and retail businesses that live on WhatsApp and can’t afford to miss a single enquiry.",
+    features: [
+      "Instant automated replies",
+      "Appointment booking & reminders",
+      "Order taking and confirmation",
+      "Lead capture and follow-up",
+    ],
   },
   {
     icon: "gear",
     title: "Business Automation",
     outcome: "Cut hours of manual work down to seconds.",
-    detail: "We map your most repetitive tasks and build systems that handle them automatically, every time.",
-    features: ["Invoice and billing automation", "Staff and shift management", "Inventory alerts and reordering", "Automated reporting and dashboards"],
+    detail:
+      "Best for teams drowning in spreadsheets, phone calls and manual reports that never quite match.",
+    features: [
+      "Invoice and billing automation",
+      "Staff and shift management",
+      "Inventory alerts and reordering",
+      "Automated reporting and dashboards",
+    ],
   },
   {
     icon: "code",
     title: "Custom Software",
     outcome: "A system built for exactly how your business works.",
-    detail: "Not a template. Not a plugin. Software engineered around your specific workflow, from scratch.",
-    features: ["Web apps and management portals", "Mobile apps (iOS and Android)", "POS and payment integrations", "MTN MoMo and Airtel Money support"],
+    detail:
+      "Best for businesses ready to move from patchwork tools to a single, robust system designed from scratch.",
+    features: [
+      "Web apps and management portals",
+      "Mobile apps (iOS and Android)",
+      "POS and payment integrations",
+      "MTN MoMo and Airtel Money support",
+    ],
   },
 ];
 
@@ -50,8 +68,8 @@ export default function Solution() {
             Our <span className="text-electric">core services</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            Only three things we do, and we do them well ,  WhatsApp chatbots,
-            business automation and custom systems built around how you work.
+            We focus on three things, and we do them extremely well: WhatsApp chatbots,
+            business process automation, and custom systems built around how you work.
           </p>
         </motion.div>
 
