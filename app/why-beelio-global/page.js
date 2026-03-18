@@ -3,8 +3,30 @@ import Footer from '../../components/Footer';
 import { Check, Shield, Users, Globe, Zap, Layers, BarChart2 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Why Beelio for Global Businesses | WhatsApp Automation Platform',
-  description: 'Discover why global salons, clinics, and retailers choose Beelio: multi-location, integrations, enterprise security, SLA support, and more.',
+  title: 'Why Beelio: AI-Powered Booking & Automation for Salons, Clinics, Spas, Retailers',
+  description: 'Beelio uses AI to automate WhatsApp booking, reminders, and customer service for salons, clinics, spas, and retailers. Integrates with Stripe, Google Calendar, and more. Multi-location, SLA, and advanced reporting.',
+  keywords: [
+    'AI appointment bot for salons UK',
+    'AI automation for clinics US',
+    'AI booking system for spas',
+    'AI customer service automation UK',
+    'AI WhatsApp integration with Stripe',
+    'AI booking for multi-location salons',
+    'AI reminders for clinics',
+    'AI chatbot for retailers',
+    'AI automation for beauty businesses',
+    'AI booking for medical practices',
+    'WhatsApp appointment bot for salons UK',
+    'WhatsApp automation for clinics US',
+    'WhatsApp booking system for spas',
+    'WhatsApp customer service automation UK',
+    'WhatsApp integration with Stripe',
+    'WhatsApp booking for multi-location salons',
+    'WhatsApp reminders for clinics',
+    'WhatsApp chatbot for retailers',
+    'WhatsApp automation for beauty businesses',
+    'WhatsApp booking for medical practices',
+  ],
 };
 
 const features = [
@@ -50,7 +72,7 @@ export default function WhyBeelioGlobal() {
             Why choose Beelio <span className="text-electric">for global businesses?</span>
           </h1>
           <p className="text-white/60 text-lg mb-12 text-center max-w-2xl mx-auto">
-            Beelio is built for ambitious salons, clinics, and retailers worldwide. Here’s why leading brands trust us to automate WhatsApp, bookings, and customer engagement at scale.
+            Beelio is an AI-powered automation platform for salons, clinics, spas, and retailers. Leading brands trust us to automate WhatsApp, bookings, and customer engagement at scale—with intelligent workflows, smart reminders, and AI-driven customer service.
           </p>
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {features.map((f, i) => (
