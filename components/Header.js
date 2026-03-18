@@ -8,7 +8,8 @@ export default function Header() {
   const navLinks = [
     { label: "Home",         href: "/" },
     { label: "Services",     href: "/services" },
-    { label: "Case Studies", href: "/portfolio" },
+    { label: "Results",      href: "/results" },
+    { label: "Why Beelio Global", href: "/why-beelio-global" },
     { label: "Industries",   href: "/industries" },
     { label: "Pricing",      href: "/pricing" },
     { label: "How It Works", href: "/how-it-works" },

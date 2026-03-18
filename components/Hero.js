@@ -8,38 +8,38 @@ const headlines = [
   {
     heading: (
       <>
-        Still answering customer WhatsApp messages
-        <span className="text-electric"> manually?</span>
+        WhatsApp automation for service businesses
+        <span className="text-electric"> worldwide</span>
       </>
     ),
-    sub: "Automate replies, bookings, and follow-ups so you never lose a sale again. We build automation tools for African businesses.",
+    sub: "Reduce no-shows by 60%. Automate bookings, payments, and customer follow-up. Trusted by salons, clinics, and retailers in the UK, US, and EU.",
   },
   {
     heading: (
       <>
-        Your competitors reply in seconds.
-        <span className="text-electric"> You reply in hours.</span>
+        Built for UK salons, US clinics,
+        <span className="text-electric"> EU retailers</span>
       </>
     ),
-    sub: "A WhatsApp bot built for your business replies instantly, books appointments, and follows up, 24 hours a day.",
+    sub: "Enterprise security, audit logs, and SLA support. Multi-location and multi-user ready. Integrate with Stripe, Google Calendar, and more.",
   },
   {
     heading: (
       <>
-        Losing customers because
-        <span className="text-electric"> no one follows up?</span>
+        Automate replies, bookings, and payments
+        <span className="text-electric"> in one platform</span>
       </>
     ),
-    sub: "We build systems that automatically follow up with every lead, remind every client, and recover every lost sale.",
+    sub: "Let your team focus on service, not admin. Beelio handles the rest—24/7, globally.",
   },
   {
     heading: (
       <>
-        Need a web app or mobile app
-        <span className="text-electric"> built for your business?</span>
+        Ready for enterprise scale?
+        <span className="text-electric"> We are.</span>
       </>
     ),
-    sub: "From customer portals to full management systems, we build web and mobile apps tailored to how your business actually operates.",
+    sub: "From single-location startups to global chains, Beelio delivers reliability, integrations, and support that grows with you.",
   },
 ];
 

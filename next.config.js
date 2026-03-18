@@ -2,6 +2,20 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  async rewrites() {
+    return [
+      // API proxy to backend
+      {
+        source: '/api/:path*',
+        destination: 'http://localhost:5000/api/:path*',
+      },
+      // Webhook proxy to backend
+      {
+        source: '/webhook/:path*',
+        destination: 'http://localhost:5000/webhook/:path*',
+      },
+    ];
+  },
   async redirects() {
     return [
       // Old site pages → new equivalent pages (301 = permanent)

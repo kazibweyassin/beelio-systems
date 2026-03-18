@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Custom Software, WhatsApp Chatbots & Business Automation in Uganda',
-  description: 'Beelio Technologies builds WhatsApp chatbots, business automation, web apps and mobile apps for clinics, schools, restaurants, SACCOs and retail businesses across Uganda and East Africa.',
+  title: 'WhatsApp Automation for Service Businesses Worldwide | Beelio',
+  description: 'Beelio automates WhatsApp replies, bookings, payments, and customer follow-up for salons, clinics, and retailers in the UK, US, EU, and beyond. Reduce no-shows, boost revenue, and deliver enterprise-grade reliability.',
   alternates: {
     canonical: 'https://beelio.tech',
   },
@@ -27,8 +27,8 @@ export default function Home() {
       <Hero />
       <Solution />
       <Portfolio
-        heading="Real results from real businesses"
-        subheading="Real results from real businesses."
+        heading="Real results for global businesses"
+        subheading="See how Beelio helps salons, clinics, and retailers worldwide reduce no-shows, automate bookings, and grow revenue."
       />
       <Industries />
       <Pricing />
