@@ -140,19 +140,19 @@ async function handleIncoming(phone, message) {
 async function showWelcome(phone) {
   await sendList(
     phone,
-    "Hi! I'm *Bee*, Beelio's assistant. 👋\n\nWe build *WhatsApp bots and custom software* that help businesses reply faster, cut manual work, and grow.\n\nWhat type of business do you run?",
+    "Hi! I'm *Bee*, Beelio's AI assistant. 👋\n\nWe build *AI-powered WhatsApp bots and automation tools* for salons, clinics, retailers, and more. Automate bookings, reminders, payments, and customer service—with integrations like Stripe and Google Calendar.\n\nWhat type of business do you run?",
     'Choose your industry',
     [
       {
         title: 'Select your industry',
         rows: [
-          { id: 'clinic',     title: 'Clinic / Hospital',    description: 'Patient booking & management bots' },
-          { id: 'restaurant', title: 'Restaurant / Food',    description: 'Ordering bots & kitchen systems' },
-          { id: 'retail',     title: 'Retail / Shop',        description: 'Inventory & customer service bots' },
-          { id: 'sacco',      title: 'SACCO / Finance',      description: 'Loan tracking & member portals' },
-          { id: 'school',     title: 'School / Training',    description: 'Parent communication bots' },
-          { id: 'logistics',  title: 'Logistics / Delivery', description: 'Tracking & status update bots' },
-          { id: 'other',      title: 'Other Business',       description: 'Tell us what you need' },
+          { id: 'clinic',     title: 'Clinic / Medical Practice',    description: 'AI booking, reminders, calendar, payments' },
+          { id: 'restaurant', title: 'Restaurant / Food',            description: 'AI ordering, kitchen display, Stripe' },
+          { id: 'retail',     title: 'Retail / Shop',                description: 'AI inventory, customer service, Shopify' },
+          { id: 'sacco',      title: 'Finance / Membership',         description: 'AI repayments, self-service, audit logs' },
+          { id: 'school',     title: 'School / Training',            description: 'AI parent comms, reminders, calendar' },
+          { id: 'logistics',  title: 'Logistics / Delivery',         description: 'AI tracking, status updates, integrations' },
+          { id: 'other',      title: 'Other Business',               description: 'Tell us what you need' },
         ],
       },
     ]
