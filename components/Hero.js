@@ -6,44 +6,44 @@ import { MessageSquare, MessageCircle, Globe, Phone, Sparkles } from "lucide-rea
 
 const headlines = [
   {
-    heading: (
-      <>
-        WhatsApp automation for service businesses
-        <span className="text-electric"> worldwide</span>
-      </>
-    ),
-    sub: "Reduce no-shows by 60%. Automate bookings, payments, and customer follow-up. Trusted by salons, clinics, and retailers in the UK, US, and EU.",
-  },
-  {
-    heading: (
-      <>
-        Built for UK salons, US clinics,
-        <span className="text-electric"> EU retailers</span>
-      </>
-    ),
-    sub: "Enterprise security, audit logs, and SLA support. Multi-location and multi-user ready. Integrate with Stripe, Google Calendar, and more.",
-  },
-  {
-    heading: (
-      <>
-        Automate replies, bookings, and payments
-        <span className="text-electric"> in one platform</span>
-      </>
-    ),
-    sub: "Let your team focus on service, not admin. Beelio handles the rest—24/7, globally.",
-  },
-  {
-    heading: (
-      <>
-        Ready for enterprise scale?
-        <span className="text-electric"> We are.</span>
-      </>
-    ),
-    sub: "From single-location startups to global chains, Beelio delivers reliability, integrations, and support that grows with you.",
-  },
-];
-
-export default function Hero() {
+    const headlines = [
+      {
+        heading: (
+          <>
+            Get more bookings and happier customers
+            <span className="text-electric"> with WhatsApp</span>
+          </>
+        ),
+        sub: "Reply instantly, take bookings, and answer questions 24/7—no tech skills needed. Beelio works for salons, clinics, and shops of any size.",
+      },
+      {
+        heading: (
+          <>
+            Never miss a customer again
+            <span className="text-electric">—even at night</span>
+          </>
+        ),
+        sub: "Beelio replies to every WhatsApp message, even when you’re closed. No more lost sales or missed appointments.",
+      },
+      {
+        heading: (
+          <>
+            Simple setup, real results
+            <span className="text-electric"> in days</span>
+          </>
+        ),
+        sub: "Go live in under a week. No complicated tech, no hiring. Just more time and more business for you.",
+      },
+      {
+        heading: (
+          <>
+            Focus on your business
+            <span className="text-electric">—we handle the rest</span>
+          </>
+        ),
+        sub: "We set up everything for you. You get more bookings, less admin, and support whenever you need it.",
+      },
+    ];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -81,6 +81,7 @@ export default function Hero() {
             Built for Business Growth
           </div>
 
+
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight min-h-[120px] md:min-h-[140px]">
             <AnimatePresence mode="wait">
               <motion.span
@@ -95,6 +96,11 @@ export default function Hero() {
               </motion.span>
             </AnimatePresence>
           </h1>
+
+          {/* New value proposition line */}
+          <div className="text-lg md:text-xl font-semibold text-electric mb-4">
+            Turn WhatsApp into your 24/7 sales and support agent without hiring extra staff.
+          </div>
 
           <div className="text-base md:text-lg mb-8 text-white/60 leading-relaxed max-w-lg min-h-[64px]">
             <AnimatePresence mode="wait">
@@ -190,7 +196,7 @@ export default function Hero() {
         >
           <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
             <img
-              src="/Real-Time-Analytics.png"
+              src="/recover.svg"
               alt="Beelio automation interface in action"
               className="w-full h-auto object-cover"
             />
