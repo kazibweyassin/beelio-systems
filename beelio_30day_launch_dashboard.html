@@ -1,0 +1,422 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.dash{padding:1rem 0;display:flex;flex-direction:column;gap:1.5rem}
+.section-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:.6rem}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.metric{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:.75rem 1rem}
+.metric .val{font-size:22px;font-weight:500;color:var(--color-text-primary);line-height:1.1}
+.metric .lbl{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.metric .target{font-size:11px;color:var(--color-text-tertiary);margin-top:4px}
+.metric .bar-bg{height:3px;background:var(--color-border-tertiary);border-radius:2px;margin-top:6px}
+.metric .bar-fill{height:3px;border-radius:2px;transition:width .4s}
+.tabs{display:flex;gap:4px;border-bottom:0.5px solid var(--color-border-tertiary);padding-bottom:0}
+.tab{font-size:13px;padding:6px 14px;cursor:pointer;border-radius:6px 6px 0 0;color:var(--color-text-secondary);border:0.5px solid transparent;border-bottom:none;background:none}
+.tab.active{color:var(--color-text-primary);background:var(--color-background-primary);border-color:var(--color-border-tertiary);margin-bottom:-0.5px}
+.tab-content{display:none}.tab-content.active{display:block}
+.week-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:.75rem}
+.day-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:.6rem .75rem;border:0.5px solid var(--color-border-tertiary)}
+.day-name{font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em}
+.day-tasks{margin-top:.4rem;display:flex;flex-direction:column;gap:4px}
+.task{font-size:12px;color:var(--color-text-secondary);display:flex;gap:6px;align-items:flex-start;cursor:pointer;line-height:1.4}
+.task .dot{width:5px;height:5px;border-radius:50%;background:var(--color-border-secondary);flex-shrink:0;margin-top:4px}
+.task.done .dot{background:#1D9E75}
+.task.done span{text-decoration:line-through;color:var(--color-text-tertiary)}
+.sprint-grid{display:flex;flex-direction:column;gap:6px;margin-top:.75rem}
+.sprint-phase{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);overflow:hidden}
+.sprint-header{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;background:var(--color-background-secondary);cursor:pointer}
+.sprint-header .phase-name{font-size:13px;font-weight:500}
+.sprint-header .phase-days{font-size:11px;color:var(--color-text-tertiary)}
+.sprint-header .badge{font-size:11px;padding:2px 8px;border-radius:4px}
+.sprint-body{padding:.75rem 1rem;display:flex;flex-direction:column;gap:5px}
+.sprint-task{font-size:13px;color:var(--color-text-secondary);display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.sprint-task .ck{width:14px;height:14px;border-radius:3px;border:0.5px solid var(--color-border-secondary);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.sprint-task.done .ck{background:#1D9E75;border-color:#1D9E75}
+.sprint-task.done .ck::after{content:'✓';color:#fff;font-size:10px}
+.sprint-task.done .txt{text-decoration:line-through;color:var(--color-text-tertiary)}
+.copy-pack{display:flex;flex-direction:column;gap:8px;margin-top:.75rem}
+.copy-item{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);overflow:hidden}
+.copy-header{display:flex;justify-content:space-between;align-items:center;padding:.5rem .75rem;background:var(--color-background-secondary);cursor:pointer}
+.copy-header .copy-title{font-size:13px;font-weight:500}
+.copy-btn{font-size:11px;color:var(--color-text-info);padding:2px 8px;border:0.5px solid var(--color-border-info);border-radius:4px;background:none;cursor:pointer}
+.copy-body{padding:.75rem;font-size:13px;color:var(--color-text-secondary);line-height:1.7;display:none}
+.copy-body.open{display:block}
+.pipeline-table{width:100%;border-collapse:collapse;margin-top:.75rem;font-size:13px}
+.pipeline-table th{text-align:left;font-size:11px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:.05em;text-transform:uppercase;padding:0 8px 8px 8px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.pipeline-table td{padding:8px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary)}
+.pipeline-table td:first-child{color:var(--color-text-primary);font-weight:500}
+.status-pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;font-weight:500}
+.s-new{background:var(--color-background-secondary);color:var(--color-text-secondary)}
+.s-contacted{background:var(--color-background-info);color:var(--color-text-info)}
+.s-replied{background:#e1f5ee;color:#085041}
+.s-call{background:#faeeda;color:#633806}
+.s-closed{background:#eaf3de;color:#3B6D11}
+.add-lead{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+.add-lead input,.add-lead select{flex:1;min-width:100px;font-size:13px;padding:6px 10px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary)}
+.add-lead button{font-size:13px;padding:6px 14px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-secondary);color:var(--color-text-primary);cursor:pointer}
+.progress-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+.prog-bar{height:6px;background:var(--color-border-tertiary);border-radius:3px;margin-bottom:12px}
+.prog-fill{height:6px;border-radius:3px;background:#1D9E75;transition:width .4s}
+</style>
+<div class="dash">
+
+<!-- Metrics -->
+<div>
+  <div class="section-label">Week 1 pipeline</div>
+  <div class="metric-grid">
+    <div class="metric">
+      <div class="val" id="m-out">0</div>
+      <div class="lbl">Outreaches</div>
+      <div class="target">Target: 150/wk</div>
+      <div class="bar-bg"><div class="bar-fill" id="b-out" style="width:0%;background:#378ADD"></div></div>
+    </div>
+    <div class="metric">
+      <div class="val" id="m-rep">0</div>
+      <div class="lbl">Replies</div>
+      <div class="target">Target: 20/wk</div>
+      <div class="bar-bg"><div class="bar-fill" id="b-rep" style="width:0%;background:#1D9E75"></div></div>
+    </div>
+    <div class="metric">
+      <div class="val" id="m-call">0</div>
+      <div class="lbl">Calls booked</div>
+      <div class="target">Target: 8/wk</div>
+      <div class="bar-bg"><div class="bar-fill" id="b-call" style="width:0%;background:#EF9F27"></div></div>
+    </div>
+    <div class="metric">
+      <div class="val" id="m-close">0</div>
+      <div class="lbl">Deals closed</div>
+      <div class="target">Target: 2–3/mo</div>
+      <div class="bar-bg"><div class="bar-fill" id="b-close" style="width:0%;background:#D85A30"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Tabs -->
+<div>
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('cadence')">Weekly cadence</div>
+    <div class="tab" onclick="switchTab('sprint')">14-day sprint</div>
+    <div class="tab" onclick="switchTab('copy')">Copy pack</div>
+    <div class="tab" onclick="switchTab('crm')">Pipeline CRM</div>
+  </div>
+
+  <!-- Cadence -->
+  <div class="tab-content active" id="tab-cadence">
+    <div class="week-grid">
+      <div class="day-card">
+        <div class="day-name">Mon</div>
+        <div class="day-tasks">
+          <div class="task" onclick="toggleTask(this)"><div class="dot"></div><span>Case-study post</span></div>
+          <div class="task" onclick="toggleTask(this)"><div class="dot"></div><span>30 outreach msgs</span></div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-name">Tue</div>
+        <div class="day-tasks">
+          <div class="task" onclick="toggleTask(this)"><div class="dot"></div><span>Short video demo</span></div>
+          <div class="task" onclick="toggleTask(this)"><div class="dot"></div><span>Follow up all leads</span></div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-name">Wed</div>
+        <div class="day-tasks">
+          <div class="task" onclick="toggleTask(this)"><div class="dot"></div><span>Educational post</span></div>
+          <div class="task" onclick="toggleTask(this)"><div class="dot"></div><span>30 outreach msgs</span></div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-name">Thu</div>
+        <div class="day-tasks">
+          <div class="task" onclick="toggleTask(this)"><div class="dot"></div><span>Live demo (Zoom)</span></div>
+          <div class="task" onclick="toggleTask(this)"><div class="dot"></div><span>Share replay clips</span></div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-name">Fri</div>
+        <div class="day-tasks">
+          <div class="task" onclick="toggleTask(this)"><div class="dot"></div><span>Customer story post</span></div>
+          <div class="task" onclick="toggleTask(this)"><div class="dot"></div><span>Pipeline review</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:1rem">
+      <div class="progress-row"><span style="color:var(--color-text-secondary);font-size:13px">Week progress</span><span id="week-pct" style="font-size:13px;font-weight:500">0 / 10 tasks</span></div>
+      <div class="prog-bar"><div class="prog-fill" id="week-prog" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <!-- Sprint -->
+  <div class="tab-content" id="tab-sprint">
+    <div class="sprint-grid">
+      <div class="sprint-phase">
+        <div class="sprint-header" onclick="togglePhase(this)">
+          <span class="phase-name">Days 1–3 · Foundation</span>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span class="badge" style="background:var(--color-background-info);color:var(--color-text-info)">0/3 done</span>
+            <span style="font-size:11px;color:var(--color-text-tertiary)">▾</span>
+          </div>
+        </div>
+        <div class="sprint-body">
+          <div class="sprint-task" onclick="toggleSprint(this,0)"><div class="ck"></div><span class="txt">Finalize one-page offer</span></div>
+          <div class="sprint-task" onclick="toggleSprint(this,0)"><div class="ck"></div><span class="txt">Publish 2 posts</span></div>
+          <div class="sprint-task" onclick="toggleSprint(this,0)"><div class="ck"></div><span class="txt">Send 60 outreach messages</span></div>
+        </div>
+      </div>
+      <div class="sprint-phase">
+        <div class="sprint-header" onclick="togglePhase(this)">
+          <span class="phase-name">Days 4–7 · First demos</span>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span class="badge" style="background:var(--color-background-secondary);color:var(--color-text-secondary)">0/4 done</span>
+            <span style="font-size:11px;color:var(--color-text-tertiary)">▾</span>
+          </div>
+        </div>
+        <div class="sprint-body">
+          <div class="sprint-task" onclick="toggleSprint(this,1)"><div class="ck"></div><span class="txt">Run first demo calls</span></div>
+          <div class="sprint-task" onclick="toggleSprint(this,1)"><div class="ck"></div><span class="txt">Post 2 short videos</span></div>
+          <div class="sprint-task" onclick="toggleSprint(this,1)"><div class="ck"></div><span class="txt">Send follow-ups to all replies</span></div>
+          <div class="sprint-task" onclick="toggleSprint(this,1)"><div class="ck"></div><span class="txt">LinkedIn founder post ×2</span></div>
+        </div>
+      </div>
+      <div class="sprint-phase">
+        <div class="sprint-header" onclick="togglePhase(this)">
+          <span class="phase-name">Days 8–10 · Social proof</span>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span class="badge" style="background:var(--color-background-secondary);color:var(--color-text-secondary)">0/3 done</span>
+            <span style="font-size:11px;color:var(--color-text-tertiary)">▾</span>
+          </div>
+        </div>
+        <div class="sprint-body">
+          <div class="sprint-task" onclick="toggleSprint(this,2)"><div class="ck"></div><span class="txt">Publish mini case study</span></div>
+          <div class="sprint-task" onclick="toggleSprint(this,2)"><div class="ck"></div><span class="txt">Send 60 more outreach messages</span></div>
+          <div class="sprint-task" onclick="toggleSprint(this,2)"><div class="ck"></div><span class="txt">Thursday live demo session</span></div>
+        </div>
+      </div>
+      <div class="sprint-phase">
+        <div class="sprint-header" onclick="togglePhase(this)">
+          <span class="phase-name">Days 11–14 · Close & capture</span>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span class="badge" style="background:var(--color-background-secondary);color:var(--color-text-secondary)">0/3 done</span>
+            <span style="font-size:11px;color:var(--color-text-tertiary)">▾</span>
+          </div>
+        </div>
+        <div class="sprint-body">
+          <div class="sprint-task" onclick="toggleSprint(this,3)"><div class="ck"></div><span class="txt">Close first pilot clients</span></div>
+          <div class="sprint-task" onclick="toggleSprint(this,3)"><div class="ck"></div><span class="txt">Collect testimonials</span></div>
+          <div class="sprint-task" onclick="toggleSprint(this,3)"><div class="ck"></div><span class="txt">Turn wins into next content cycle</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:1rem">
+      <div class="progress-row"><span style="color:var(--color-text-secondary);font-size:13px">Sprint progress</span><span id="sprint-pct" style="font-size:13px;font-weight:500">0 / 13 tasks</span></div>
+      <div class="prog-bar"><div class="prog-fill" id="sprint-prog" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <!-- Copy pack -->
+  <div class="tab-content" id="tab-copy">
+    <div class="copy-pack">
+      <div class="copy-item">
+        <div class="copy-header" onclick="toggleCopy(this)">
+          <span class="copy-title">LinkedIn post — hook</span>
+          <button class="copy-btn" onclick="copyText(event,'linkedin')">Copy</button>
+        </div>
+        <div class="copy-body" id="linkedin">Still missing customers because nobody replies fast on WhatsApp?
+
+Most service businesses lose leads after-hours.
+
+We help clinics and salons automate WhatsApp replies, bookings, and reminders in 7 days.
+
+If you want fewer missed appointments and less admin work, message "DEMO".</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header" onclick="toggleCopy(this)">
+          <span class="copy-title">WhatsApp outreach — first touch</span>
+          <button class="copy-btn" onclick="copyText(event,'whatsapp')">Copy</button>
+        </div>
+        <div class="copy-body" id="whatsapp">Hi [Name], quick one:
+
+We help [clinics/salons] automate WhatsApp replies + booking reminders so they stop losing leads after-hours.
+
+Would you like a free 10-minute workflow audit for your business this week?</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header" onclick="toggleCopy(this)">
+          <span class="copy-title">Follow-up — 48 hours</span>
+          <button class="copy-btn" onclick="copyText(event,'followup')">Copy</button>
+        </div>
+        <div class="copy-body" id="followup">Hi [Name], just checking in.
+
+Happy to send a short video showing exactly how this would work for [business name].
+
+Should I send it?</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header" onclick="toggleCopy(this)">
+          <span class="copy-title">Call booking CTA</span>
+          <button class="copy-btn" onclick="copyText(event,'cta')">Copy</button>
+        </div>
+        <div class="copy-body" id="cta">Book a free demo — we'll map your workflow and show how to automate replies, bookings, and reminders.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header" onclick="toggleCopy(this)">
+          <span class="copy-title">Landing page — headline & subheadline</span>
+          <button class="copy-btn" onclick="copyText(event,'landing')">Copy</button>
+        </div>
+        <div class="copy-body" id="landing">Headline: Get more bookings from WhatsApp in 7 days
+
+Subheadline: We set up automated replies, booking flows, and reminders so you stop losing customers and save hours each week.
+
+CTA 1: Book Free Demo
+CTA 2: See How It Works</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRM -->
+  <div class="tab-content" id="tab-crm">
+    <table class="pipeline-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Business</th>
+          <th>Channel</th>
+          <th>Status</th>
+          <th>Next action</th>
+        </tr>
+      </thead>
+      <tbody id="crm-body">
+        <tr><td colspan="5" style="text-align:center;color:var(--color-text-tertiary);padding:20px;font-size:13px">No leads yet — add your first one below</td></tr>
+      </tbody>
+    </table>
+    <div class="add-lead">
+      <input id="l-name" placeholder="Name" />
+      <input id="l-biz" placeholder="Business (e.g. Smile Clinic)" />
+      <select id="l-ch">
+        <option value="WhatsApp">WhatsApp</option>
+        <option value="LinkedIn">LinkedIn</option>
+        <option value="Referral">Referral</option>
+        <option value="Facebook">Facebook</option>
+        <option value="Other">Other</option>
+      </select>
+      <select id="l-st">
+        <option value="New">New</option>
+        <option value="Contacted">Contacted</option>
+        <option value="Replied">Replied</option>
+        <option value="Call Booked">Call Booked</option>
+        <option value="Closed">Closed</option>
+      </select>
+      <input id="l-date" type="date" style="flex:0.8" />
+      <button onclick="addLead()">+ Add lead</button>
+    </div>
+  </div>
+</div>
+
+<!-- Update metrics inputs -->
+<div style="border-top:0.5px solid var(--color-border-tertiary);padding-top:1rem">
+  <div class="section-label">Update this week's numbers</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+    <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--color-text-secondary)">Outreaches<input type="number" id="i-out" min="0" max="999" value="0" style="width:64px;font-size:13px;padding:4px 8px;border:0.5px solid var(--color-border-secondary);border-radius:6px;background:var(--color-background-primary);color:var(--color-text-primary)" oninput="updateMetrics()"></div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--color-text-secondary)">Replies<input type="number" id="i-rep" min="0" max="999" value="0" style="width:56px;font-size:13px;padding:4px 8px;border:0.5px solid var(--color-border-secondary);border-radius:6px;background:var(--color-background-primary);color:var(--color-text-primary)" oninput="updateMetrics()"></div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--color-text-secondary)">Calls<input type="number" id="i-call" min="0" max="999" value="0" style="width:56px;font-size:13px;padding:4px 8px;border:0.5px solid var(--color-border-secondary);border-radius:6px;background:var(--color-background-primary);color:var(--color-text-primary)" oninput="updateMetrics()"></div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--color-text-secondary)">Closed<input type="number" id="i-close" min="0" max="99" value="0" style="width:56px;font-size:13px;padding:4px 8px;border:0.5px solid var(--color-border-secondary);border-radius:6px;background:var(--color-background-primary);color:var(--color-text-primary)" oninput="updateMetrics()"></div>
+  </div>
+</div>
+</div>
+
+<script>
+var leads=[];
+var sprintCounts=[0,0,0,0];
+var sprintTotals=[3,4,3,3];
+
+function switchTab(id){
+  document.querySelectorAll('.tab,.tab-content').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach((t,i)=>{if(['cadence','sprint','copy','crm'][i]===id)t.classList.add('active')});
+  document.getElementById('tab-'+id).classList.add('active');
+}
+
+function toggleTask(el){
+  el.classList.toggle('done');
+  var tasks=document.querySelectorAll('#tab-cadence .task');
+  var done=[].filter.call(tasks,t=>t.classList.contains('done')).length;
+  document.getElementById('week-pct').textContent=done+' / '+tasks.length+' tasks';
+  document.getElementById('week-prog').style.width=Math.round(done/tasks.length*100)+'%';
+}
+
+function togglePhase(header){
+  var body=header.nextElementSibling;
+  body.style.display=body.style.display==='none'?'':'none';
+}
+
+function toggleSprint(el,phase){
+  el.classList.toggle('done');
+  var phases=document.querySelectorAll('.sprint-phase');
+  var phaseTasks=phases[phase].querySelectorAll('.sprint-task');
+  var phaseDone=[].filter.call(phaseTasks,t=>t.classList.contains('done')).length;
+  var badge=phases[phase].querySelector('.badge');
+  badge.textContent=phaseDone+'/'+phaseTotals[phase]+' done';
+  badge.style.background=phaseDone===phaseTotals[phase]?'#eaf3de':phaseDone>0?'#faeeda':'var(--color-background-secondary)';
+  badge.style.color=phaseDone===phaseTotals[phase]?'#3B6D11':phaseDone>0?'#633806':'var(--color-text-secondary)';
+  var allTasks=document.querySelectorAll('.sprint-task');
+  var allDone=[].filter.call(allTasks,t=>t.classList.contains('done')).length;
+  document.getElementById('sprint-pct').textContent=allDone+' / 13 tasks';
+  document.getElementById('sprint-prog').style.width=Math.round(allDone/13*100)+'%';
+}
+
+var phaseTotals=[3,4,3,3];
+
+function toggleCopy(header){
+  var body=header.nextElementSibling;
+  body.classList.toggle('open');
+}
+
+function copyText(e,id){
+  e.stopPropagation();
+  var el=document.getElementById(id);
+  if(el){navigator.clipboard.writeText(el.textContent.trim()).then(()=>{var b=e.target;b.textContent='Copied!';setTimeout(()=>b.textContent='Copy',1500)})}
+}
+
+function statusClass(s){
+  var m={New:'s-new',Contacted:'s-contacted',Replied:'s-replied','Call Booked':'s-call',Closed:'s-closed'};
+  return m[s]||'s-new';
+}
+
+function addLead(){
+  var n=document.getElementById('l-name').value.trim();
+  var b=document.getElementById('l-biz').value.trim();
+  if(!n||!b)return;
+  var lead={name:n,biz:b,ch:document.getElementById('l-ch').value,status:document.getElementById('l-st').value,date:document.getElementById('l-date').value||'—'};
+  leads.push(lead);
+  renderCRM();
+  document.getElementById('l-name').value='';
+  document.getElementById('l-biz').value='';
+}
+
+function renderCRM(){
+  var tb=document.getElementById('crm-body');
+  if(!leads.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--color-text-tertiary);padding:20px;font-size:13px">No leads yet — add your first one below</td></tr>';return;}
+  tb.innerHTML=leads.map((l,i)=>'<tr><td>'+l.name+'</td><td style="color:var(--color-text-secondary)">'+l.biz+'</td><td style="color:var(--color-text-tertiary)">'+l.ch+'</td><td><span class="status-pill '+statusClass(l.status)+'">'+l.status+'</span></td><td><select style="font-size:12px;border:none;background:none;color:var(--color-text-secondary);cursor:pointer" onchange="updateStatus('+i+',this.value)"><option>New</option><option>Contacted</option><option>Replied</option><option>Call Booked</option><option>Closed</option></select></td></tr>').join('');
+  leads.forEach((l,i)=>{var sel=tb.rows[i].cells[4].querySelector('select');sel.value=l.status;});
+}
+
+function updateStatus(i,v){
+  leads[i].status=v;
+  renderCRM();
+  updateMetrics();
+}
+
+function updateMetrics(){
+  var out=parseInt(document.getElementById('i-out').value)||0;
+  var rep=parseInt(document.getElementById('i-rep').value)||0;
+  var call=parseInt(document.getElementById('i-call').value)||0;
+  var close=parseInt(document.getElementById('i-close').value)||0;
+  document.getElementById('m-out').textContent=out;
+  document.getElementById('m-rep').textContent=rep;
+  document.getElementById('m-call').textContent=call;
+  document.getElementById('m-close').textContent=close;
+  document.getElementById('b-out').style.width=Math.min(Math.round(out/150*100),100)+'%';
+  document.getElementById('b-rep').style.width=Math.min(Math.round(rep/20*100),100)+'%';
+  document.getElementById('b-call').style.width=Math.min(Math.round(call/8*100),100)+'%';
+  document.getElementById('b-close').style.width=Math.min(Math.round(close/3*100),100)+'%';
+}
+</script>

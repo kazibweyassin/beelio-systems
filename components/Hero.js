@@ -6,44 +6,44 @@ import { MessageSquare, MessageCircle, Globe, Phone, Sparkles } from "lucide-rea
 
 const headlines = [
   {
-    const headlines = [
-      {
-        heading: (
-          <>
-            Get more bookings and happier customers
-            <span className="text-electric"> with WhatsApp</span>
-          </>
-        ),
-        sub: "Reply instantly, take bookings, and answer questions 24/7—no tech skills needed. Beelio works for salons, clinics, and shops of any size.",
-      },
-      {
-        heading: (
-          <>
-            Never miss a customer again
-            <span className="text-electric">—even at night</span>
-          </>
-        ),
-        sub: "Beelio replies to every WhatsApp message, even when you’re closed. No more lost sales or missed appointments.",
-      },
-      {
-        heading: (
-          <>
-            Simple setup, real results
-            <span className="text-electric"> in days</span>
-          </>
-        ),
-        sub: "Go live in under a week. No complicated tech, no hiring. Just more time and more business for you.",
-      },
-      {
-        heading: (
-          <>
-            Focus on your business
-            <span className="text-electric">—we handle the rest</span>
-          </>
-        ),
-        sub: "We set up everything for you. You get more bookings, less admin, and support whenever you need it.",
-      },
-    ];
+    heading: (
+      <>
+        Get more bookings and happier customers
+        <span className="text-electric"> with WhatsApp</span>
+      </>
+    ),
+    sub: "Reply instantly, take bookings, and answer questions 24/7—no tech skills needed. Beelio works for salons, clinics, and shops of any size.",
+  },
+  {
+    heading: (
+      <>
+        Never miss a customer again
+        <span className="text-electric">—even at night</span>
+      </>
+    ),
+    sub: "Beelio replies to every WhatsApp message, even when you’re closed. No more lost sales or missed appointments.",
+  },
+  {
+    heading: (
+      <>
+        Simple setup, real results
+        <span className="text-electric"> in days</span>
+      </>
+    ),
+    sub: "Go live in under a week. No complicated tech, no hiring. Just more time and more business for you.",
+  },
+  {
+    heading: (
+      <>
+        Focus on your business
+        <span className="text-electric">—we handle the rest</span>
+      </>
+    ),
+    sub: "We set up everything for you. You get more bookings, less admin, and support whenever you need it.",
+  },
+];
+
+export default function Hero() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
