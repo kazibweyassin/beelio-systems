@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageSquare, Settings, Code2 } from "lucide-react";
+import { MessageSquare, Settings, Code2, Headset } from "lucide-react";
 
-const SOLUTION_ICONS = { chat: MessageSquare, gear: Settings, code: Code2 };
+const SOLUTION_ICONS = { chat: MessageSquare, gear: Settings, code: Code2, support: Headset };
 function SolutionIcon({ name }) {
   const Icon = SOLUTION_ICONS[name];
   return Icon ? <Icon size={22} className="text-electric" /> : null;
@@ -34,6 +34,19 @@ const pillars = [
       "Staff and shift management",
       "Inventory alerts and reordering",
       "Automated reporting and dashboards",
+    ],
+  },
+  {
+    icon: "support",
+    title: "Customer Support Automation",
+    outcome: "Answer common questions instantly and route the rest to the right person.",
+    detail:
+      "Best for businesses that want faster responses, happier customers, and less time spent on repetitive support messages.",
+    features: [
+      "FAQ replies and knowledge base automation",
+      "Order and booking status updates",
+      "Human handoff for complex issues",
+      "After-hours support that never sleeps",
     ],
   },
   {
@@ -68,8 +81,8 @@ export default function Solution() {
             Our <span className="text-electric">core services</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            We focus on three things, and we do them extremely well: WhatsApp chatbots,
-            business process automation, and custom systems built around how you work.
+            We focus on four things, and we do them extremely well: WhatsApp chatbots,
+            business process automation, customer support automation, and custom systems built around how you work.
           </p>
         </motion.div>
 
@@ -89,7 +102,7 @@ export default function Solution() {
         </motion.div>
 
         {/* Pillar Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
           {pillars.map((pillar, i) => (
             <motion.div
               key={i}

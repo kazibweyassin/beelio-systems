@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'WhatsApp Automation for Service Businesses Worldwide | Beelio',
-  description: 'Beelio automates WhatsApp replies, bookings, payments, and customer follow-up for salons, clinics, and retailers in the UK, US, EU, and beyond. Reduce no-shows, boost revenue, and deliver enterprise-grade reliability.',
+  description: 'Beelio automates WhatsApp replies, bookings, payments, customer support, and follow-up for salons, clinics, and retailers in the UK, US, EU, and beyond. Reduce no-shows, boost revenue, and deliver enterprise-grade reliability.',
   alternates: {
     canonical: 'https://beelio.tech',
   },

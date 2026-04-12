@@ -17,6 +17,10 @@ const faqs = [
     a: "A person sleeps, gets sick, asks for a salary increase, and can only handle one conversation at a time. Our chatbot replies to 100 customers simultaneously, at 3am, for a flat one-off fee. It never misses a lead.",
   },
   {
+    q: "Can Beelio handle customer support too?",
+    a: "Yes. We can automate FAQs, booking changes, order updates, complaint routing, and after-hours responses. For anything complex, the conversation can hand off to a human at the right time.",
+  },
+  {
     q: "How long until I see results?",
     a: "Most clients go live within 1 to 2 weeks. You'll see the first automated replies within days of launch. Measurable changes like faster response times and more bookings typically show up in the first 30 days.",
   },
