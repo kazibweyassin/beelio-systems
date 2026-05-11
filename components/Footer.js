@@ -37,9 +37,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-              We build intelligent software systems for African businesses ,  
-              custom platforms with AI built in, so your operations run 
-              smarter with less manual work.
+              We build intelligent software systems for African businesses — custom platforms with AI built in, spanning FinTech, enterprise automation, and digital transformation, so your operations run smarter with less manual work.
             </p>
             {/* Contact */}
             <div className="flex flex-col gap-2 text-sm mt-2">

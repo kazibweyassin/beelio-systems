@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "Do you work with businesses outside Uganda?",
-    a: "Yes. We've worked with clients in Kenya, Tanzania, and Rwanda. Our systems support multiple currencies, languages, and mobile money providers across East Africa. Remote projects work just as well.",
+    a: "Yes. We can support remote projects across East Africa, and our systems are designed to work with the tools, workflows, and mobile money needs common in the region.",
   },
 ];
 

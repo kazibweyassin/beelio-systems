@@ -1,15 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageSquare, Settings, Code2, Headset } from "lucide-react";
+import { MessageSquare, Settings, Code2, Headset, BrainCircuit } from "lucide-react";
 
-const SOLUTION_ICONS = { chat: MessageSquare, gear: Settings, code: Code2, support: Headset };
+const SOLUTION_ICONS = { chat: MessageSquare, gear: Settings, code: Code2, support: Headset, ai: BrainCircuit };
 function SolutionIcon({ name }) {
   const Icon = SOLUTION_ICONS[name];
   return Icon ? <Icon size={22} className="text-electric" /> : null;
 }
 
 const pillars = [
+  {
+    icon: "ai",
+    title: "AI-Powered Software Solutions",
+    outcome: "Custom artificial intelligence integrations for African businesses.",
+    detail:
+      "We build intelligent systems that automate decisions, analyse data, and streamline operations — including AI agents, machine learning pipelines, and LLM-powered tools for finance, healthcare, and enterprise clients.",
+    features: [
+      "AI agent development and integration",
+      "FinTech platform development",
+      "Data analysis and automated reporting",
+      "LLM-powered customer and business tools",
+    ],
+  },
   {
     icon: "chat",
     title: "WhatsApp Chatbots",
@@ -102,7 +115,7 @@ export default function Solution() {
         </motion.div>
 
         {/* Pillar Cards */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 xl:grid-cols-5 gap-6">
           {pillars.map((pillar, i) => (
             <motion.div
               key={i}

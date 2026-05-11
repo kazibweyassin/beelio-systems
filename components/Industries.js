@@ -3,11 +3,16 @@
 import { motion } from "framer-motion";
 
 const industries = [
-  "Clinics & Pharmacies",
-  "Restaurants & Food Delivery",
-  "Schools & Training Centres",
-  "Logistics & Transport",
-  "Retail Shops",
+  { title: "Clinics & Pharmacies" },
+  { title: "Restaurants & Food Delivery" },
+  { title: "Schools & Training Centres" },
+  { title: "Logistics & Transport" },
+  { title: "Retail Shops" },
+  {
+    title: "FinTech & Financial Services",
+    description:
+      "SACCOs, microfinance institutions, digital wallets, and payment platforms. We build loan management systems, mobile money integrations, member portals, and automated financial reporting tools for East African financial service providers.",
+  },
 ];
 
 export default function Industries() {
@@ -55,7 +60,12 @@ export default function Industries() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-[#0d1526] rounded-xl p-6 border border-white/5 text-center text-electric font-medium"
             >
-              {item}
+              <div>{item.title}</div>
+              {item.description ? (
+                <p className="mt-3 text-sm leading-relaxed text-white/60 font-normal">
+                  {item.description}
+                </p>
+              ) : null}
             </motion.div>
           ))}
         </div>

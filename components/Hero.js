@@ -8,38 +8,38 @@ const headlines = [
   {
     heading: (
       <>
-        Get more bookings and happier customers
-        <span className="text-electric"> with WhatsApp</span>
+        AI software and WhatsApp automation
+        <span className="text-electric"> for African businesses</span>
       </>
     ),
-    sub: "Reply instantly, take bookings, and answer questions 24/7—no tech skills needed. Beelio works for salons, clinics, and shops of any size.",
+    sub: "We design practical systems for clinics, schools, retailers, SACCOs, and service teams that need cleaner operations and faster responses.",
   },
   {
     heading: (
       <>
-        Never miss a customer again
-        <span className="text-electric">—even at night</span>
+        Built for real workflows
+        <span className="text-electric">, not templates</span>
       </>
     ),
-    sub: "Beelio replies to every WhatsApp message, even when you’re closed. No more lost sales or missed appointments.",
+    sub: "We map your business process first, then build the automation, reporting, and integrations around how your team actually works.",
   },
   {
     heading: (
       <>
-        Simple setup, real results
-        <span className="text-electric"> in days</span>
+        Practical software
+        <span className="text-electric"> with ongoing support</span>
       </>
     ),
-    sub: "Go live in under a week. No complicated tech, no hiring. Just more time and more business for you.",
+    sub: "From AI agents to member portals and payment integrations, we build systems that are clear, useful, and easy to maintain.",
   },
   {
     heading: (
       <>
-        Focus on your business
-        <span className="text-electric">—we handle the rest</span>
+        A credible partner
+        <span className="text-electric"> for business automation</span>
       </>
     ),
-    sub: "We set up everything for you. You get more bookings, less admin, and support whenever you need it.",
+    sub: "Beelio focuses on deliverable systems, straightforward communication, and support after launch.",
   },
 ];
 
@@ -72,13 +72,13 @@ export default function Hero() {
         >
           {/* Vision line */}
           <p className="text-white/30 text-xs uppercase tracking-widest mb-3 font-medium">
-            WhatsApp automation and custom software for African businesses
+            AI software, WhatsApp automation, and custom systems for East African businesses
           </p>
 
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/5 border border-electric/20 rounded-full px-4 py-1 text-xs text-electric mb-6">
             <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
-            Built for Business Growth
+            Practical software for real operations
           </div>
 
 
@@ -99,7 +99,7 @@ export default function Hero() {
 
           {/* New value proposition line */}
           <div className="text-lg md:text-xl font-semibold text-electric mb-4">
-            Turn WhatsApp into your 24/7 sales and support agent without hiring extra staff.
+            Build clearer workflows, better customer handling, and less manual work.
           </div>
 
           <div className="text-base md:text-lg mb-8 text-white/60 leading-relaxed max-w-lg min-h-[64px]">
@@ -135,7 +135,7 @@ export default function Hero() {
 
           {/* Trust line */}
           <p className="mt-4 text-xs md:text-sm text-white/40">
-            Trusted by clinics, schools, SACCOs and retailers across Uganda and East Africa.
+            Built in Uganda for businesses across East Africa.
           </p>
 
           {/* Channel pills */}
@@ -170,19 +170,19 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Stats bar */}
-          <div className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
-            <div>
-              <p className="text-electric font-bold text-2xl md:text-3xl">40+</p>
-              <p className="text-white/40 text-xs mt-1">Systems built and live</p>
+          {/* Credibility bar */}
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-white/10 pt-8">
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+              <p className="text-white font-semibold text-sm">Custom-built systems</p>
+              <p className="text-white/40 text-xs mt-1">Designed around your workflow, not a template.</p>
             </div>
-            <div>
-              <p className="text-electric font-bold text-2xl md:text-3xl">2–4 wks</p>
-              <p className="text-white/40 text-xs mt-1">Avg. delivery time</p>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+              <p className="text-white font-semibold text-sm">East African market focus</p>
+              <p className="text-white/40 text-xs mt-1">Useful for clinics, SACCOs, retailers, and service teams.</p>
             </div>
-            <div>
-              <p className="text-electric font-bold text-2xl md:text-3xl">24/7</p>
-              <p className="text-white/40 text-xs mt-1">Automated, always on</p>
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+              <p className="text-white font-semibold text-sm">Support after launch</p>
+              <p className="text-white/40 text-xs mt-1">We stay reachable and help after go-live.</p>
             </div>
           </div>
         </motion.div>

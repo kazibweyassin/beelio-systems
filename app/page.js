@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'WhatsApp Automation for Service Businesses Worldwide | Beelio',
-  description: 'Beelio automates WhatsApp replies, bookings, payments, customer support, and follow-up for salons, clinics, and retailers in the UK, US, EU, and beyond. Reduce no-shows, boost revenue, and deliver enterprise-grade reliability.',
+  title: 'Beelio Technologies | AI Software, WhatsApp Automation & Custom Systems',
+  description: 'Beelio Technologies builds AI software, WhatsApp automation, and custom business systems for East African businesses, including clinics, schools, SACCOs, retailers, logistics teams, and financial service providers.',
   alternates: {
     canonical: 'https://beelio.tech',
   },
@@ -8,6 +8,7 @@ export const metadata = {
 
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import CompanySnapshot from '../components/CompanySnapshot';
 import Solution from '../components/Solution';
 import Portfolio from '../components/Portfolio';
 import Industries from '../components/Industries';
@@ -25,10 +26,11 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
+      <CompanySnapshot />
       <Solution />
       <Portfolio
-        heading="Real results for global businesses"
-        subheading="See how Beelio helps salons, clinics, and retailers worldwide reduce no-shows, automate bookings, and grow revenue."
+        heading="Representative systems we build"
+        subheading="Examples of the kind of workflows we automate for service businesses and financial service providers."
       />
       <Industries />
       <Pricing />
