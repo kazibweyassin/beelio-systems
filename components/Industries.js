@@ -3,15 +3,15 @@
 import { motion } from "framer-motion";
 
 const industries = [
-  { title: "Clinics & Pharmacies" },
-  { title: "Restaurants & Food Delivery" },
-  { title: "Schools & Training Centres" },
-  { title: "Logistics & Transport" },
-  { title: "Retail Shops" },
+  { title: "FinTech & Digital Finance" },
+  { title: "Banking & Microfinance" },
+  { title: "Enterprise & Corporate" },
+  { title: "Healthcare Technology" },
+  { title: "Logistics & Supply Chain" },
   {
-    title: "FinTech & Financial Services",
+    title: "Government & Public Sector",
     description:
-      "SACCOs, microfinance institutions, digital wallets, and payment platforms. We build loan management systems, mobile money integrations, member portals, and automated financial reporting tools for East African financial service providers.",
+      "Digital service delivery, workflow automation, and reporting platforms for public institutions and large-scale programs.",
   },
 ];
 
@@ -32,7 +32,7 @@ export default function Industries() {
             <span className="text-electric">these industries</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            Our tools are built for businesses who live and breathe WhatsApp.
+            Our systems are built for institutions and scaling businesses that need reliable software, financial infrastructure, and operational clarity.
           </p>
         </motion.div>
 
@@ -45,7 +45,7 @@ export default function Industries() {
         >
           <img
             src="/restuarant.jpg"
-            alt="African businesses powered by automation"
+            alt="Enterprise systems for emerging markets"
             className="w-full h-56 md:h-64 object-cover"
           />
         </motion.div>
@@ -78,12 +78,10 @@ export default function Industries() {
           className="text-center mt-12"
         >
           <a
-            href="https://wa.me/256786367460"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
           >
-            Get a Free WhatsApp Demo
+            Book a Consultation
           </a>
         </motion.div>
       </div>

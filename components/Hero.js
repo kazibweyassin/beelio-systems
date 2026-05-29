@@ -8,38 +8,38 @@ const headlines = [
   {
     heading: (
       <>
-        AI software and WhatsApp automation
-        <span className="text-electric"> for African businesses</span>
+        AI Software & FinTech Development
+        <span className="text-electric"> for Emerging Markets</span>
       </>
     ),
-    sub: "We design practical systems for clinics, schools, retailers, SACCOs, and service teams that need cleaner operations and faster responses.",
+    sub: "We build intelligent financial systems, AI-powered platforms, and custom enterprise software for FinTech companies and scaling businesses across Africa and beyond.",
   },
   {
     heading: (
       <>
-        Built for real workflows
+        Built for complex systems
         <span className="text-electric">, not templates</span>
       </>
     ),
-    sub: "We map your business process first, then build the automation, reporting, and integrations around how your team actually works.",
+    sub: "We map your operating model first, then design the automation, reporting, integrations, and controls around how your team actually works.",
   },
   {
     heading: (
       <>
-        Practical software
-        <span className="text-electric"> with ongoing support</span>
+        Enterprise software
+        <span className="text-electric"> with AI built in</span>
       </>
     ),
-    sub: "From AI agents to member portals and payment integrations, we build systems that are clear, useful, and easy to maintain.",
+    sub: "From AI agents to payment infrastructure and operations platforms, we build systems that are clear, robust, and easy to maintain.",
   },
   {
     heading: (
       <>
-        A credible partner
-        <span className="text-electric"> for business automation</span>
+        A technical partner
+        <span className="text-electric"> for regulated growth</span>
       </>
     ),
-    sub: "Beelio focuses on deliverable systems, straightforward communication, and support after launch.",
+    sub: "Beelio focuses on delivery, architectural clarity, and support after launch.",
   },
 ];
 
@@ -72,13 +72,13 @@ export default function Hero() {
         >
           {/* Vision line */}
           <p className="text-white/30 text-xs uppercase tracking-widest mb-3 font-medium">
-            AI software, WhatsApp automation, and custom systems for East African businesses
+            AI software, FinTech platforms, and custom enterprise systems
           </p>
 
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/5 border border-electric/20 rounded-full px-4 py-1 text-xs text-electric mb-6">
             <span className="w-2 h-2 rounded-full bg-electric animate-pulse" />
-            Practical software for real operations
+            Emerging Markets Expertise | Enterprise Grade
           </div>
 
 
@@ -99,7 +99,7 @@ export default function Hero() {
 
           {/* New value proposition line */}
           <div className="text-lg md:text-xl font-semibold text-electric mb-4">
-            Build clearer workflows, better customer handling, and less manual work.
+            Build intelligent systems that improve operations, controls, and delivery.
           </div>
 
           <div className="text-base md:text-lg mb-8 text-white/60 leading-relaxed max-w-lg min-h-[64px]">
@@ -118,34 +118,32 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="https://wa.me/256786367460"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#services"
               className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-electric/90 transition-colors duration-200 text-center"
             >
-              Book Free Demo
+              See What We Build
             </a>
             <a
-              href="#services"
+              href="/contact"
               className="inline-block border border-white/20 text-white px-8 py-3 rounded-full hover:border-electric hover:text-electric transition-colors duration-200 text-center"
             >
-              See What We Build
+              Book a Consultation
             </a>
           </div>
 
           {/* Trust line */}
           <p className="mt-4 text-xs md:text-sm text-white/40">
-            Built in Uganda for businesses across East Africa.
+            Founded and led from Kampala for clients across Africa and international markets.
           </p>
 
           {/* Channel pills */}
           <div className="flex flex-wrap gap-2 mt-7">
             {[
-              { label: 'WhatsApp', icon: MessageCircle,  iconColor: 'text-[#25D366]' },
-              { label: 'SMS',      icon: MessageSquare,  iconColor: 'text-blue-400'  },
-              { label: 'Website',  icon: Globe,          iconColor: 'text-purple-400'},
-              { label: 'Voice',    icon: Phone,          iconColor: 'text-orange-400'},
-              { label: 'Custom',   icon: Sparkles,       iconColor: 'text-pink-400'  },
+              { label: 'AI Agents', icon: MessageCircle,  iconColor: 'text-[#25D366]' },
+              { label: 'Platforms', icon: MessageSquare,  iconColor: 'text-blue-400'  },
+              { label: 'Web',       icon: Globe,          iconColor: 'text-purple-400'},
+              { label: 'Voice',     icon: Phone,          iconColor: 'text-orange-400'},
+              { label: 'Custom',    icon: Sparkles,       iconColor: 'text-pink-400'  },
             ].map((ch) => (
               <span
                 key={ch.label}
@@ -177,8 +175,8 @@ export default function Hero() {
               <p className="text-white/40 text-xs mt-1">Designed around your workflow, not a template.</p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-              <p className="text-white font-semibold text-sm">East African market focus</p>
-              <p className="text-white/40 text-xs mt-1">Useful for clinics, SACCOs, retailers, and service teams.</p>
+              <p className="text-white font-semibold text-sm">Emerging markets focus</p>
+              <p className="text-white/40 text-xs mt-1">Built for financial infrastructure, enterprise workflows, and scale.</p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-xl p-4">
               <p className="text-white font-semibold text-sm">Support after launch</p>
@@ -202,7 +200,7 @@ export default function Hero() {
             />
             {/* overlay label */}
             <div className="absolute bottom-4 left-4 bg-[#0a1020]/80 backdrop-blur-sm border border-electric/20 rounded-lg px-3 py-2 text-xs text-electric">
-              Live WhatsApp automation dashboard
+              Live enterprise software dashboard
             </div>
           </div>
         </motion.div>

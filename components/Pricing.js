@@ -4,52 +4,45 @@ import { motion } from "framer-motion";
 
 const tiers = [
   {
-    name: "Starter",
-    price: "$99/mo",
-    note: "For small teams",
-    typical: "WhatsApp automation for a single location. Perfect for small salons, clinics, or retailers.",
+    name: "Starter Project",
+    price: "From $2,500",
+    note: "Defined scope project",
+    typical: "For a clearly defined build with a fixed scope and delivery plan.",
     popular: false,
     features: [
-      "WhatsApp chatbot or automation",
-      "1 custom workflow",
-      "Basic booking & reminders",
-      "Email support",
-      "3 months free onboarding",
+      "Discovery and solution mapping",
+      "One core workflow or product module",
+      "Design, build, test, and launch",
+      "Post-launch handover",
     ],
   },
   {
-    name: "Pro",
-    price: "$249/mo",
-    note: "For growing businesses",
-    typical: "Multi-location, API access, custom branding, and advanced integrations.",
+    name: "Retainer",
+    price: "From $1,500/month",
+    note: "Ongoing development",
+    typical: "For teams that need continuous product iteration, support, and automation work.",
     popular: true,
     features: [
-      "Everything in Starter",
-      "Multi-location & multi-user support",
-      "API access",
-      "Custom branding (white-label)",
-      "Stripe & Google Calendar integration",
-      "Priority onboarding",
-      "Live chat support",
+      "Feature development and improvements",
+      "Priority support and maintenance",
+      "Integrations and workflow enhancements",
+      "Product roadmap collaboration",
     ],
   },
   {
     name: "Enterprise",
-    price: "Contact us",
-    note: "Custom quote for enterprise",
-    typical: "For large organizations needing advanced features, integrations, and support.",
+    price: "Custom quote",
+    note: "Large-scale builds",
+    typical: "For financial platforms, enterprise systems, and multi-team implementations.",
     popular: false,
     features: [
-      "Everything in Pro",
-      "Multiple WhatsApp lines",
-      "Advanced reporting & analytics",
-      "Audit logs & compliance",
-      "SLA & dedicated success manager",
-      "Custom integrations (HubSpot, Shopify, etc.)",
-      "24/7 enterprise support",
+      "Custom architecture and delivery plan",
+      "Advanced reporting and controls",
+      "Security, audit, and compliance requirements",
+      "Dedicated delivery and support",
     ],
     cta: {
-      label: "Contact us for enterprise pricing",
+      label: "Book a consultation",
       href: "/contact",
     },
   },
@@ -69,10 +62,10 @@ export default function Pricing() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Simple pricing
             <br />
-            <span className="text-electric">built for growing businesses</span>
+            <span className="text-electric">built for serious software projects</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            Three transparent tiers so you know exactly what you’re getting before we write a single line of code.
+            Engagement options for defined builds, ongoing delivery, and enterprise-scale work.
           </p>
         </motion.div>
 
@@ -126,16 +119,14 @@ export default function Pricing() {
                 ))}
               </ul>
               <a
-                href="https://wa.me/256786367460"
-                target="_blank"
-                rel="noopener noreferrer"
+                href={tier.cta?.href || '/contact'}
                 className={`mt-auto inline-block font-semibold px-6 py-3 rounded-full transition-colors duration-200 text-center ${
                   tier.popular
                     ? "bg-electric text-[#0a1020] hover:bg-electric/90"
                     : "border border-electric/30 text-electric hover:bg-electric/10"
                 }`}
               >
-                {tier.name === "Enterprise" ? "Request a Quote" : "Get Started"}
+                {tier.cta?.label || 'Book a consultation'}
               </a>
             </motion.div>
           ))}

@@ -12,22 +12,21 @@ const scriptedFlow = [
   // ── WELCOME ────────────────────────────────────────────────────────────
   {
     id: "welcome",
-    bot: "Hi, I'm Bee, the Beelio AI assistant. In a few clicks I'll show you what kind of custom system and AI agents we can build for your business. What kind of business do you run?",
+    bot: "Hi, I'm Bee, the Beelio AI assistant. In a few clicks I'll show you what kind of custom system and AI agents we can build for your business. What best describes your organisation?",
     options: [
-      { label: "Clinic / Pharmacy / Hospital", next: "clinic" },
-      { label: "Restaurant / Food Business", next: "restaurant" },
-      { label: "School / Training Centre", next: "school" },
-      { label: "Retail / Shop / Supermarket", next: "retail" },
-      { label: "Logistics / Transport / Delivery", next: "logistics" },
-      { label: "SACCO / Microfinance / Finance", next: "finance" },
-      { label: "Other type of business", next: "other" },
+      { label: "FinTech / Digital Finance", next: "finance" },
+      { label: "Banking / Microfinance", next: "finance" },
+      { label: "Enterprise / Corporate", next: "other" },
+      { label: "Healthcare Technology", next: "clinic" },
+      { label: "Logistics / Supply Chain", next: "logistics" },
+      { label: "Government / Public Sector", next: "other" },
     ],
   },
 
   // ── CLINIC ─────────────────────────────────────────────────────────────
   {
     id: "clinic",
-    bot: "Clinics and pharmacies use Beelio for digital patient systems and AI agents that handle reminders, follow‑ups, and reporting. Which of these sounds most like your situation?",
+    bot: "Healthcare organisations use Beelio for digital patient systems and AI agents that handle reminders, follow‑ups, and reporting. Which of these sounds most like your situation?",
     options: [
       { label: "Patient records are in files or spreadsheets", next: "clinic_records" },
       { label: "Too many missed appointments", next: "clinic_appointments" },
@@ -85,7 +84,7 @@ const scriptedFlow = [
   // ── RESTAURANT ─────────────────────────────────────────────────────────
   {
     id: "restaurant",
-    bot: "Restaurants and food businesses use Beelio systems and AI agents for digital ordering, loyalty automation, and kitchen management. What's slowing your business down the most?",
+    bot: "Food and hospitality businesses use Beelio systems and AI agents for digital ordering, loyalty automation, and kitchen management. What's slowing your business down the most?",
     options: [
       { label: "Taking orders is chaotic and error-prone", next: "restaurant_orders" },
       { label: "Customers don't come back enough", next: "restaurant_loyalty" },
@@ -170,7 +169,7 @@ const scriptedFlow = [
   },
   {
     id: "school_admin",
-    bot: "Our school management system includes timetable generation, staff attendance, leave tracking, and payroll summaries ,  giving administrators a complete picture from one dashboard.",
+    bot: "Our education management system includes timetable generation, staff attendance, leave tracking, and payroll summaries ,  giving administrators a complete picture from one dashboard.",
     options: [
       { label: "Can it handle multiple campuses?", next: "qualify" },
       { label: "What does it cost?", next: "pricing" },
@@ -181,7 +180,7 @@ const scriptedFlow = [
   // ── RETAIL ─────────────────────────────────────────────────────────────
   {
     id: "retail",
-    bot: "Retail shops and supermarkets use Beelio systems and AI agents for inventory control, sales tracking, supplier management, and loyalty programs. What's your main problem right now?",
+    bot: "Businesses use Beelio systems and AI agents for inventory control, sales tracking, supplier management, and loyalty programs. What's your main problem right now?",
     options: [
       { label: "Stock goes missing or runs out unexpectedly", next: "retail_stock" },
       { label: "I can't track daily sales properly", next: "retail_sales" },
@@ -362,7 +361,7 @@ const scriptedFlow = [
   },
   {
     id: "other_chatbot",
-    bot: "We build WhatsApp chatbots that handle customer queries, take orders, book appointments, and collect leads ,  24 hours a day. The bot hands off to a human only when truly necessary.",
+    bot: "We build AI assistants that handle customer queries, intake, booking, and lead capture ,  24 hours a day. The bot hands off to a human only when truly necessary.",
     options: [
       { label: "How does the bot learn my business?", next: "how_it_works" },
       { label: "What does a chatbot cost?", next: "pricing" },
@@ -373,7 +372,7 @@ const scriptedFlow = [
   // ── CROSS-CUTTING NODES ────────────────────────────────────────────────
   {
     id: "qualify",
-    bot: "Based on what you've described, we've already built similar Beelio systems and AI agents for businesses here in Uganda. We offer a free 30‑minute consultation, no obligation, to map your workflow, suggest the right automations and agents, and give you a realistic quote.",
+    bot: "Based on what you've described, we've already built similar Beelio systems and AI agents for organisations operating in emerging markets. We offer a consultation to map your workflow, suggest the right automations and agents, and give you a realistic quote.",
     options: [
       { label: "Book the free consultation", next: "whatsapp" },
       { label: "What will it cost?", next: "pricing" },

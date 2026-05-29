@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Beelio Technologies | AI Software, WhatsApp Automation & Custom Systems',
-  description: 'Beelio Technologies builds AI software, WhatsApp automation, and custom business systems for East African businesses, including clinics, schools, SACCOs, retailers, logistics teams, and financial service providers.',
+  title: 'Beelio Technologies | AI Software & FinTech Development',
+  description: 'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
   alternates: {
     canonical: 'https://beelio.tech',
   },
@@ -12,7 +12,6 @@ import CompanySnapshot from '../components/CompanySnapshot';
 import Solution from '../components/Solution';
 import Portfolio from '../components/Portfolio';
 import Industries from '../components/Industries';
-import Pricing from '../components/Pricing';
 import Problem from '../components/Problem';
 import HowItWorks from '../components/HowItWorks';
 import WhyBeelio from '../components/WhyBeelio';
@@ -30,10 +29,9 @@ export default function Home() {
       <Solution />
       <Portfolio
         heading="Representative systems we build"
-        subheading="Examples of the kind of workflows we automate for service businesses and financial service providers."
+        subheading="Examples of the kind of workflows we design for FinTech companies, institutions, and scaling businesses."
       />
       <Industries />
-      <Pricing />
       <Problem />
       <HowItWorks />
       <WhyBeelio />

@@ -1,6 +1,12 @@
-# Beelio - WhatsApp Automation for Hair Salons
+# Beelio Technologies
 
-MVP for WhatsApp-based appointment booking and customer management for hair salons.
+AI Software and FinTech platform development for emerging markets. This repository contains the public-facing website.
+
+## Repository Overview
+
+This is the Next.js website for Beelio Technologies, positioned as an AI Software & FinTech development company. The site has been repositioned from a "WhatsApp automation for African SMEs" brand to an enterprise-grade AI and financial technology development company.
+
+For current website positioning, see [app/page.js](app/page.js) and the components in `/components`.
 
 ## Quick Start
 
@@ -45,60 +51,73 @@ npm run dev
 
 ```
 beelio-systems/
-├── backend/                    # Node.js API server
-│   ├── models/                # MongoDB schemas
-│   │   ├── Conversation.js    # Chat conversations
-│   │   ├── Booking.js         # Appointments
-│   │   └── Salon.js           # Business info
-│   ├── routes/                # API endpoints
-│   │   ├── webhook.js         # WhatsApp webhook
-│   │   └── dashboard.js       # Dashboard API
-│   ├── services/              # Business logic
-│   │   └── conversationFlow.js # Booking flow
-│   ├── scripts/
-│   │   └── seed.js           # Demo data
-│   └── server.js             # Express server
-├── pages/dashboard/           # Salon owner dashboard
-├── components/               # React components
-└── whatsapp-bot/            # Legacy bot (can be removed)
+├── app/                         # Next.js App Router
+│   ├── layout.js               # Root layout with metadata
+│   ├── page.js                 # Homepage
+│   ├── contact/                # Contact page
+│   ├── pricing/                # Pricing page
+│   ├── services/               # Services page
+│   ├── industries/             # Industries page
+│   ├── how-it-works/           # Process page
+│   ├── results/                # Results & case studies
+│   ├── portfolio/              # Case studies
+│   ├── why-beelio-global/      # Why Beelio page
+│   ├── blog/                   # Blog posts
+│   ├── head.js                 # Metadata
+│   └── api/
+│       └── whatsapp.js         # WhatsApp webhook (legacy)
+├── components/                 # React components
+│   ├── Hero.js                 # Homepage hero
+│   ├── Solution.js             # Services section
+│   ├── Industries.js           # Industries section
+│   ├── CompanySnapshot.js      # About section
+│   ├── Pricing.js              # Pricing section
+│   ├── HowItWorks.js           # Process section
+│   ├── Portfolio.js            # Case studies
+│   ├── CTASection.js           # CTA section
+│   ├── FAQ.js                  # FAQ section
+│   ├── Header.js               # Navigation
+│   ├── Footer.js               # Footer
+│   ├── WhyBeelio.js            # Differentiators
+│   ├── Problem.js              # Problem statement
+│   ├── Chatbot.js              # Chatbot widget
+│   └── Layout.js               # Page wrapper
+├── lib/                        # Utilities
+├── public/                     # Static assets
+├── beeflow/                    # Separate Next.js project
+├── whatsapp-bot/               # Legacy WhatsApp bot (can be removed)
+└── styles/                     # Global styles
 ```
 
-## Core Features
+## Current Website Positioning
 
-### 1. Auto-Reply System
-- Instant responses to WhatsApp messages
-- Service menu presentation
-- Business hours information
+**Brand:** Beelio Technologies — AI Software & FinTech Development for Emerging Markets
 
-### 2. Appointment Booking Flow
-- Service selection (Haircut, Color, Styling, Treatment, Beard Trim)
-- Date picker (DD/MM format)
-- Time slot selection (9AM-5PM)
-- Customer name collection
-- Booking confirmation
+**Key Services:**
+- AI-Powered Software & FinTech Platforms
+- Enterprise Business Automation
+- Custom Software Development
+- Customer & Support Automation
 
-### 3. Salon Dashboard
-- Real-time statistics
-- Conversation history
-- Booking management
-- Status updates (confirm/cancel/complete)
+**Target Audience:**
+- FinTech companies and digital finance platforms
+- Banking and microfinance institutions
+- Enterprise and corporate teams
+- Healthcare technology providers
+- Logistics and supply chain operators
+- Government and public sector programs
 
-## Conversation Flow
+**Engagement Model:**
+- Consultation-led sales approach
+- Project-based builds (from $2,500)
+- Retainer engagements (from $1,500/month)
+- Enterprise custom quotes
 
-```
-Customer: "book"
-Bot: Shows service menu
-Customer: "1" (Haircut)
-Bot: Asks for date (DD/MM)
-Customer: "25/12"
-Bot: Shows available times
-Customer: "2:00 PM"
-Bot: Asks for name
-Customer: "John Smith"
-Bot: Shows booking summary
-Customer: "confirm"
-Bot: Confirms booking ✅
-```
+## Recent Repositioning (May 2026)
+
+The website was repositioned from "WhatsApp automation for African SMEs" to "AI Software & FinTech Development for Emerging Markets." All homepage copy, services, industries, pricing, and metadata have been updated to reflect this new positioning.
+
+Legacy references to WhatsApp-first messaging, salon/restaurant/retail industry focus, and low-price subscription models have been removed from the public-facing site.
 
 ## MongoDB Schemas
 

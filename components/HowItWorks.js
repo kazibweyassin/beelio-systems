@@ -12,22 +12,22 @@ function StepIcon({ name }) {
 const steps = [
   {
     number: "01",
-    title: "We understand your problem",
-    desc: "We start with a free consultation ,  a real conversation about how your business actually works, where you're losing time, and what a solution needs to do.",
-    time: "Day 1 ,  Free, no commitment",
+    title: "We understand your system requirements",
+    desc: "We start with a consultation and a clear conversation about how your business operates, where the constraints are, and what the solution needs to achieve.",
+    time: "Day 1 ,  Consultation",
     icon: "search",
   },
   {
     number: "02",
-    title: "We build your custom system",
-    desc: "No templates. We design and develop a platform built around your exact workflow ,  whether that's a management system, a booking platform, or a customer portal.",
+    title: "We architect and build your solution",
+    desc: "No templates. We design and develop the platform around your exact workflow, whether that means a management system, a FinTech product, or an enterprise portal.",
     time: "Week 1–3 ,  Depending on scope",
     icon: "wrench",
   },
   {
     number: "03",
-    title: "We integrate AI so it runs itself",
-    desc: "We embed AI agents that handle the repetitive work ,  customer follow-ups, data processing, reporting, and more. Your system gets smarter over time.",
+    title: "We integrate AI and deliver enterprise-grade software",
+    desc: "We embed AI agents and automation layers that handle repetitive work, data processing, reporting, and operational handoffs.",
     time: "Week 3–4 ,  Launch ready",
     icon: "zap",
   },
@@ -50,8 +50,7 @@ export default function HowItWorks() {
             How it <span className="text-electric">works</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-base">
-            From our first chat to the day your system is live ,  here's what 
-            working with our team actually feels like.
+            From the first consultation to delivery, here is what working with our team looks like.
           </p>
         </motion.div>
 
@@ -124,15 +123,13 @@ export default function HowItWorks() {
           className="text-center mt-12"
         >
           <p className="text-white/40 text-sm mb-4">
-            Ready to see it in action? It's free to try.
+            Ready to see how we would approach your system?
           </p>
           <a
-            href="https://wa.me/256786367460"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
           >
-            Get a Free WhatsApp Demo
+            Book a Consultation
           </a>
         </motion.div>
 

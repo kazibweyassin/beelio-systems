@@ -2,34 +2,34 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 export const metadata = {
-  title: 'Results & Case Studies | Beelio Global',
-  description: 'See how Beelio helps global salons, clinics, and retailers automate WhatsApp, bookings, and customer engagement. Real results, real ROI.',
+  title: 'Beelio Technologies | AI Software & FinTech Development',
+  description: 'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
 };
 
 const results = [
   {
-    industry: 'Salon Chain (UK)',
-    outcome: 'Missed bookings reduced by 45% and no-shows down 60% after automating WhatsApp bookings and reminders.',
+    industry: 'Operations workflow transformation',
+    outcome: 'Manual steps reduced, reporting accelerated, and delivery visibility improved across the team.',
   },
   {
-    industry: 'Clinic Group (US)',
-    outcome: 'Admin time cut by 30%. Patient satisfaction up. 24/7 instant replies with WhatsApp automation.',
+    industry: 'Financial systems improvement',
+    outcome: 'System controls improved, handoffs became more predictable, and operational errors dropped.',
   },
   {
-    industry: 'Retailer (EU)',
-    outcome: 'Zero surprise stockouts. Revenue up 15%. Staff focused on sales, not counting.',
+    industry: 'Enterprise workflow transformation',
+    outcome: 'Leadership gained better visibility across operations, approvals, and reporting.',
   },
   {
-    industry: 'Multi-location Spa (UK)',
-    outcome: 'Consistent experience across all branches. Bookings up 25%. Real-time management visibility.',
+    industry: '[FinTech client case study — coming soon]',
+    outcome: 'Placeholder for a published FinTech implementation with measurable business outcomes.',
   },
 ];
 
 const trustedBy = [
-  'Multiple UK salons',
-  'US clinic groups',
-  'EU retailers',
-  'Global spa brands',
+  'FinTech teams',
+  'Enterprise operators',
+  'Financial institutions',
+  'Scaling businesses',
 ];
 
 export default function ResultsPage() {
@@ -39,10 +39,10 @@ export default function ResultsPage() {
       <main className="min-h-screen bg-[#0a1020] text-white pt-24 pb-24">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-            Real results for global businesses
+            Results for complex software projects
           </h1>
           <p className="text-white/60 text-lg mb-10 text-center max-w-2xl mx-auto">
-            Beelio delivers measurable ROI for salons, clinics, and retailers worldwide. Here are anonymized case studies and outcomes.
+            Beelio delivers measurable operational improvements for financial, enterprise, and scaling businesses. Here are anonymized outcomes and a placeholder for a live FinTech case study.
           </p>
           <div className="mb-14">
             {results.map((r, i) => (

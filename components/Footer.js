@@ -37,15 +37,15 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-              We build intelligent software systems for African businesses — custom platforms with AI built in, spanning FinTech, enterprise automation, and digital transformation, so your operations run smarter with less manual work.
+              We build intelligent software systems for emerging markets — custom platforms with AI built in, spanning FinTech, enterprise automation, and digital infrastructure.
             </p>
             {/* Contact */}
             <div className="flex flex-col gap-2 text-sm mt-2">
               <a
-                href="mailto:beeliotechnologies@gmail.com"
+                href="mailto:info@beelio.tech"
                 className="hover:text-electric transition-colors"
               >
-                beeliotechnologies@gmail.com
+                info@beelio.tech
               </a>
               <a
                 href="https://wa.me/256786367460"
@@ -53,7 +53,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-electric transition-colors"
               >
-                WhatsApp: +256 786 367460
+                Book a Consultation: +256 786 367460
               </a>
             </div>
           </div>
@@ -88,26 +88,26 @@ export default function Footer() {
           {/* Social links */}
           <div className="flex gap-4">
             <a
-              href="https://tiktok.com/@beelio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-electric transition-colors"
-            >
-              TikTok
-            </a>
-            <a
               href="https://x.com/beelio"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-electric transition-colors"
             >
-              X (Twitter)
+              X
+            </a>
+            <a
+              href="https://linkedin.com/company/beelio-technologies"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-electric transition-colors"
+            >
+              LinkedIn
             </a>
           </div>
 
           {/* Pride line */}
           <p className="text-white/20">
-            Built in Uganda ,  for Africa
+            AI Software & FinTech Development for Emerging Markets
           </p>
         </div>
 

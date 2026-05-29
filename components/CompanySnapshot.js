@@ -7,17 +7,17 @@ const items = [
   {
     icon: BrainCircuit,
     title: "What we build",
-    text: "AI-powered software, WhatsApp automation, custom business systems, reporting tools, and integrations that reduce manual work.",
+    text: "AI-powered software, FinTech platforms, enterprise automation, reporting tools, and integrations that reduce manual work.",
   },
   {
     icon: Users,
     title: "Who we work with",
-    text: "Clinics, schools, SACCOs, retailers, logistics teams, restaurants, and other service businesses across East Africa.",
+    text: "FinTech companies, financial institutions, enterprises, and scaling businesses across Africa and internationally.",
   },
   {
     icon: ShieldCheck,
     title: "How we work",
-    text: "We scope the workflow clearly, build around the business process, test before launch, and stay available after go-live.",
+    text: "We scope the system clearly, architect around the business process, test before launch, and stay available after go-live.",
   },
 ];
 
@@ -36,10 +36,16 @@ export default function CompanySnapshot() {
             Company Snapshot
           </p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            A real software studio for real operations
+            AI software and FinTech systems for serious businesses
           </h2>
           <p className="text-white/55 text-base leading-relaxed">
-            Beelio Technologies builds practical software for African businesses that need reliable automation, better customer handling, and cleaner operations.
+            Beelio Technologies is an AI software and FinTech development company building intelligent systems for emerging markets.
+          </p>
+          <p className="text-white/55 text-base leading-relaxed mt-4">
+            We design and deliver custom financial platforms, AI agents, and enterprise automation tools for FinTech companies, financial institutions, and scaling businesses across Africa and internationally.
+          </p>
+          <p className="text-white/55 text-base leading-relaxed mt-4">
+            Our work sits at the intersection of financial technology, artificial intelligence, and operational infrastructure — solving complex problems that generic software cannot.
           </p>
         </motion.div>
 
@@ -65,6 +71,18 @@ export default function CompanySnapshot() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-8 bg-[#0d1526] rounded-2xl p-6 border border-electric/15 text-white/80"
+        >
+          <p className="text-white font-semibold">Founded by [FOUNDER NAME], Founder &amp; CEO</p>
+          <p className="text-white/55 text-sm mt-2">[LinkedIn URL placeholder]</p>
+          <p className="text-white/55 text-sm mt-1">Kampala, Uganda | [Second city placeholder]</p>
+        </motion.div>
       </div>
     </section>
   );

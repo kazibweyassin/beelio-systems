@@ -6,10 +6,10 @@ import { Check } from "lucide-react";
 const differentiators = [
   'We build around your workflow, not a generic template',
   'Most projects are live within 2 to 4 weeks',
-  'Flat-rate pricing with no surprise invoices',
-  'Free 3-month support after every launch',
-  'We stay reachable on WhatsApp after go-live',
-  'African market experience: MTN MoMo, Airtel Money, offline-first',
+  'Clear scope and commercial terms',
+  'Support after launch is built into the engagement',
+  'Direct access to the founder and delivery team',
+  'Emerging markets experience: payments, infrastructure, and operational scale',
 ];
 
 export default function WhyBeelio() {
@@ -71,12 +71,10 @@ export default function WhyBeelio() {
               className="mt-8"
             >
               <a
-                href="https://wa.me/256786367460"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
               >
-                Get a Free WhatsApp Demo
+                Book a Consultation
               </a>
             </motion.div>
           </div>

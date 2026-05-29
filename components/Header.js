@@ -49,12 +49,10 @@ export default function Header() {
 
         {/* Desktop CTA */}
         <a
-          href="https://wa.me/256786367460"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/contact"
           className="hidden md:inline-block bg-electric text-[#0a1020] font-semibold px-4 py-2 rounded-full text-xs hover:bg-electric/90 transition-colors duration-200"
         >
-          Get a Free WhatsApp Demo
+          Book a Consultation
         </a>
 
         {/* Mobile Menu Toggle */}
@@ -81,12 +79,10 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="https://wa.me/256786367460"
-            target="_blank"
-            rel="noopener noreferrer"
-            classity="mt-2 text-center bg-electric text-[#0a1020] font-semibold px-4 py-2 rounded-full text-xs hover:bg-electric/90 transition-colors duration-200"
+            href="/contact"
+            className="mt-2 text-center bg-electric text-[#0a1020] font-semibold px-4 py-2 rounded-full text-xs hover:bg-electric/90 transition-colors duration-200"
           >
-            Get a Free WhatsApp Demo
+            Book a Consultation
           </a>
         </div>
       )}

@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Case Studies | Software Built for Uganda Businesses',
-  description: 'See real systems Beelio Technologies has built for clinics, restaurants, retail shops and SACCOs across Uganda. WhatsApp automation, management systems, and more.',
+  title: 'Beelio Technologies | AI Software & FinTech Development',
+  description: 'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
   alternates: {
     canonical: 'https://beelio.tech/portfolio',
   },
@@ -19,10 +19,10 @@ export default function PortfolioPage() {
       {/* simple hero/banner for the portfolio page */}
       <section className="py-24 bg-[#0a1020] text-white text-center">
         <h1 className="text-4xl md:text-5xl font-bold">
-          Case Studies
+          Case Studies and systems
         </h1>
         <p className="mt-4 text-white/60 max-w-xl mx-auto">
-          Real products we've built from scratch and the problems they solve.
+          Real products we've built from scratch and the operational problems they solve.
         </p>
       </section>
 

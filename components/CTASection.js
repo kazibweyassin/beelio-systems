@@ -23,7 +23,7 @@ export default function CTASection() {
             <div className="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
               <img
                 src="/youversion-G3Rqy_OT8uw-unsplash.jpg"
-                alt="Customer using WhatsApp automation"
+                alt="Team planning an enterprise software engagement"
                 className="w-full h-72 object-cover"
               />
             </div>
@@ -38,8 +38,8 @@ export default function CTASection() {
               transition={{ duration: 0.6 }}
               className="text-3xl md:text-4xl font-bold mb-6 leading-tight"
             >
-              Ready to stop losing sales to
-              <span className="text-electric"> slow replies?</span>
+              Discuss your next
+              <span className="text-electric"> software build.</span>
             </motion.h2>
 
             <motion.p
@@ -49,9 +49,8 @@ export default function CTASection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-white/50 text-base mb-8 leading-relaxed"
             >
-              Tell us how your business works and what’s slowing you down.
-              We’ll design a simple automation plan and show you exactly what we’d build—free and with no obligation.
-              You’ll get a clear demo or walkthrough, usually within 24 hours.
+              Tell us what you are building and the constraints you need to solve.
+              We will map the requirements, define the delivery approach, and show you what we would build.
             </motion.p>
 
             <motion.div
@@ -66,15 +65,15 @@ export default function CTASection() {
                 rel="noopener noreferrer"
                 className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-electric/90 transition-colors duration-200"
               >
-                Get a Free WhatsApp Demo
+                Book a Consultation
               </a>
             </motion.div>
 
             <div className="flex flex-wrap gap-4 text-white/30 text-xs mt-6">
-              <span>&#10003; Free consultation</span>
-              <span>&#10003; No commitment required</span>
-              <span>&#10003; 3 months support included</span>
-              <span>&#10003; We reply on WhatsApp within a few hours</span>
+              <span>&#10003; Consultation-led</span>
+              <span>&#10003; Clear scope and delivery plan</span>
+              <span>&#10003; Support options available</span>
+              <span>&#10003; Fast response from the team</span>
             </div>
           </div>
 

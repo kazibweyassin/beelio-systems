@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "Is this right for my type of business?",
-    a: "If your business gets customer enquiries on WhatsApp, bookings, orders, questions, or complaints, then yes. We've built systems for clinics, restaurants, retail shops, schools, SACCOs, and logistics companies across Uganda and East Africa. If you're not sure, message us and we'll tell you honestly within 24 hours.",
+    a: "If your business needs financial workflows, internal automation, customer operations, or custom software, then yes. We work with FinTech companies, financial institutions, enterprises, and scaling businesses across Africa and beyond. If you're not sure, we will tell you honestly within 24 hours.",
   },
   {
     q: "What if it doesn't work for me?",
@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "How is this different from just hiring someone to reply messages?",
-    a: "A person sleeps, gets sick, asks for a salary increase, and can only handle one conversation at a time. Our chatbot replies to 100 customers simultaneously, at 3am, for a flat one-off fee. It never misses a lead.",
+    a: "A manual process is slow, inconsistent, and hard to scale. We design systems that handle workflows reliably, integrate with your tools, and support growth without adding avoidable operational overhead.",
   },
   {
     q: "Can Beelio handle customer support too?",
@@ -26,11 +26,11 @@ const faqs = [
   },
   {
     q: "What's the catch? Why is the demo free?",
-    a: "No catch. We offer a free demo because we know that once you see your own business running on automation, you'll want to keep it. We'd rather show you than pitch you. No hard sell, no hidden fees.",
+    a: "No catch. We start with a consultation because clarity matters before any build begins. We would rather map the requirements properly than force a vague sales conversation.",
   },
   {
     q: "What happens after the project launches?",
-    a: "Every project includes 3 months of free support after launch. Bug fixes, minor updates, and guidance are all included. After that, we offer affordable ongoing retainers. You'll have our WhatsApp number and we respond the same day.",
+    a: "Every project includes a defined support period after launch. Bug fixes, minor updates, and guidance are included, and we can continue on a retainer if the project needs ongoing development.",
   },
   {
     q: "Do you work with businesses outside Uganda?",
@@ -111,12 +111,10 @@ export default function FAQ() {
         >
           <p className="text-white/40 text-sm mb-4">Still got a question?</p>
           <a
-            href="https://wa.me/256786367460"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
           >
-            Get a Free WhatsApp Demo
+            Book a Consultation
           </a>
         </motion.div>
 

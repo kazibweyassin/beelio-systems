@@ -3,26 +3,22 @@ import './globals.css';
 export const metadata = {
   metadataBase: new URL('https://beelio.tech'),
   title: {
-    default: 'Beelio | WhatsApp Automation for Global Service Businesses',
-    template: '%s | Beelio',
+    default: 'Beelio Technologies | AI Software & FinTech Development',
+    template: '%s | Beelio Technologies',
   },
   description:
-    'Beelio automates WhatsApp replies, bookings, payments, and customer engagement for salons, clinics, and retailers in the UK, US, EU, and beyond.',
+    'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
   keywords: [
-    'WhatsApp automation UK',
-    'WhatsApp chatbot US',
-    'AI booking system EU',
-    'enterprise WhatsApp bot',
-    'clinic appointment automation',
-    'retail WhatsApp automation',
-    'salon WhatsApp bot',
-    'Stripe WhatsApp integration',
-    'global WhatsApp automation',
-    'customer engagement automation',
-    'Beelio',
-    'business process automation',
-    'multi-location booking system',
-    'SaaS WhatsApp bot',
+    'AI software',
+    'FinTech development',
+    'emerging markets',
+    'financial technology Africa',
+    'AI agents',
+    'enterprise software',
+    'custom software development',
+    'business automation',
+    'financial infrastructure',
+    'Beelio Technologies',
   ],
   authors: [{ name: 'Beelio', url: 'https://beelio.tech' }],
   creator: 'Beelio',
@@ -41,9 +37,9 @@ export const metadata = {
     canonical: 'https://beelio.tech',
   },
   openGraph: {
-    title: 'Beelio | WhatsApp Automation for Global Service Businesses',
+    title: 'Beelio Technologies | AI Software & FinTech Development',
     description:
-      'WhatsApp chatbots, business automation, web and mobile apps built for global SMEs.',
+      'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
     url: 'https://beelio.tech',
     siteName: 'Beelio',
     images: [
@@ -51,7 +47,7 @@ export const metadata = {
         url: '/interface.jpg',
         width: 1200,
         height: 630,
-        alt: 'Beelio, WhatsApp automation for global businesses',
+        alt: 'Beelio Technologies AI Software and FinTech Development',
       },
     ],
     locale: 'en_GB',
@@ -59,9 +55,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Beelio | WhatsApp Automation for Global Businesses',
+    title: 'Beelio Technologies | AI Software & FinTech Development',
     description:
-      'WhatsApp chatbots, automation, web and mobile apps built for global SMEs.',
+      'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
     images: ['/interface.jpg'],
     creator: '@beelio',
   },
@@ -89,8 +85,8 @@ export default function RootLayout({ children }) {
         logo: 'https://beelio.tech/favicon.svg',
         image: 'https://beelio.tech/interface.jpg',
         description:
-          'Beelio automates WhatsApp replies, bookings, payments, and customer engagement for global service businesses.',
-        sameAs: ['https://tiktok.com/@beelio', 'https://x.com/beelio'],
+          'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets.',
+        sameAs: ['https://linkedin.com/company/beelio-technologies', 'https://x.com/beelio'],
       },
       {
         '@type': 'WebSite',

@@ -3,29 +3,15 @@ import Footer from '../../components/Footer';
 import { Check, Shield, Users, Globe, Zap, Layers, BarChart2 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Why Beelio: AI-Powered Booking & Automation for Salons, Clinics, Spas, Retailers',
-  description: 'Beelio uses AI to automate WhatsApp booking, reminders, and customer service for salons, clinics, spas, and retailers. Integrates with Stripe, Google Calendar, and more. Multi-location, SLA, and advanced reporting.',
+  title: 'Beelio Technologies | AI Software & FinTech Development',
+  description: 'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
   keywords: [
-    'AI appointment bot for salons UK',
-    'AI automation for clinics US',
-    'AI booking system for spas',
-    'AI customer service automation UK',
-    'AI WhatsApp integration with Stripe',
-    'AI booking for multi-location salons',
-    'AI reminders for clinics',
-    'AI chatbot for retailers',
-    'AI automation for beauty businesses',
-    'AI booking for medical practices',
-    'WhatsApp appointment bot for salons UK',
-    'WhatsApp automation for clinics US',
-    'WhatsApp booking system for spas',
-    'WhatsApp customer service automation UK',
-    'WhatsApp integration with Stripe',
-    'WhatsApp booking for multi-location salons',
-    'WhatsApp reminders for clinics',
-    'WhatsApp chatbot for retailers',
-    'WhatsApp automation for beauty businesses',
-    'WhatsApp booking for medical practices',
+    'AI software',
+    'FinTech development',
+    'emerging markets',
+    'enterprise software',
+    'AI agents',
+    'financial technology Africa',
   ],
 };
 
@@ -69,10 +55,10 @@ export default function WhyBeelioGlobal() {
       <main className="min-h-screen bg-[#0a1020] text-white pt-24 pb-24">
         <div className="max-w-4xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-            Why choose Beelio <span className="text-electric">for global businesses?</span>
+            Why choose Beelio <span className="text-electric">for emerging markets?</span>
           </h1>
           <p className="text-white/60 text-lg mb-12 text-center max-w-2xl mx-auto">
-            Beelio is an AI-powered automation platform for salons, clinics, spas, and retailers. Leading brands trust us to automate WhatsApp, bookings, and customer engagement at scale—with intelligent workflows, smart reminders, and AI-driven customer service.
+            Beelio is an AI software and FinTech development company focused on intelligent systems, financial infrastructure, and enterprise automation for serious businesses.
           </p>
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {features.map((f, i) => (
@@ -87,7 +73,7 @@ export default function WhyBeelioGlobal() {
           </div>
           <div className="text-center mt-10">
             <a href="/contact" className="inline-flex items-center gap-2 bg-electric text-white font-semibold px-7 py-3 rounded-xl hover:opacity-90 transition">
-              <Check size={18} /> Book a free global consultation
+              <Check size={18} /> Book a consultation
             </a>
           </div>
         </div>

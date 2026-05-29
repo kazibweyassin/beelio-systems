@@ -12,13 +12,13 @@ function ProblemIcon({ name }) {
 const painPoints = [
   {
     icon: "grid",
-    title: "Still using spreadsheets for everything?",
+    title: "Still using spreadsheets for core operations?",
     desc: "You spend hours every week entering data by hand, and one small mistake can cost you a client or an entire month of records.",
   },
   {
     icon: "clock",
-    title: "Losing customers to slow replies?",
-    desc: "A customer messages you at 9pm. Nobody replies until morning. By then, they’ve already called your competitor.",
+    title: "Losing time to delayed responses?",
+    desc: "Requests sit in inboxes, teams duplicate work, and by the time someone responds the opportunity has already moved on.",
   },
   {
     icon: "users",
@@ -101,7 +101,7 @@ export default function Problem() {
           transition={{ delay: 0.6, duration: 0.6 }}
           className="text-center text-white/40 text-sm mt-10"
         >
-          These things stack up fast. <span className="text-electric">Here's how we sort them out. ↓</span>
+          These issues compound quickly. <span className="text-electric">Here is how we approach them. ↓</span>
         </motion.p>
 
         <motion.div
@@ -112,12 +112,10 @@ export default function Problem() {
           className="text-center mt-8"
         >
           <a
-            href="https://wa.me/256786367460"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
           >
-            Get a Free WhatsApp Demo
+            Book a Consultation
           </a>
         </motion.div>
 

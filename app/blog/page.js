@@ -5,13 +5,13 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: 'Blog – WhatsApp Automation & Software Tips for Uganda | Beelio',
+  title: 'Beelio Technologies | AI Software & FinTech Development',
   description:
-    'Practical guides on automating your business with WhatsApp bots, custom software, and inventory systems in Uganda. Real examples, real prices.',
+    'Insights on AI software engineering, FinTech platforms, enterprise automation, and intelligent systems for emerging markets.',
   openGraph: {
-    title: 'Blog – WhatsApp Automation & Software Tips for Uganda | Beelio',
+    title: 'Beelio Technologies | AI Software & FinTech Development',
     description:
-      'Practical guides on automating your business with WhatsApp bots, custom software, and inventory systems in Uganda.',
+      'Insights on AI software engineering, FinTech platforms, enterprise automation, and intelligent systems for emerging markets.',
     url: 'https://beelio.tech/blog',
     siteName: 'Beelio Technologies',
     type: 'website',
@@ -19,11 +19,11 @@ export const metadata = {
 };
 
 const categoryColors = {
-  'WhatsApp Automation': 'bg-green-900/40 text-green-300 border border-green-700/40',
+  'AI Software': 'bg-green-900/40 text-green-300 border border-green-700/40',
   Healthcare: 'bg-blue-900/40 text-blue-300 border border-blue-700/40',
   'Custom Software': 'bg-purple-900/40 text-purple-300 border border-purple-700/40',
   'Business Automation': 'bg-orange-900/40 text-orange-300 border border-orange-700/40',
-  Restaurants: 'bg-red-900/40 text-red-300 border border-red-700/40',
+  FinTech: 'bg-red-900/40 text-red-300 border border-red-700/40',
 };
 
 function formatDate(dateStr) {
@@ -45,10 +45,10 @@ export default function BlogPage() {
             Beelio Blog
           </p>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-            Automation guides for <span className="text-white/80">Ugandan businesses</span>
+            Engineering insights for <span className="text-white/80">emerging markets</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Practical articles on WhatsApp bots, custom software, and business systems. Written for owners, not engineers.
+            Practical articles on AI software, FinTech platforms, enterprise automation, and business systems. Written for decision-makers.
           </p>
         </section>
 

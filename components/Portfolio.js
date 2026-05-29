@@ -6,38 +6,38 @@ import { TrendingUp, Clock, Users, Package } from "lucide-react";
 const projects = [
   {
     img: "/vagaro-Rz9_wnuHyA0-unsplash.jpg",
-    industry: "Booking automation",
-    problem: "Businesses lose time when bookings and reminders are handled manually.",
-    built: "WhatsApp booking flows, reminders, and payment handoff.",
-    result: "Clearer booking handling, fewer missed messages, and less admin work.",
-    metric: "Live workflow",
+    industry: "Operational workflow automation",
+    problem: "Teams lose time when approvals, reporting, and follow-ups are handled manually.",
+    built: "Structured workflow automation, dashboards, and task routing.",
+    result: "Clearer handling, fewer manual errors, and stronger operational visibility.",
+    metric: "Efficiency gain",
     icon: Clock,
   },
   {
     img: "/carlos-gil-nyYvpVt8OlU-unsplash.jpg",
-    industry: "Clinic support system",
-    problem: "Front desks spend too much time answering the same patient questions.",
-    built: "Appointment reminders, support routing, and patient follow-up flows.",
-    result: "Faster responses for patients and less repetitive work for staff.",
-    metric: "Support workflow",
+    industry: "Financial operations platform",
+    problem: "Finance teams need reliable systems for records, approvals, and status tracking.",
+    built: "A secure operations platform with reporting, workflow controls, and integration points.",
+    result: "Better visibility, fewer bottlenecks, and more predictable delivery.",
+    metric: "Control layer",
     icon: TrendingUp,
   },
   {
     img: "/detail-co-MnamLwFl1d8-unsplash.jpg",
-    industry: "Retail operations",
-    problem: "Retail teams need a simple way to track stock and handle reordering.",
-    built: "Inventory alerts, reordering triggers, and dashboard reporting.",
-    result: "Better visibility into stock levels and fewer manual checks.",
-    metric: "Stock visibility",
+    industry: "Enterprise reporting system",
+    problem: "Leadership teams need consistent reporting across departments and locations.",
+    built: "Centralised dashboards, reporting automation, and system-level audit trails.",
+    result: "Faster reporting cycles and cleaner decision-making.",
+    metric: "Reporting speed",
     icon: Package,
   },
   {
     img: "/igor-omilaev-gVQLAbGVB6Q-unsplash.jpg",
-    industry: "Branch dashboard",
-    problem: "Multi-branch businesses need a consistent way to manage bookings and reporting.",
-    built: "A central dashboard with branded workflows and reporting tools.",
-    result: "Cleaner oversight across locations and a more consistent customer experience.",
-    metric: "Central control",
+    industry: "[FinTech client case study — coming soon]",
+    problem: "A placeholder for a live FinTech implementation and outcome story.",
+    built: "Custom financial infrastructure, AI-assisted workflows, and enterprise controls.",
+    result: "Placeholder for a measurable business outcome once the case study is published.",
+    metric: "Coming soon",
     icon: Users,
   },
 ];
@@ -119,15 +119,13 @@ export default function Portfolio({
             Your business could be next.
           </p>
           <p className="text-white/40 text-sm mb-6">
-            Tell us your problem. We'll tell you exactly what we'd build and what it would cost. Free.
+            Tell us your problem. We'll tell you what we would build and how we would scope it.
           </p>
           <a
-            href="https://wa.me/256786367460"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="inline-block bg-electric text-[#0a1020] font-semibold px-8 py-3 rounded-full hover:bg-electric/90 transition-colors duration-200"
           >
-            Get a Free Consultation
+            Book a Consultation
           </a>
         </motion.div>
 
