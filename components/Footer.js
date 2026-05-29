@@ -88,7 +88,7 @@ export default function Footer() {
           {/* Social links */}
           <div className="flex gap-4">
             <a
-              href="https://x.com/beelio"
+              href="https://x.com/beeliotech"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-electric transition-colors"
@@ -96,7 +96,7 @@ export default function Footer() {
               X
             </a>
             <a
-              href="https://linkedin.com/company/beelio-technologies"
+              href="https://www.linkedin.com/company/beelio/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-electric transition-colors"

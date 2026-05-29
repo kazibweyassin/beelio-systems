@@ -79,8 +79,8 @@ export default function CompanySnapshot() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-8 bg-[#0d1526] rounded-2xl p-6 border border-electric/15 text-white/80"
         >
-          <p className="text-white font-semibold">Founded by [FOUNDER NAME], Founder &amp; CEO</p>
-          <p className="text-white/55 text-sm mt-2">[LinkedIn URL placeholder]</p>
+          <p className="text-white font-semibold">Founded by Yassin Kazibwe, Founder &amp; CEO</p>
+          <p className="text-white/55 text-sm mt-2">LinkedIn: https://www.linkedin.com/in/yassin-kazibwe-95625613b/</p>
           <p className="text-white/55 text-sm mt-1">Kampala, Uganda | [Second city placeholder]</p>
         </motion.div>
       </div>

@@ -86,7 +86,7 @@ export default function RootLayout({ children }) {
         image: 'https://beelio.tech/interface.jpg',
         description:
           'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets.',
-        sameAs: ['https://linkedin.com/company/beelio-technologies', 'https://x.com/beelio'],
+        sameAs: ['https://www.linkedin.com/company/beelio/?viewAsMember=true', 'https://x.com/beeliotech'],
       },
       {
         '@type': 'WebSite',
