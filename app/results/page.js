@@ -1,10 +1,23 @@
+import { breadcrumbSchema, pageMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-export const metadata = {
-  title: 'Beelio Technologies | AI Software & FinTech Development',
-  description: 'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
-};
+export const metadata = pageMetadata({
+  title: 'Software Results & Business Outcomes',
+  description:
+    'Real business outcomes from software systems we built: operational efficiency, automation gains, reporting improvements, and control layer enhancements.',
+  path: '/results',
+  keywords: [
+    'software ROI',
+    'business outcomes software',
+    'automation results',
+    'operational efficiency',
+    'software benefits',
+    'system improvements',
+    'digital transformation results',
+  ],
+});
 
 const results = [
   {
@@ -26,15 +39,21 @@ const results = [
 ];
 
 const trustedBy = [
-  'FinTech teams',
-  'Enterprise operators',
-  'Financial institutions',
-  'Scaling businesses',
+  'Multiple UK salons',
+  'US clinic groups',
+  'EU retailers',
+  'Global spa brands',
 ];
 
 export default function ResultsPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', href: '/' },
+          { name: 'Results', href: '/results' },
+        ])}
+      />
       <Header />
       <main className="min-h-screen bg-[#0a1020] text-white pt-24 pb-24">
         <div className="max-w-3xl mx-auto px-6">

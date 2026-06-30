@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Clock, MessageCircle } from 'lucide-react';
 import { getPostBySlug, getAllSlugs } from '@/lib/blog';
+import { articleSchema, breadcrumbSchema, pageMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -12,18 +14,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
-  return {
-    title: `${post.title} | Beelio Blog`,
+
+  return pageMetadata({
+    title: post.title,
     description: post.description,
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      url: `https://beelio.tech/blog/${post.slug}`,
-      siteName: 'Beelio Technologies',
-      type: 'article',
-      publishedTime: post.date,
-    },
-  };
+    path: `/blog/${post.slug}`,
+    type: 'article',
+    publishedTime: post.date,
+  });
 }
 
 function formatDate(dateStr) {
@@ -86,10 +84,19 @@ export default function BlogPostPage({ params }) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          articleSchema(post),
+          breadcrumbSchema([
+            { name: 'Home', href: '/' },
+            { name: 'Blog', href: '/blog' },
+            { name: post.title, href: `/blog/${post.slug}` },
+          ]),
+        ]}
+      />
       <Header />
       <main className="min-h-screen bg-[#0a1020] text-white pt-24 pb-24">
         <div className="max-w-2xl mx-auto px-6">
-          {/* Back */}
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-white/40 hover:text-electric transition-colors text-sm mb-10"
@@ -97,7 +104,6 @@ export default function BlogPostPage({ params }) {
             <ArrowLeft size={15} /> Back to blog
           </Link>
 
-          {/* Meta */}
           <div className="flex items-center gap-3 mb-5 flex-wrap">
             <span className="text-xs font-medium px-3 py-1 rounded-full bg-white/8 text-white/50 border border-white/10">
               {post.category}
@@ -108,24 +114,20 @@ export default function BlogPostPage({ params }) {
             <span className="text-white/30 text-sm">{formatDate(post.date)}</span>
           </div>
 
-          {/* Title */}
           <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
             {post.title}
           </h1>
 
-          {/* Description */}
           <p className="text-white/50 text-lg leading-relaxed mb-10 border-b border-white/10 pb-10">
             {post.description}
           </p>
 
-          {/* Content */}
           <article>
             {post.content.map((block, i) => (
               <RenderBlock key={i} block={block} />
             ))}
           </article>
 
-          {/* Bottom CTA */}
           <div className="mt-16 bg-[#0d1526] border border-white/8 rounded-2xl p-8 text-center">
             <p className="text-white/40 text-sm uppercase tracking-widest font-semibold mb-3">
               Ready to automate?

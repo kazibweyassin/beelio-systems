@@ -1,17 +1,33 @@
-export const metadata = {
-  title: 'Beelio Technologies | AI Software & FinTech Development',
-  description: 'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
-  alternates: { canonical: 'https://beelio.tech/contact' },
-};
-
+import { breadcrumbSchema, pageMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 import Header from '../../components/Header';
 import CTASection from '../../components/CTASection';
 import Footer from '../../components/Footer';
 import Chatbot from '../../components/Chatbot';
 
+export const metadata = pageMetadata({
+  title: 'Contact — Software Development & Consultation',
+  description:
+    'Get in touch with Beelio Technologies. Book a consultation to discuss your software project, FinTech platform, or automation needs.',
+  path: '/contact',
+  keywords: [
+    'contact software developer',
+    'software development consultation',
+    'book software consultation',
+    'FinTech development inquiry',
+    'custom software inquiry',
+  ],
+});
+
 export default function ContactPage() {
   return (
     <main>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', href: '/' },
+          { name: 'Contact', href: '/contact' },
+        ])}
+      />
       <Header />
       <div className="pt-28 pb-6 bg-[#0a1020] text-center px-4">
         <p className="text-white/30 text-xs uppercase tracking-widest mb-3">Get In Touch</p>

@@ -1,11 +1,6 @@
-export const metadata = {
-  title: 'Beelio Technologies | AI Software & FinTech Development',
-  description: 'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
-  alternates: {
-    canonical: 'https://beelio.tech',
-  },
-};
-
+import { pageMetadata } from '@/lib/seo';
+import { faqSchema } from '@/lib/faqSchema';
+import JsonLd from '@/components/JsonLd';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import CompanySnapshot from '../components/CompanySnapshot';
@@ -20,9 +15,17 @@ import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
 
+export const metadata = pageMetadata({
+  title: 'Beelio Technologies | AI Software & FinTech Development',
+  description:
+    'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
+  absoluteTitle: true,
+});
+
 export default function Home() {
   return (
     <main>
+      <JsonLd data={faqSchema} />
       <Header />
       <Hero />
       <CompanySnapshot />

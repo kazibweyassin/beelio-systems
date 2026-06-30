@@ -1,9 +1,5 @@
-export const metadata = {
-  title: 'Beelio Technologies | AI Software & FinTech Development',
-  description: 'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
-  alternates: { canonical: 'https://beelio.tech/how-it-works' },
-};
-
+import { breadcrumbSchema, pageMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 import Header from '../../components/Header';
 import HowItWorks from '../../components/HowItWorks';
 import WhyBeelio from '../../components/WhyBeelio';
@@ -11,9 +7,30 @@ import CTASection from '../../components/CTASection';
 import Footer from '../../components/Footer';
 import Chatbot from '../../components/Chatbot';
 
+export const metadata = pageMetadata({
+  title: 'How We Build Software — Development Process & Timeline',
+  description:
+    'Our software development process: consultation, architecture, development, and launch. 2-4 week delivery with clear scope and defined milestones.',
+  path: '/how-it-works',
+  keywords: [
+    'software development process',
+    'custom software development timeline',
+    'agile software development',
+    'software delivery methodology',
+    'enterprise software development',
+    'how software is built',
+  ],
+});
+
 export default function HowItWorksPage() {
   return (
     <main>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', href: '/' },
+          { name: 'How It Works', href: '/how-it-works' },
+        ])}
+      />
       <Header />
       <div className="pt-28 pb-6 bg-[#0a1020] text-center px-4">
         <p className="text-white/30 text-xs uppercase tracking-widest mb-3">The Process</p>

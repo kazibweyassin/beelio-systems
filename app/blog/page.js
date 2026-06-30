@@ -1,22 +1,24 @@
 import Link from 'next/link';
 import { ArrowRight, Clock, Tag } from 'lucide-react';
 import { getAllPosts } from '@/lib/blog';
+import { breadcrumbSchema, pageMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-export const metadata = {
-  title: 'Beelio Technologies | AI Software & FinTech Development',
+export const metadata = pageMetadata({
+  title: 'Blog — AI Software & FinTech Insights',
   description:
-    'Insights on AI software engineering, FinTech platforms, enterprise automation, and intelligent systems for emerging markets.',
-  openGraph: {
-    title: 'Beelio Technologies | AI Software & FinTech Development',
-    description:
-      'Insights on AI software engineering, FinTech platforms, enterprise automation, and intelligent systems for emerging markets.',
-    url: 'https://beelio.tech/blog',
-    siteName: 'Beelio Technologies',
-    type: 'website',
-  },
-};
+    'Practical articles on AI software engineering, FinTech platforms, enterprise automation, and intelligent systems for emerging markets.',
+  path: '/blog',
+  keywords: [
+    'AI software blog',
+    'FinTech insights',
+    'enterprise automation articles',
+    'software development Africa',
+    'emerging markets technology',
+  ],
+});
 
 const categoryColors = {
   'AI Software': 'bg-green-900/40 text-green-300 border border-green-700/40',
@@ -24,6 +26,7 @@ const categoryColors = {
   'Custom Software': 'bg-purple-900/40 text-purple-300 border border-purple-700/40',
   'Business Automation': 'bg-orange-900/40 text-orange-300 border border-orange-700/40',
   FinTech: 'bg-red-900/40 text-red-300 border border-red-700/40',
+  'WhatsApp Automation': 'bg-teal-900/40 text-teal-300 border border-teal-700/40',
 };
 
 function formatDate(dateStr) {
@@ -37,9 +40,14 @@ export default function BlogPage() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', href: '/' },
+          { name: 'Blog', href: '/blog' },
+        ])}
+      />
       <Header />
       <main className="min-h-screen bg-[#0a1020] text-white pt-24 pb-24">
-        {/* Hero */}
         <section className="max-w-5xl mx-auto px-6 mb-16 text-center">
           <p className="text-white/40 font-semibold text-sm uppercase tracking-widest mb-3">
             Beelio Blog
@@ -53,7 +61,6 @@ export default function BlogPage() {
         </section>
 
         <div className="max-w-5xl mx-auto px-6">
-          {/* Featured post */}
           <Link
             href={`/blog/${featured.slug}`}
             className="group block bg-[#0d1526] border border-white/8 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300 mb-10"
@@ -84,7 +91,6 @@ export default function BlogPage() {
             </div>
           </Link>
 
-          {/* Rest of posts */}
           <div className="grid md:grid-cols-2 gap-6">
             {rest.map((post) => (
               <Link

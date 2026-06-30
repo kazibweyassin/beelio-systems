@@ -1,5 +1,11 @@
 import './globals.css';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#0a1020',
+};
+
 export const metadata = {
   metadataBase: new URL('https://beelio.tech'),
   title: {
@@ -80,12 +86,32 @@ export default function RootLayout({ children }) {
       {
         '@type': 'Organization',
         '@id': 'https://beelio.tech/#organization',
-        name: 'Beelio',
+        name: 'Beelio Technologies',
         url: 'https://beelio.tech',
         logo: 'https://beelio.tech/favicon.svg',
         image: 'https://beelio.tech/interface.jpg',
         description:
-          'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets.',
+          'Beelio Technologies builds AI-powered software and FinTech platforms for emerging markets. Custom intelligent systems, financial infrastructure, and enterprise automation.',
+        sameAs: ['https://www.linkedin.com/company/beelio/?viewAsMember=true', 'https://x.com/beeliotech'],
+        areaServed: ['Uganda', 'Kenya', 'Africa', 'Emerging Markets'],
+        foundingDate: '2023',
+        founders: [{ '@type': 'Person', name: 'Yassin Kazibwe' }],
+      },
+      {
+        '@type': 'LocalBusiness',
+        '@id': 'https://beelio.tech/#localbusiness',
+        name: 'Beelio Technologies',
+        url: 'https://beelio.tech',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Kampala',
+          addressCountry: 'UG',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'Business Development',
+          email: 'info@beelio.tech',
+        },
         sameAs: ['https://www.linkedin.com/company/beelio/?viewAsMember=true', 'https://x.com/beeliotech'],
       },
       {
@@ -95,6 +121,10 @@ export default function RootLayout({ children }) {
         name: 'Beelio',
         publisher: { '@id': 'https://beelio.tech/#organization' },
         inLanguage: 'en',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: { '@type': 'EntryPoint', urlTemplate: 'https://beelio.tech/contact' },
+        },
       },
     ],
   };
