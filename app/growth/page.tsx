@@ -1,8 +1,16 @@
+"use client";
 
-import { breadcrumbSchema, pageMetadata } from '@/lib/seo';
-import JsonLd from '@/components/JsonLd';
-
-
+import { motion } from "framer-motion";
+import {
+  Search,
+  PenTool,
+  Plug,
+  Rocket,
+  Check,
+  ArrowRight,
+  MapPin,
+} from "lucide-react";
+import Hero from "@/components/Hero";
 const WHATSAPP_NUMBER = "256786367460";
 
 const whatsappUrl = (
@@ -12,49 +20,118 @@ const whatsappUrl = (
     `Hello Beelio, ${message}`,
   )}`;
 
-const essentialFeatures = [
-  "Five-page professional website",
-  "Mobile-first design",
-  "WhatsApp and contact forms",
-  "Google Maps and basic SEO",
-  "First-year domain and hosting",
-  "30 days of post-launch support",
+const stats = [
+  { value: "7 days", label: "Typical delivery" },
+  { value: "WhatsApp-first", label: "Built around real enquiries" },
+  { value: "60 days", label: "Support with Growth" },
+  { value: "UGX 1.2m", label: "Packages start from" },
 ];
 
-const growthFeatures = [
-  "Everything in Essential",
-  "Custom content and visual design",
-  "Consultation booking",
-  "Client-intake automation",
-  "WhatsApp FAQs and lead qualification",
-  "Google Business and analytics setup",
-  "Staff training and 60 days of support",
+const problems = [
+  {
+    title: "Capture the right details",
+    desc: "Guide prospects through a short intake instead of beginning every conversation from zero.",
+    tags: ["Name", "Service", "Contact"],
+  },
+  {
+    title: "Answer common questions",
+    desc: "Handle routine FAQs instantly while keeping sensitive or complex matters with your team.",
+    tags: ["Pricing", "Availability", "Process"],
+  },
 ];
+
+type Package = {
+  id: "essential" | "growth";
+  label: string;
+  tagline: string;
+  priceUGX: string;
+  depositNote: string;
+  features: string[];
+  recommended?: boolean;
+};
+
+const packages: Package[] = [
+  {
+    id: "essential",
+    label: "Essential",
+    tagline: "A credible online foundation for a growing service business.",
+    priceUGX: "1.2m",
+    depositNote: "UGX 720,000 to begin",
+    features: [
+      "Five-page professional website",
+      "Mobile-first design",
+      "WhatsApp and contact forms",
+      "Google Maps and basic SEO",
+      "First-year domain and hosting",
+      "30 days of post-launch support",
+    ],
+  },
+  {
+    id: "growth",
+    label: "Growth",
+    tagline: "A connected conversion and response system for an active team.",
+    priceUGX: "2.5m",
+    depositNote: "UGX 1,500,000 to begin",
+    recommended: true,
+    features: [
+      "Everything in Essential",
+      "Custom content and visual design",
+      "Consultation booking",
+      "Client-intake automation",
+      "WhatsApp FAQs and lead qualification",
+      "Google Business and analytics setup",
+      "Staff training and 60 days of support",
+    ],
+  },
+];
+
+const work = [
+  {
+    name: "McFord Advocates",
+    category: "Legal services",
+    href: "https://www.mcfordadvocates.co.ug/",
+  },
+  {
+    name: "JK Express",
+    category: "Logistics & property",
+    href: "https://jkexpress.vercel.app/",
+  },
+];
+
+const STEP_ICONS = { search: Search, design: PenTool, connect: Plug, launch: Rocket };
+function StepIcon({ name }: { name: keyof typeof STEP_ICONS }) {
+  const Icon = STEP_ICONS[name];
+  return Icon ? <Icon size={18} className="text-electric" /> : null;
+}
 
 const process = [
   {
     number: "01",
     title: "Discover",
-    text: "We understand your services, clients and current enquiry process.",
+    desc: "We understand your services, clients and current enquiry process.",
+    icon: "search" as const,
   },
   {
     number: "02",
     title: "Design",
-    text: "We shape the content, interface and conversion journey.",
+    desc: "We shape the content, interface and conversion journey.",
+    icon: "design" as const,
   },
   {
     number: "03",
     title: "Connect",
-    text: "We configure WhatsApp, forms, booking and measurement.",
+    desc: "We configure WhatsApp, forms, booking and measurement.",
+    icon: "connect" as const,
   },
   {
     number: "04",
     title: "Launch",
-    text: "Your team reviews, learns the system and goes live.",
+    desc: "Your team reviews, learns the system and goes live.",
+    icon: "launch" as const,
   },
 ];
 
-const faqs = [
+export const faqs = [
   {
     question: "Do I need an existing website?",
     answer:
@@ -77,52 +154,12 @@ const faqs = [
   },
 ];
 
-function CheckIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg
-      aria-hidden="true"
-      className={className}
-      viewBox="0 0 20 20"
-      fill="none"
-    >
-      <path
-        d="m5 10 3 3 7-7"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ArrowIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg
-      aria-hidden="true"
-      className={className}
-      viewBox="0 0 20 20"
-      fill="none"
-    >
-      <path
-        d="M4 10h11M11 6l4 4-4 4"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 function WhatsAppIcon({ className = "h-5 w-5" }: { className?: string }) {
+  // Kept as a bespoke SVG rather than lucide's generic MessageCircle —
+  // this is a WhatsApp-specific funnel, so the mark should read as WhatsApp
+  // at a glance, not as a generic chat icon.
   return (
-    <svg
-      aria-hidden="true"
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-    >
+    <svg aria-hidden="true" className={className} viewBox="0 0 24 24" fill="none">
       <path
         d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.6Z"
         stroke="currentColor"
@@ -138,440 +175,449 @@ function WhatsAppIcon({ className = "h-5 w-5" }: { className?: string }) {
   );
 }
 
-export default function BeelioGrowthPage() {
+function NewTabHint() {
+  return <span className="sr-only"> (opens in a new tab)</span>;
+}
+
+// Shared pill button — every primary CTA on the page uses this exact
+// treatment so the "what do I click" pattern stays consistent end to end.
+function PrimaryButton({
+  href,
+  children,
+  className = "",
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <main className="overflow-hidden bg-[#f4f6f1] text-[#081510] selection:bg-[#c9ff5a] selection:text-[#081510]">
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className={`inline-flex items-center justify-center gap-2 rounded-full bg-electric px-8 py-3 text-sm font-semibold text-[#0a1020] transition-colors duration-200 hover:bg-electric/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-[#080e1a] ${className}`}
+    >
+      {children}
+      <NewTabHint />
+    </a>
+  );
+}
+
+export default function GrowthPageClient() {
+  return (
+    <main className="bg-[#080e1a] text-white">
+      {/* Mobile floating WhatsApp CTA — this is a WhatsApp-first funnel, so
+          on small screens the primary action stays reachable without
+          scrolling back up. */}
+      <a
+        href={whatsappUrl()}
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-electric text-[#0a1020] shadow-xl transition-colors duration-200 hover:bg-electric/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white sm:hidden"
+        aria-label="Start a WhatsApp conversation with Beelio (opens in a new tab)"
+      >
+        <WhatsAppIcon className="h-6 w-6" />
+      </a>
+
       {/* Hero */}
-       <JsonLd
-              data={breadcrumbSchema([
-                { name: 'Home', href: '/' },
-                { name: 'Growth', href: '/growth' },
-              ])}
-            />
-      <section className="px-4 py-6 sm:px-6 lg:px-8">
-        <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] bg-[#06110d] px-6 py-16 text-white shadow-[0_28px_90px_rgba(6,17,13,0.18)] sm:px-10 lg:min-h-[650px] lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:px-16 lg:py-20">
-          <div className="pointer-events-none absolute -left-24 -top-20 h-72 w-72 rounded-full bg-[#c9ff5a]/10 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-28 right-0 h-96 w-96 rounded-full bg-emerald-400/10 blur-3xl" />
-
-          <div className="relative z-10">
-            <div className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-white/65">
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-[#c9ff5a]/10 text-[#c9ff5a]">
-                ✦
-              </span>
-              Beelio Client Growth System
-            </div>
-
-            <h1 className="max-w-3xl text-5xl font-semibold leading-[0.96] tracking-[-0.065em] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
-              Your website should start{" "}
-              <span className="text-[#c9ff5a]">conversations.</span>
-            </h1>
-
-            <p className="mt-7 max-w-xl text-base leading-8 text-white/60 sm:text-lg">
-              We connect a polished business website with WhatsApp intake,
-              automated FAQs and consultation booking—so every enquiry has a
-              clear next step.
-            </p>
-
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <a
-                href={whatsappUrl()}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-13 items-center justify-center gap-2.5 rounded-full bg-[#c9ff5a] px-6 py-3.5 text-sm font-extrabold text-[#081510] shadow-[0_16px_40px_rgba(201,255,90,0.15)] transition hover:-translate-y-0.5 hover:shadow-[0_20px_50px_rgba(201,255,90,0.23)] focus:outline-none focus:ring-2 focus:ring-[#c9ff5a] focus:ring-offset-2 focus:ring-offset-[#06110d]"
-              >
-                <WhatsAppIcon />
-                Request a free consultation
-              </a>
-              <a
-                href="#beelio-packages"
-                className="inline-flex items-center justify-center gap-2 px-3 py-3 text-sm font-bold text-white/80 transition hover:text-white"
-              >
-                View packages <ArrowIcon />
-              </a>
-            </div>
-
-            <div className="mt-10 flex items-center gap-4 border-t border-white/10 pt-7">
-              <div className="flex -space-x-2" aria-hidden="true">
-                <span className="grid h-9 w-9 place-items-center rounded-full border-2 border-[#06110d] bg-[#c9ff5a] text-[10px] font-black text-[#081510]">
-                  JK
-                </span>
-                <span className="grid h-9 w-9 place-items-center rounded-full border-2 border-[#06110d] bg-white text-[10px] font-black text-[#081510]">
-                  MF
-                </span>
-                <span className="grid h-9 w-9 place-items-center rounded-full border-2 border-[#06110d] bg-[#173329] text-xs font-black text-[#76efb1]">
-                  +
-                </span>
-              </div>
-              <p className="text-xs leading-5 text-white/45">
-                <strong className="block text-white/80">
-                  Built for service businesses
-                </strong>
-                that need faster, organised follow-up.
-              </p>
-            </div>
-          </div>
-
-          {/* Product-style visual, built only with Tailwind */}
-          <div className="relative z-10 mt-14 min-h-[430px] lg:mt-0">
-            <div className="absolute right-0 top-2 w-[92%] rotate-[1.5deg] overflow-hidden rounded-3xl border border-white/15 bg-[#edf1e9] shadow-2xl sm:w-[86%]">
-              <div className="flex h-11 items-center justify-between bg-white px-4 text-[10px] text-slate-500">
-                <span className="flex gap-1.5">
-                  <i className="h-1.5 w-1.5 rounded-full bg-slate-300" />
-                  <i className="h-1.5 w-1.5 rounded-full bg-slate-300" />
-                  <i className="h-1.5 w-1.5 rounded-full bg-slate-300" />
-                </span>
-                yourbusiness.com
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              </div>
-              <div className="relative min-h-[300px] overflow-hidden p-7 text-[#081510]">
-                <div className="absolute -right-14 -top-16 h-52 w-52 rounded-full bg-[#c9ff5a]/70 blur-2xl" />
-                <div className="relative flex items-center justify-between">
-                  <span className="grid h-9 w-9 place-items-center rounded-xl bg-[#081510] text-[10px] font-black text-[#c9ff5a]">
-                    YB
-                  </span>
-                  <span className="flex gap-2">
-                    <i className="h-1 w-7 rounded-full bg-[#081510]/15" />
-                    <i className="h-1 w-7 rounded-full bg-[#081510]/15" />
-                    <i className="h-1 w-7 rounded-full bg-[#081510]/15" />
-                  </span>
-                </div>
-                <div className="relative mt-14 text-[10px] font-black uppercase tracking-[0.14em] text-[#081510]/45">
-                  Professional service. Clear next step.
-                </div>
-                <div className="relative mt-4 space-y-2.5">
-                  <i className="block h-5 w-4/5 rounded-full bg-[#081510]" />
-                  <i className="block h-5 w-3/5 rounded-full bg-[#081510]" />
-                </div>
-                <div className="relative mt-6 space-y-2">
-                  <i className="block h-1.5 w-3/4 rounded-full bg-[#081510]/15" />
-                  <i className="block h-1.5 w-2/3 rounded-full bg-[#081510]/15" />
-                  <i className="block h-1.5 w-1/2 rounded-full bg-[#081510]/15" />
-                </div>
-                <div className="relative mt-7 inline-flex items-center gap-2 rounded-full bg-[#081510] px-4 py-2.5 text-[10px] font-bold text-white">
-                  Start on WhatsApp <ArrowIcon className="h-3.5 w-3.5" />
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute left-0 top-44 w-[260px] rounded-2xl border border-white/15 bg-[#0a2018]/95 p-4 shadow-2xl backdrop-blur sm:w-[280px]">
-              <div className="flex items-center gap-3">
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-emerald-400 text-[#062c16]">
-                  <WhatsAppIcon className="h-5 w-5" />
-                </span>
-                <div>
-                  <strong className="block text-xs">New enquiry</strong>
-                  <small className="text-[10px] text-white/40">Just now</small>
-                </div>
-                <span className="ml-auto h-2 w-2 rounded-full bg-[#c9ff5a] ring-4 ring-[#c9ff5a]/10" />
-              </div>
-              <div className="my-4 rounded-xl rounded-bl-sm bg-white/10 p-3 text-[11px] leading-5 text-white/75">
-                Hi, I need help with a business website.
-              </div>
-              <div className="flex items-end justify-between">
-                <div>
-                  <small className="block text-[9px] text-white/35">Service</small>
-                  <strong className="text-[10px] font-semibold text-white/75">
-                    Website &amp; automation
-                  </strong>
-                </div>
-                <span className="rounded-full bg-[#c9ff5a]/10 px-2 py-1 text-[9px] font-bold text-[#c9ff5a]">
-                  Qualified
-                </span>
-              </div>
-            </div>
-
-            <div className="absolute bottom-0 right-1 w-[240px] -rotate-1 rounded-2xl bg-white p-4 text-[#081510] shadow-2xl">
-              <p className="text-[11px] font-bold">Lead journey</p>
-              <div className="mt-4 flex items-center">
-                {[1, 2].map((step) => (
-                  <div className="contents" key={step}>
-                    <span className="grid h-6 w-6 place-items-center rounded-full bg-[#081510] text-[#c9ff5a]">
-                      <CheckIcon className="h-3.5 w-3.5" />
-                    </span>
-                    <i className="h-px flex-1 bg-slate-200" />
-                  </div>
-                ))}
-                <span className="grid h-6 w-6 place-items-center rounded-full border border-emerald-400 text-[9px] font-black text-emerald-700 ring-4 ring-emerald-50">
-                  3
-                </span>
-              </div>
-              <div className="mt-2 flex justify-between text-[9px] text-slate-400">
-                <span>Visit</span><span>Capture</span><span>Follow-up</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Proof */}
-      <section className="mx-auto grid max-w-7xl grid-cols-2 border-b border-[#081510]/10 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
-        {[
-          ["7 days", "Typical delivery"],
-          ["WhatsApp-first", "Built around real enquiries"],
-          ["60 days", "Support with Growth"],
-          ["UGX 1.2m", "Packages start from"],
-        ].map(([value, label], index) => (
-          <div
-            key={value}
-            className={`flex min-h-28 flex-col justify-center border-[#081510]/10 px-4 py-6 sm:px-7 ${
-              index % 2 === 0 ? "border-r" : ""
-            } ${index < 2 ? "border-b lg:border-b-0" : ""} ${
-              index !== 3 ? "lg:border-r" : ""
-            }`}
+      <section className="px-4 py-24 md:py-32">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
           >
-            <strong className="text-base tracking-tight">{value}</strong>
-            <span className="mt-1 text-xs text-[#081510]/50">{label}</span>
-          </div>
-        ))}
-      </section>
-
-      {/* System */}
-      <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
-        <div className="grid gap-7 lg:grid-cols-[1fr_0.65fr] lg:items-end">
-          <div>
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-emerald-800">
-              The real problem
+            <span className="inline-flex items-center gap-2 rounded-full border border-electric/20 bg-electric/10 px-4 py-1.5 text-xs font-medium text-electric mb-6">
+              Beelio Client Growth System
             </span>
-            <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.02] tracking-[-0.055em] sm:text-5xl lg:text-6xl">
-              A website alone is not a client system.
-            </h2>
-          </div>
-          <p className="max-w-xl text-sm leading-7 text-[#081510]/55 sm:text-base">
-            Traffic has little value when enquiries are missed, responses are
-            slow, or the next step is unclear. We design the full path from first
-            visit to your team&apos;s follow-up.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-5 md:grid-cols-2">
-          <article className="relative overflow-hidden rounded-3xl bg-[#06110d] p-8 text-white sm:p-10">
-            <span className="absolute right-8 top-8 font-mono text-[10px] text-white/35">01</span>
-            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#c9ff5a]/10 text-[#c9ff5a]">
-              <WhatsAppIcon className="h-6 w-6" />
-            </span>
-            <h3 className="mt-24 text-2xl font-semibold tracking-[-0.04em]">
-              Capture the right details
-            </h3>
-            <p className="mt-3 max-w-md text-sm leading-7 text-white/50">
-              Guide prospects through a short intake instead of beginning every
-              conversation from zero.
+            <h1 className="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight text-white">
+              Your website should start <span className="text-electric">conversations.</span>
+            </h1>
+            <p className="text-white/50 max-w-xl mx-auto text-base md:text-lg mt-6">
+              We connect a polished business website with WhatsApp intake, automated FAQs and
+              consultation booking, so every enquiry has a clear next step.
             </p>
-            <div className="mt-7 flex flex-wrap gap-2">
-              {["Name", "Service", "Contact"].map((item) => (
-                <span key={item} className="rounded-full border border-white/10 px-3 py-2 text-[10px] text-white/55">
-                  {item}
-                </span>
+            <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <PrimaryButton href={whatsappUrl()}>
+                <WhatsAppIcon className="h-4 w-4" />
+                Request a free consultation
+              </PrimaryButton>
+              <a
+                href="#packages"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 hover:text-white transition-colors rounded-full px-3 py-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric"
+              >
+                View packages <ArrowRight size={16} />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* WhatsApp preview card — one restrained visual instead of a
+              layered mockup collage, in keeping with the rest of the site. */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mt-14 max-w-md mx-auto bg-[#0d1526] rounded-2xl p-6 border border-white/5"
+            aria-hidden="true"
+          >
+            <div className="flex items-center gap-3">
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-electric/10 border border-electric/30 text-electric">
+                <WhatsAppIcon className="h-4 w-4" />
+              </span>
+              <div>
+                <strong className="block text-xs text-white">New enquiry</strong>
+                <small className="text-[10px] text-white/40">Just now</small>
+              </div>
+              <span className="ml-auto rounded-full bg-electric/10 border border-electric/20 px-2.5 py-1 text-[10px] font-medium text-electric">
+                Qualified
+              </span>
+            </div>
+            <div className="mt-4 rounded-xl rounded-bl-sm bg-white/5 p-3 text-xs leading-5 text-white/70">
+              Hi, I need help with a business website.
+            </div>
+            <div className="mt-4 flex items-center gap-2 border-t border-white/5 pt-4">
+              {[0, 1, 2].map((step) => (
+                <span
+                  key={step}
+                  className={`h-1.5 flex-1 rounded-full ${step < 2 ? "bg-electric" : "bg-white/10"}`}
+                />
               ))}
             </div>
-          </article>
-
-          <article className="relative overflow-hidden rounded-3xl border border-[#081510]/10 bg-white/60 p-8 sm:p-10">
-            <span className="absolute right-8 top-8 font-mono text-[10px] text-[#081510]/35">02</span>
-            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-emerald-50 text-emerald-800">✦</span>
-            <h3 className="mt-24 text-2xl font-semibold tracking-[-0.04em]">
-              Answer common questions
-            </h3>
-            <p className="mt-3 max-w-md text-sm leading-7 text-[#081510]/50">
-              Handle routine FAQs instantly while keeping sensitive or complex
-              matters with your team.
-            </p>
-            <div className="absolute -bottom-4 right-0 w-1/2 rounded-tl-2xl bg-[#e5ebe3] p-6 shadow-xl">
-              <i className="block h-1.5 w-full rounded-full bg-[#081510]/15" />
-              <i className="mt-2 block h-1.5 w-4/5 rounded-full bg-[#081510]/15" />
-              <i className="mt-2 block h-1.5 w-1/2 rounded-full bg-emerald-400" />
+            <div className="mt-2 flex justify-between text-[10px] text-white/30">
+              <span>Visit</span>
+              <span>Capture</span>
+              <span>Follow-up</span>
             </div>
-          </article>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Proof stats */}
+      <section className="py-16 bg-[#0a1020]">
+        <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.value}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="bg-[#0d1526] rounded-2xl p-5 border border-white/5"
+            >
+              <strong className="block text-lg font-bold text-white">{stat.value}</strong>
+              <span className="text-white/50 text-xs mt-1 block">{stat.label}</span>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* The real problem */}
+      <section className="py-20 bg-[#080e1a]">
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              A website alone is not <span className="text-electric">a client system</span>
+            </h2>
+            <p className="text-white/50 max-w-xl mx-auto text-base">
+              Traffic has little value when enquiries are missed, responses are slow, or the
+              next step is unclear.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {problems.map((problem, i) => (
+              <motion.div
+                key={problem.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-electric/20 transition-all duration-300"
+              >
+                <h3 className="text-lg font-semibold text-white">{problem.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed mt-3">{problem.desc}</p>
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {problem.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-white/10 px-3 py-1.5 text-[10px] text-white/60"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Packages */}
-      <section id="beelio-packages" className="border-y border-[#081510]/5 bg-[#e8ece4] px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-emerald-800">Simple packages</span>
-            <h2 className="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.055em] sm:text-5xl lg:text-6xl">
-              Start where your business is today.
+      <section id="packages" className="py-20 bg-[#0a1020]">
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Start where your business is <span className="text-electric">today</span>
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#081510]/50 sm:text-base">
-              Both packages give clients a professional way to discover,
-              understand and contact your business.
+            <p className="text-white/50 max-w-xl mx-auto text-base">
+              Both packages give clients a professional way to discover, understand and contact
+              your business.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="mx-auto mt-14 grid max-w-5xl gap-5 lg:grid-cols-2">
-            <article className="flex flex-col rounded-3xl border border-[#081510]/10 bg-white/75 p-7 sm:p-10">
-              <span className="text-xs font-black uppercase tracking-[0.16em] text-emerald-800">Essential</span>
-              <p className="mt-4 min-h-12 text-sm leading-6 text-[#081510]/50">
-                A credible online foundation for a growing service business.
-              </p>
-              <div className="mt-7 flex items-start gap-2">
-                <span className="mt-2 text-xs font-bold text-[#081510]/45">UGX</span>
-                <strong className="text-6xl font-semibold tracking-[-0.065em]">1.2m</strong>
-              </div>
-              <span className="mt-2 text-xs text-[#081510]/45">UGX 720,000 to begin</span>
-              <ul className="my-8 space-y-4 border-t border-[#081510]/10 pt-8">
-                {essentialFeatures.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-sm text-[#081510]/65">
-                    <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-50 text-emerald-700">
-                      <CheckIcon className="h-3.5 w-3.5" />
-                    </span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={whatsappUrl("I'm interested in the Essential package.")}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-auto inline-flex items-center justify-center gap-2 rounded-full border border-[#081510]/15 px-6 py-4 text-sm font-extrabold transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-700"
+          <div className="grid md:grid-cols-2 gap-6">
+            {packages.map((pkg, i) => (
+              <motion.div
+                key={pkg.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className={`relative flex flex-col rounded-2xl p-7 md:p-8 border ${
+                  pkg.recommended
+                    ? "bg-[#0d1526] border-electric/30"
+                    : "bg-[#0d1526] border-white/5"
+                }`}
               >
-                Choose Essential <ArrowIcon />
-              </a>
-            </article>
+                {pkg.recommended && (
+                  <span className="absolute right-6 top-6 rounded-full bg-electric px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-[#0a1020]">
+                    Recommended
+                  </span>
+                )}
+                <span className="text-xs font-bold uppercase tracking-widest text-electric">
+                  {pkg.label}
+                </span>
+                <p className="text-white/50 text-sm leading-6 mt-4 min-h-12 max-w-xs">
+                  {pkg.tagline}
+                </p>
+                <div className="mt-6 flex items-start gap-2">
+                  <span className="mt-2 text-xs font-bold text-white/40">UGX</span>
+                  <strong className="text-5xl font-bold tracking-tight text-white">
+                    {pkg.priceUGX}
+                  </strong>
+                </div>
+                <span className="text-white/40 text-xs mt-2">{pkg.depositNote}</span>
 
-            <article className="relative flex flex-col rounded-3xl bg-[#06110d] p-7 text-white shadow-[0_30px_80px_rgba(8,21,16,0.16)] sm:p-10">
-              <span className="absolute right-6 top-6 rounded-full bg-[#c9ff5a] px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.12em] text-[#081510] sm:right-8 sm:top-8">
-                Recommended
-              </span>
-              <span className="text-xs font-black uppercase tracking-[0.16em] text-[#76efb1]">Growth</span>
-              <p className="mt-4 min-h-12 max-w-xs text-sm leading-6 text-white/50">
-                A connected conversion and response system for an active team.
-              </p>
-              <div className="mt-7 flex items-start gap-2">
-                <span className="mt-2 text-xs font-bold text-white/35">UGX</span>
-                <strong className="text-6xl font-semibold tracking-[-0.065em]">2.5m</strong>
-              </div>
-              <span className="mt-2 text-xs text-white/40">UGX 1,500,000 to begin</span>
-              <ul className="my-8 space-y-4 border-t border-white/10 pt-8">
-                {growthFeatures.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-sm text-white/65">
-                    <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#c9ff5a]/10 text-[#c9ff5a]">
-                      <CheckIcon className="h-3.5 w-3.5" />
-                    </span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={whatsappUrl("I'm interested in the Growth package.")}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#c9ff5a] px-6 py-4 text-sm font-extrabold text-[#081510] transition hover:-translate-y-0.5 hover:shadow-[0_18px_45px_rgba(201,255,90,0.18)] focus:outline-none focus:ring-2 focus:ring-[#c9ff5a] focus:ring-offset-2 focus:ring-offset-[#06110d]"
-              >
-                Choose Growth <ArrowIcon />
-              </a>
-            </article>
-          </div>
+                <ul className="flex flex-col gap-3 mt-7 pt-7 border-t border-white/5">
+                  {pkg.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3 text-sm text-white/70">
+                      <span className="mt-0.5 flex-shrink-0">
+                        <Check size={16} className="text-electric" strokeWidth={2.5} />
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
 
-          <p className="mx-auto mt-7 max-w-2xl text-center text-xs leading-5 text-[#081510]/45">
-            Need a different scope? We can remove features and quote the smaller
-            project clearly—without hiding costs.
-          </p>
-        </div>
-      </section>
-
-      {/* Work */}
-      <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
-        <div className="grid gap-7 lg:grid-cols-[1fr_0.65fr] lg:items-end">
-          <div>
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-emerald-800">Selected work</span>
-            <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.02] tracking-[-0.055em] sm:text-5xl lg:text-6xl">
-              Real businesses. Clearer digital experiences.
-            </h2>
-          </div>
-          <p className="text-sm leading-7 text-[#081510]/50 sm:text-base">
-            Every project is shaped around the client journey, business model
-            and actions that matter most.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-5 md:grid-cols-2">
-          <a
-            href="https://www.mcfordadvocates.co.ug/"
-            target="_blank"
-            rel="noreferrer"
-            className="group rounded-3xl bg-[#20292a] p-8 text-white transition hover:-translate-y-1 sm:p-10"
-          >
-            <span className="text-[10px] font-black tracking-[0.18em] text-white/60">McFORD</span>
-            <div className="mt-24 rounded-2xl bg-white p-6 text-[#081510] shadow-2xl">
-              <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-amber-700">Legal services</span>
-              <h3 className="mt-3 text-2xl font-semibold tracking-tight">McFord Advocates</h3>
-              <div className="mt-8 space-y-2"><i className="block h-2 w-3/4 rounded-full bg-slate-200" /><i className="block h-2 w-1/2 rounded-full bg-slate-200" /></div>
-            </div>
-            <span className="mt-6 flex items-center justify-between text-sm font-bold">View website <ArrowIcon className="h-5 w-5 transition group-hover:translate-x-1" /></span>
-          </a>
-
-          <a
-            href="https://jkexpress.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
-            className="group rounded-3xl bg-[#ffd76a] p-8 text-[#081510] transition hover:-translate-y-1 sm:p-10"
-          >
-            <span className="text-[10px] font-black tracking-[0.18em]">JK EXPRESS</span>
-            <div className="mt-24 rounded-2xl bg-[#081510] p-6 text-white shadow-2xl">
-              <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#c9ff5a]">Logistics &amp; property</span>
-              <h3 className="mt-3 text-2xl font-semibold tracking-tight">JK Express</h3>
-              <div className="mt-8 flex items-center gap-2"><i className="h-3 w-3 rounded-full bg-[#c9ff5a]" /><i className="h-px flex-1 border-t border-dashed border-white/30" /><i className="h-3 w-3 rounded-full bg-[#c9ff5a]" /></div>
-            </div>
-            <span className="mt-6 flex items-center justify-between text-sm font-bold">View website <ArrowIcon className="h-5 w-5 transition group-hover:translate-x-1" /></span>
-          </a>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="bg-[#06110d] px-4 py-24 text-white sm:px-6 lg:px-8 lg:py-32">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-[#76efb1]">From brief to launch</span>
-            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.055em] sm:text-5xl lg:text-6xl">A focused seven-day process.</h2>
-          </div>
-          <div className="mt-14 grid border-t border-white/10 sm:grid-cols-2 lg:grid-cols-4">
-            {process.map((step, index) => (
-              <article key={step.number} className={`min-h-60 border-white/10 py-8 sm:px-7 ${index % 2 === 0 ? "sm:border-r" : ""} ${index > 1 ? "sm:border-t lg:border-t-0" : ""} ${index !== 3 ? "lg:border-r" : ""} ${index === 0 || index === 2 ? "sm:pl-0" : ""}`}>
-                <span className="font-mono text-[10px] text-[#c9ff5a]">{step.number}</span>
-                <h3 className="mt-20 text-xl font-semibold tracking-tight">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/45">{step.text}</p>
-              </article>
+                <a
+                  href={whatsappUrl(`I'm interested in the ${pkg.label} package.`)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric ${
+                    pkg.recommended
+                      ? "bg-electric text-[#0a1020] hover:bg-electric/90"
+                      : "border border-white/15 text-white hover:bg-white/5"
+                  }`}
+                >
+                  Choose {pkg.label} <ArrowRight size={16} />
+                  <NewTabHint />
+                </a>
+              </motion.div>
             ))}
           </div>
+
+          <p className="text-center text-white/40 text-xs max-w-2xl mx-auto mt-8">
+            Need a different scope? We can remove features and quote the smaller project
+            clearly, without hiding costs.
+          </p>
+        </div>
+      </section>
+
+      {/* Selected work */}
+      <section className="py-20 bg-[#080e1a]">
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Real businesses. <span className="text-electric">Clearer digital experiences.</span>
+            </h2>
+            <p className="text-white/50 max-w-xl mx-auto text-base">
+              Every project is shaped around the client journey, business model and actions that
+              matter most.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {work.map((item, i) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="group bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-electric/20 transition-all duration-300 flex flex-col"
+              >
+                <span className="grid h-9 w-9 place-items-center rounded-lg bg-electric/10 border border-electric/20 text-electric">
+                  <MapPin size={16} />
+                </span>
+                <span className="text-white/40 text-xs font-medium mt-5">{item.category}</span>
+                <h3 className="text-lg font-semibold text-white mt-1">{item.name}</h3>
+                <span className="mt-auto pt-6 flex items-center gap-1.5 text-sm font-semibold text-electric">
+                  View website<NewTabHint />
+                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                </span>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process — same numbered-circle + icon + connecting-line pattern as HowItWorks */}
+      <section className="py-20 bg-[#0a1020]">
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              A focused <span className="text-electric">seven-day process.</span>
+            </h2>
+            <p className="text-white/50 max-w-xl mx-auto text-base">
+              From the first consultation to launch, here is what working with Beelio looks
+              like.
+            </p>
+          </motion.div>
+
+          <ol className="relative grid md:grid-cols-4 gap-6">
+            <div className="hidden md:block absolute top-10 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-electric/30 to-transparent" />
+            {process.map((step, i) => (
+              <motion.li
+                key={step.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className="bg-[#0d1526] rounded-2xl p-6 border border-white/5 hover:border-electric/20 transition-all duration-300 flex flex-col gap-4"
+              >
+                <div className="w-10 h-10 rounded-full bg-electric/10 border border-electric/30 flex items-center justify-center text-electric font-bold text-sm">
+                  {step.number}
+                </div>
+                <div className="w-9 h-9 rounded-lg bg-electric/10 border border-electric/20 flex items-center justify-center">
+                  <StepIcon name={step.icon} />
+                </div>
+                <h3 className="text-lg font-semibold text-white">{step.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed flex-1">{step.desc}</p>
+              </motion.li>
+            ))}
+          </ol>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
-        <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
-          <div>
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-emerald-800">Questions, answered</span>
-            <h2 className="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.055em] sm:text-5xl">Know what you are buying.</h2>
-            <a href={whatsappUrl("I have a question about the client system.")} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 border-b border-[#081510]/20 pb-1 text-sm font-bold">Ask another question <ArrowIcon /></a>
-          </div>
-          <div>
-            {faqs.map((faq, index) => (
-              <details key={faq.question} open={index === 0} className="group border-t border-[#081510]/10 last:border-b">
-                <summary className="flex min-h-20 cursor-pointer list-none items-center justify-between gap-5 py-5 text-base font-bold tracking-tight [&::-webkit-details-marker]:hidden">
+      <section className="py-20 bg-[#080e1a]">
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Know what you are <span className="text-electric">buying.</span>
+            </h2>
+          </motion.div>
+
+          <div className="max-w-2xl mx-auto flex flex-col gap-3">
+            {faqs.map((faq, i) => (
+              <motion.details
+                key={faq.question}
+                open={i === 0}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group bg-[#0d1526] rounded-2xl border border-white/5 open:border-electric/20 px-6"
+              >
+                <summary className="flex items-center justify-between gap-5 py-5 text-sm font-semibold text-white cursor-pointer list-none focus:outline-none focus-visible:ring-2 focus-visible:ring-electric [&::-webkit-details-marker]:hidden">
                   {faq.question}
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-[#081510]/10 text-lg font-normal transition group-open:rotate-45">+</span>
+                  <span
+                    className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/10 text-electric text-base font-normal transition-transform duration-300 group-open:rotate-45"
+                    aria-hidden="true"
+                  >
+                    +
+                  </span>
                 </summary>
-                <p className="max-w-2xl pb-7 pr-12 text-sm leading-7 text-[#081510]/55">{faq.answer}</p>
-              </details>
+                <p className="text-white/50 text-sm leading-relaxed pb-5">{faq.answer}</p>
+              </motion.details>
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <a
+              href={whatsappUrl("I have a question about the client system.")}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-electric hover:text-electric/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-electric rounded-full px-2 py-1"
+            >
+              Ask another question<NewTabHint /> <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="relative mx-auto flex min-h-[520px] max-w-7xl flex-col items-center justify-center overflow-hidden rounded-[2rem] bg-[#06110d] px-6 py-20 text-center text-white">
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5" />
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5 bg-emerald-400/5 blur-sm" />
-          <div className="relative z-10">
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-[#76efb1]">Ready when you are</span>
-            <h2 className="mt-6 text-5xl font-semibold leading-[0.98] tracking-[-0.06em] sm:text-6xl lg:text-7xl">Give every enquiry<br />a better next step.</h2>
-            <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-white/50 sm:text-base">Tell us what you sell and how clients contact you today. We&apos;ll recommend the right starting package.</p>
-            <a href={whatsappUrl()} target="_blank" rel="noreferrer" className="mt-9 inline-flex items-center justify-center gap-2.5 rounded-full bg-[#c9ff5a] px-7 py-4 text-sm font-extrabold text-[#081510] transition hover:-translate-y-0.5 hover:shadow-[0_18px_50px_rgba(201,255,90,0.18)] focus:outline-none focus:ring-2 focus:ring-[#c9ff5a] focus:ring-offset-2 focus:ring-offset-[#06110d]"><WhatsAppIcon /> Start a WhatsApp conversation</a>
-            <small className="mt-5 block text-[10px] text-white/30">No pressure. A focused conversation about what your business actually needs.</small>
+      <section className="py-20 bg-[#0a1020]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto px-4 text-center"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+            Give every enquiry a better next step.
+          </h2>
+          <p className="text-white/50 max-w-xl mx-auto text-base mt-5">
+            Tell us what you sell and how clients contact you today. We&apos;ll recommend the
+            right starting package.
+          </p>
+          <div className="mt-8">
+            <PrimaryButton href={whatsappUrl()}>
+              <WhatsAppIcon className="h-4 w-4" />
+              Start a WhatsApp conversation
+            </PrimaryButton>
           </div>
-        </div>
+          <p className="text-white/30 text-xs mt-5">
+            No pressure. A focused conversation about what your business actually needs.
+          </p>
+        </motion.div>
       </section>
     </main>
   );
