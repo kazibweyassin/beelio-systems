@@ -11,9 +11,11 @@ export default function Header() {
     { label: "Results",      href: "/results" },
     { label: "Why Beelio Global", href: "/why-beelio-global" },
     { label: "Industries",   href: "/industries" },
-    { label: "Pricing",      href: "/pricing" },
+    { label: "Growth",      href: "/growth" },
     { label: "How It Works", href: "/how-it-works" },
     { label: "Contact",      href: "/contact" },
+    { label: "Growth",      href: "/growth" },
+
   ];
 
   return (
