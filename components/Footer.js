@@ -3,13 +3,15 @@ export default function Footer() {
 
   const links = {
     Services: [
-      { label: "Custom Software", href: "#solution" },
-      { label: "AI Agent Integration", href: "#solution" },
-      { label: "Business Automation", href: "#solution" },
+      { label: "Custom Software", href: "/services" },
+      { label: "AI & FinTech", href: "/services" },
+      { label: "Client Growth System", href: "/growth" },
+      { label: "Business Automation", href: "/services" },
     ],
     Company: [
       { label: "Portfolio", href: "/portfolio" },
       { label: "How It Works", href: "/how-it-works" },
+      { label: "Pricing", href: "/pricing" },
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
     ],

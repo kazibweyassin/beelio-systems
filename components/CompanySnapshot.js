@@ -7,7 +7,7 @@ const items = [
   {
     icon: BrainCircuit,
     title: "What we build",
-    text: "AI-powered software, FinTech platforms, enterprise automation, reporting tools, and integrations that reduce manual work.",
+    text: "AI-powered software, FinTech platforms, enterprise automation, reporting tools, and client growth systems that reduce manual work.",
   },
   {
     icon: Users,

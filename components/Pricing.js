@@ -67,6 +67,13 @@ export default function Pricing() {
           <p className="text-white/50 max-w-xl mx-auto text-base">
             Engagement options for defined builds, ongoing delivery, and enterprise-scale work.
           </p>
+          <p className="text-white/40 text-sm mt-4">
+            Service businesses that need a website and WhatsApp intake can start from UGX 1.2m.{" "}
+            <a href="/growth" className="text-electric hover:text-electric/80">
+              See the Client Growth System
+            </a>
+            .
+          </p>
         </motion.div>
 
         <motion.div

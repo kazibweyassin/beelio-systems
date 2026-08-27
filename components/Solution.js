@@ -151,6 +151,34 @@ export default function Solution() {
           ))}
         </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="mt-10 rounded-2xl border border-electric/20 bg-electric/5 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+        >
+          <div>
+            <p className="text-electric text-xs uppercase tracking-widest mb-2 font-medium">
+              Also available
+            </p>
+            <h3 className="text-xl font-semibold text-white mb-2">
+              Client Growth System
+            </h3>
+            <p className="text-white/55 text-sm leading-relaxed max-w-xl">
+              A professional website connected to WhatsApp intake, FAQs, and booking.
+              Typical delivery in 7 days, from UGX 1.2m — built for service businesses
+              that need a client system, not a full custom platform.
+            </p>
+          </div>
+          <a
+            href="/growth"
+            className="shrink-0 inline-flex items-center justify-center rounded-full border border-electric/30 bg-transparent px-6 py-3 text-sm font-semibold text-electric hover:bg-electric/10 transition-colors duration-200"
+          >
+            Explore Growth
+          </a>
+        </motion.div>
+
         {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

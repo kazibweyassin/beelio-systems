@@ -14,6 +14,7 @@ const pages = [
   { label: 'Services', href: '/services' },
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Growth', href: '/growth' },
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Industries', href: '/industries' },
   { label: 'Results', href: '/results' },

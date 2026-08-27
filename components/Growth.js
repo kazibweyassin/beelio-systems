@@ -9,8 +9,10 @@ import {
   Check,
   ArrowRight,
   MapPin,
+  Calendar,
 } from "lucide-react";
-import Hero from "@/components/Hero";
+import EnquiryPreview, { WhatsAppIcon } from "./EnquiryPreview";
+
 const WHATSAPP_NUMBER = "256786367460";
 
 const whatsappUrl = (
@@ -38,19 +40,23 @@ const problems = [
     desc: "Handle routine FAQs instantly while keeping sensitive or complex matters with your team.",
     tags: ["Pricing", "Availability", "Process"],
   },
+  {
+    title: "Book the next step",
+    desc: "Let qualified prospects schedule a consultation so the enquiry does not stall in the chat thread.",
+    tags: ["Calendar", "Reminders", "Handoff"],
+  },
 ];
 
-type Package = {
-  id: "essential" | "growth";
-  label: string;
-  tagline: string;
-  priceUGX: string;
-  depositNote: string;
-  features: string[];
-  recommended?: boolean;
-};
+const audiences = [
+  "Legal practices",
+  "Clinics",
+  "Logistics",
+  "Consultancies",
+  "Property",
+  "Agencies",
+];
 
-const packages: Package[] = [
+const packages = [
   {
     id: "essential",
     label: "Essential",
@@ -89,17 +95,20 @@ const work = [
   {
     name: "McFord Advocates",
     category: "Legal services",
+    summary: "A professional presence for a Kampala law firm, built around how clients actually enquire.",
     href: "https://www.mcfordadvocates.co.ug/",
   },
   {
     name: "JK Express",
     category: "Logistics & property",
+    summary: "A clearer digital front door for logistics and property enquiries.",
     href: "https://jkexpress.vercel.app/",
   },
 ];
 
 const STEP_ICONS = { search: Search, design: PenTool, connect: Plug, launch: Rocket };
-function StepIcon({ name }: { name: keyof typeof STEP_ICONS }) {
+
+function StepIcon({ name }) {
   const Icon = STEP_ICONS[name];
   return Icon ? <Icon size={18} className="text-electric" /> : null;
 }
@@ -109,29 +118,29 @@ const process = [
     number: "01",
     title: "Discover",
     desc: "We understand your services, clients and current enquiry process.",
-    icon: "search" as const,
+    icon: "search",
   },
   {
     number: "02",
     title: "Design",
     desc: "We shape the content, interface and conversion journey.",
-    icon: "design" as const,
+    icon: "design",
   },
   {
     number: "03",
     title: "Connect",
     desc: "We configure WhatsApp, forms, booking and measurement.",
-    icon: "connect" as const,
+    icon: "connect",
   },
   {
     number: "04",
     title: "Launch",
     desc: "Your team reviews, learns the system and goes live.",
-    icon: "launch" as const,
+    icon: "launch",
   },
 ];
 
-export const faqs = [
+const faqs = [
   {
     question: "Do I need an existing website?",
     answer:
@@ -152,49 +161,46 @@ export const faqs = [
     answer:
       "No. It handles repetitive first questions, captures lead details and makes follow-up easier. Your team remains in control of every relationship.",
   },
+  {
+    question: "How is this different from a custom software build?",
+    answer:
+      "Growth is a focused website and WhatsApp client system, typically live in about seven days. Custom platforms, FinTech products and retainers follow a longer scoped engagement — see Services and Pricing if you need that path.",
+  },
 ];
 
-function WhatsAppIcon({ className = "h-5 w-5" }: { className?: string }) {
-  // Kept as a bespoke SVG rather than lucide's generic MessageCircle —
-  // this is a WhatsApp-specific funnel, so the mark should read as WhatsApp
-  // at a glance, not as a generic chat icon.
-  return (
-    <svg aria-hidden="true" className={className} viewBox="0 0 24 24" fill="none">
-      <path
-        d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.4-4.7A8.5 8.5 0 1 1 20.5 11.6Z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8.4 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .3.1.4.4l.7 1.7c.1.3.1.5-.1.7l-.5.6c-.2.2-.2.4-.1.6.5 1.1 1.4 2 2.5 2.5.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.1l1.7.8c.3.1.4.3.4.5 0 .4-.2 1.3-.6 1.7-.5.5-1.3.7-2.1.6-1-.1-2.5-.6-4.1-2-1.3-1.2-2.2-2.7-2.5-3.8-.3-1.1 0-2.2.5-2.9Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
+const related = [
+  {
+    href: "/services",
+    label: "Services",
+    desc: "AI software, FinTech platforms, and enterprise automation.",
+  },
+  {
+    href: "/pricing",
+    label: "Pricing",
+    desc: "Project, retainer, and enterprise engagement models.",
+  },
+  {
+    href: "/how-it-works",
+    label: "How it works",
+    desc: "The 2–4 week process for custom software builds.",
+  },
+  {
+    href: "/portfolio",
+    label: "Portfolio",
+    desc: "Systems we have shipped for operational teams.",
+  },
+];
 
 function NewTabHint() {
   return <span className="sr-only"> (opens in a new tab)</span>;
 }
 
-// Shared pill button — every primary CTA on the page uses this exact
-// treatment so the "what do I click" pattern stays consistent end to end.
-function PrimaryButton({
-  href,
-  children,
-  className = "",
-}: {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
+function PrimaryButton({ href, children, className = "" }) {
   return (
     <a
       href={href}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       className={`inline-flex items-center justify-center gap-2 rounded-full bg-electric px-8 py-3 text-sm font-semibold text-[#0a1020] transition-colors duration-200 hover:bg-electric/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-[#080e1a] ${className}`}
     >
       {children}
@@ -203,25 +209,13 @@ function PrimaryButton({
   );
 }
 
-export default function GrowthPageClient() {
+export default function Growth() {
   return (
-    <main className="bg-[#080e1a] text-white">
-      {/* Mobile floating WhatsApp CTA — this is a WhatsApp-first funnel, so
-          on small screens the primary action stays reachable without
-          scrolling back up. */}
-      <a
-        href={whatsappUrl()}
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-electric text-[#0a1020] shadow-xl transition-colors duration-200 hover:bg-electric/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white sm:hidden"
-        aria-label="Start a WhatsApp conversation with Beelio (opens in a new tab)"
-      >
-        <WhatsAppIcon className="h-6 w-6" />
-      </a>
+    <div className="bg-[#080e1a] text-white">
+      <section className="relative overflow-hidden px-4 pt-28 pb-20 md:pt-32 md:pb-28">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-electric/5 blur-[140px] pointer-events-none" />
 
-      {/* Hero */}
-      <section className="px-4 py-24 md:py-32">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -229,6 +223,9 @@ export default function GrowthPageClient() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
+            <p className="text-white/30 text-xs uppercase tracking-widest mb-3 font-medium">
+              Website, WhatsApp intake, and booking
+            </p>
             <span className="inline-flex items-center gap-2 rounded-full border border-electric/20 bg-electric/10 px-4 py-1.5 text-xs font-medium text-electric mb-6">
               Beelio Client Growth System
             </span>
@@ -253,49 +250,18 @@ export default function GrowthPageClient() {
             </div>
           </motion.div>
 
-          {/* WhatsApp preview card — one restrained visual instead of a
-              layered mockup collage, in keeping with the rest of the site. */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="mt-14 max-w-md mx-auto bg-[#0d1526] rounded-2xl p-6 border border-white/5"
-            aria-hidden="true"
+            className="mt-14 max-w-md mx-auto"
           >
-            <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-electric/10 border border-electric/30 text-electric">
-                <WhatsAppIcon className="h-4 w-4" />
-              </span>
-              <div>
-                <strong className="block text-xs text-white">New enquiry</strong>
-                <small className="text-[10px] text-white/40">Just now</small>
-              </div>
-              <span className="ml-auto rounded-full bg-electric/10 border border-electric/20 px-2.5 py-1 text-[10px] font-medium text-electric">
-                Qualified
-              </span>
-            </div>
-            <div className="mt-4 rounded-xl rounded-bl-sm bg-white/5 p-3 text-xs leading-5 text-white/70">
-              Hi, I need help with a business website.
-            </div>
-            <div className="mt-4 flex items-center gap-2 border-t border-white/5 pt-4">
-              {[0, 1, 2].map((step) => (
-                <span
-                  key={step}
-                  className={`h-1.5 flex-1 rounded-full ${step < 2 ? "bg-electric" : "bg-white/10"}`}
-                />
-              ))}
-            </div>
-            <div className="mt-2 flex justify-between text-[10px] text-white/30">
-              <span>Visit</span>
-              <span>Capture</span>
-              <span>Follow-up</span>
-            </div>
+            <EnquiryPreview />
           </motion.div>
         </div>
       </section>
 
-      {/* Proof stats */}
       <section className="py-16 bg-[#0a1020]">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4">
           {stats.map((stat, i) => (
@@ -314,7 +280,6 @@ export default function GrowthPageClient() {
         </div>
       </section>
 
-      {/* The real problem */}
       <section className="py-20 bg-[#080e1a]">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div
@@ -333,7 +298,21 @@ export default function GrowthPageClient() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mb-12 rounded-2xl overflow-hidden border border-white/5 shadow-xl"
+          >
+            <img
+              src="/aerps-com-pp8rmBQC7Yc-unsplash.jpg"
+              alt="A service business handling client enquiries"
+              className="w-full h-52 md:h-64 object-cover"
+            />
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
             {problems.map((problem, i) => (
               <motion.div
                 key={problem.title}
@@ -358,11 +337,43 @@ export default function GrowthPageClient() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-12 bg-[#0d1526] rounded-2xl p-6 md:p-8 border border-white/5"
+          >
+            <p className="text-white/30 text-xs uppercase tracking-widest mb-3">Who this is for</p>
+            <h3 className="text-xl font-semibold text-white mb-3">
+              Service businesses that live on enquiries
+            </h3>
+            <p className="text-white/50 text-sm leading-relaxed max-w-2xl mb-6">
+              Built for teams that need a credible website and a reliable WhatsApp response
+              path — not a full custom platform. If you need enterprise software or FinTech
+              infrastructure, start with{" "}
+              <a href="/services" className="text-electric hover:text-electric/80">
+                our core services
+              </a>
+              .
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {audiences.map((item) => (
+                <a
+                  key={item}
+                  href="/industries"
+                  className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/70 hover:border-electric/30 hover:text-electric transition-colors"
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Packages */}
-      <section id="packages" className="py-20 bg-[#0a1020]">
+      <section id="packages" className="py-20 bg-[#0a1020] scroll-mt-24">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -427,7 +438,7 @@ export default function GrowthPageClient() {
                 <a
                   href={whatsappUrl(`I'm interested in the ${pkg.label} package.`)}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric ${
                     pkg.recommended
                       ? "bg-electric text-[#0a1020] hover:bg-electric/90"
@@ -443,12 +454,15 @@ export default function GrowthPageClient() {
 
           <p className="text-center text-white/40 text-xs max-w-2xl mx-auto mt-8">
             Need a different scope? We can remove features and quote the smaller project
-            clearly, without hiding costs.
+            clearly, without hiding costs. Custom platforms and retainers are on{" "}
+            <a href="/pricing" className="text-electric hover:text-electric/80">
+              software pricing
+            </a>
+            .
           </p>
         </div>
       </section>
 
-      {/* Selected work */}
       <section className="py-20 bg-[#080e1a]">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div
@@ -473,7 +487,7 @@ export default function GrowthPageClient() {
                 key={item.name}
                 href={item.href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -485,17 +499,27 @@ export default function GrowthPageClient() {
                 </span>
                 <span className="text-white/40 text-xs font-medium mt-5">{item.category}</span>
                 <h3 className="text-lg font-semibold text-white mt-1">{item.name}</h3>
+                <p className="text-white/50 text-sm leading-relaxed mt-3">{item.summary}</p>
                 <span className="mt-auto pt-6 flex items-center gap-1.5 text-sm font-semibold text-electric">
-                  View website<NewTabHint />
+                  View website
+                  <NewTabHint />
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </span>
               </motion.a>
             ))}
           </div>
+
+          <div className="text-center mt-10">
+            <a
+              href="/portfolio"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-electric hover:text-electric/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-electric rounded-full px-2 py-1"
+            >
+              See more systems we have shipped <ArrowRight size={16} />
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Process — same numbered-circle + icon + connecting-line pattern as HowItWorks */}
       <section className="py-20 bg-[#0a1020]">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div
@@ -509,8 +533,12 @@ export default function GrowthPageClient() {
               A focused <span className="text-electric">seven-day process.</span>
             </h2>
             <p className="text-white/50 max-w-xl mx-auto text-base">
-              From the first consultation to launch, here is what working with Beelio looks
-              like.
+              From the first consultation to launch, here is what the Client Growth System looks
+              like. Custom software follows a{" "}
+              <a href="/how-it-works" className="text-electric hover:text-electric/80">
+                2–4 week delivery process
+              </a>
+              .
             </p>
           </motion.div>
 
@@ -539,7 +567,6 @@ export default function GrowthPageClient() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="py-20 bg-[#080e1a]">
         <div className="max-w-5xl mx-auto px-4">
           <motion.div
@@ -583,17 +610,60 @@ export default function GrowthPageClient() {
             <a
               href={whatsappUrl("I have a question about the client system.")}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-electric hover:text-electric/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-electric rounded-full px-2 py-1"
             >
-              Ask another question<NewTabHint /> <ArrowRight size={16} />
+              Ask another question
+              <NewTabHint /> <ArrowRight size={16} />
             </a>
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
       <section className="py-20 bg-[#0a1020]">
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Continue through the <span className="text-electric">rest of Beelio</span>
+            </h2>
+            <p className="text-white/50 max-w-xl mx-auto text-base">
+              Growth is one offering. Explore custom software, engagement models, and the
+              broader delivery process.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            {related.map((item, i) => (
+              <motion.a
+                key={item.href}
+                href={item.href}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.08 }}
+                className="group bg-[#0d1526] rounded-2xl p-5 border border-white/5 hover:border-electric/20 transition-colors flex items-start justify-between gap-4"
+              >
+                <div>
+                  <h3 className="text-white font-semibold">{item.label}</h3>
+                  <p className="text-white/50 text-sm mt-1">{item.desc}</p>
+                </div>
+                <ArrowRight
+                  size={16}
+                  className="text-electric mt-1 shrink-0 transition-transform group-hover:translate-x-1"
+                />
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-[#080e1a]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -608,17 +678,24 @@ export default function GrowthPageClient() {
             Tell us what you sell and how clients contact you today. We&apos;ll recommend the
             right starting package.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <PrimaryButton href={whatsappUrl()}>
               <WhatsAppIcon className="h-4 w-4" />
               Start a WhatsApp conversation
             </PrimaryButton>
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 text-white px-8 py-3 text-sm font-semibold hover:border-electric hover:text-electric transition-colors duration-200"
+            >
+              <Calendar size={16} />
+              Book a consultation
+            </a>
           </div>
           <p className="text-white/30 text-xs mt-5">
             No pressure. A focused conversation about what your business actually needs.
           </p>
         </motion.div>
       </section>
-    </main>
+    </div>
   );
 }

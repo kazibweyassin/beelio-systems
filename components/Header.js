@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { X, Menu } from "lucide-react";
 
 const navLinks = [
@@ -24,6 +25,12 @@ const navLinks = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   return (
     <header className="fixed top-0 left-0 w-full bg-[#0a1020]/90 backdrop-blur-sm z-50 border-b border-white/5">
@@ -50,7 +57,10 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="hover:text-electric transition-colors duration-200"
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={`transition-colors duration-200 ${
+                isActive(link.href) ? "text-electric font-medium" : "hover:text-electric"
+              }`}
             >
               {link.label}
             </a>
@@ -84,7 +94,10 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-white/70 hover:text-electric text-sm transition-colors duration-200"
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={`text-sm transition-colors duration-200 ${
+                isActive(link.href) ? "text-electric font-medium" : "text-white/70 hover:text-electric"
+              }`}
             >
               {link.label}
             </a>

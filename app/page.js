@@ -14,7 +14,7 @@ import CTASection from '../components/CTASection';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
-import BeelioGrowthPage from './growth/page.tsx';
+import GrowthPreview from '../components/GrowthPreview';
 
 export const metadata = pageMetadata({
   title: 'Beelio Technologies | AI Software & FinTech Development',
@@ -37,7 +37,7 @@ export default function Home() {
       />
       <Industries />
       <Problem />
-      <BeelioGrowthPage />
+      <GrowthPreview />
       <HowItWorks />
       <WhyBeelio />
       <FAQ />

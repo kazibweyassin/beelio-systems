@@ -20,6 +20,17 @@ const scriptedFlow = [
       { label: "Healthcare Technology", next: "clinic" },
       { label: "Logistics / Supply Chain", next: "logistics" },
       { label: "Government / Public Sector", next: "other" },
+      { label: "Service business website + WhatsApp", next: "growth" },
+    ],
+  },
+
+  {
+    id: "growth",
+    bot: "The Client Growth System is a professional website connected to WhatsApp intake, FAQs, and consultation booking. Typical delivery is about 7 days, with packages from UGX 1.2m. You can see the full details on the Growth page.",
+    options: [
+      { label: "Open the Growth page", href: "/growth" },
+      { label: "Talk to the team on WhatsApp", next: "whatsapp" },
+      { label: "What does custom software cost?", next: "pricing" },
     ],
   },
 
@@ -383,9 +394,10 @@ const scriptedFlow = [
   },
   {
     id: "pricing",
-    bot: "Pricing depends on scope, but here is a simple guide for Beelio systems and AI agents:\n\n• WhatsApp chatbot or AI agent – from UGX 2.5M\n• Business automation + AI workflows – from UGX 4M\n• Full custom system with integrated agents – from UGX 8M\n\nAll prices include 3 months of free support after launch. We're significantly more affordable than international agencies, and we're right here.",
+    bot: "Pricing depends on scope, but here is a simple guide for Beelio systems and AI agents:\n\n• Client Growth System (website + WhatsApp intake) – from UGX 1.2M\n• WhatsApp chatbot or AI agent – from UGX 2.5M\n• Business automation + AI workflows – from UGX 4M\n• Full custom system with integrated agents – from UGX 8M\n\nAll prices include a defined support period after launch. We're significantly more affordable than international agencies, and we're right here.",
     options: [
       { label: "That's within budget ,  let's talk", next: "whatsapp" },
+      { label: "Tell me about the Growth System", next: "growth" },
       { label: "How long does it take?", next: "timeline" },
       { label: "Do you offer a payment plan?", next: "payment_plan" },
       { label: "What's included in support?", next: "maintenance" },
@@ -510,6 +522,11 @@ export default function Chatbot() {
   }, [messages]);
 
   const handleOption = (option) => {
+    if (option.href) {
+      window.location.href = option.href;
+      return;
+    }
+
     // Add user message
     setMessages((prev) => [
       ...prev,

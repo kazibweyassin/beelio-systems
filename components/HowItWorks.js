@@ -123,7 +123,12 @@ export default function HowItWorks() {
           className="text-center mt-12"
         >
           <p className="text-white/40 text-sm mb-4">
-            Ready to see how we would approach your system?
+            Ready to see how we would approach your system? Service businesses looking for a
+            7-day website and WhatsApp setup can start with the{" "}
+            <a href="/growth" className="text-electric hover:text-electric/80">
+              Client Growth System
+            </a>
+            .
           </p>
           <a
             href="/contact"
