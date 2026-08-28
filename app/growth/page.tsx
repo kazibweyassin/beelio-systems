@@ -131,7 +131,7 @@ const process = [
   },
 ];
 
-export const faqs = [
+const faqs = [
   {
     question: "Do I need an existing website?",
     answer:
