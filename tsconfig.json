@@ -35,7 +35,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "app/growth/page.js"  ],
   "exclude": [
     "node_modules"
   ]
